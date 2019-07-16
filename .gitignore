@@ -14,5 +14,5 @@
 
 # hugo
 static/{public,build}
-public/
+public/**/*
 !public/.well-known
