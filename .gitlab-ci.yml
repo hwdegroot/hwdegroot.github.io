@@ -13,7 +13,7 @@ pages:
     extends: .deploy
     stage: pages
     script:
-        - apk add --update git openssl-client ca-certificates
+        - apk add --update git openssh-client ca-certificates curl
         - rm -rf public
         - mkdir public
         - cd static
