@@ -1,7 +1,10 @@
 title: Rik de Groot
+assetsDir: content/assets
 enableRobotsTXT: true
 metaDataFormat: "yaml"
 baseURL: "https://www.forsure.dev/"
+permalinks:
+    posts: /-/:year/:month/:day/:title
 languageCode: "en-us"
 paginate: 10
 themesDir: "themes"
@@ -18,8 +21,8 @@ pygmentsCodeFences: true
 params:
     author: Rik de Groot
     description: >
-        I do stuff
-    avatar: https://pbs.twimg.com/profile_images/1110632196967186434/d3JdQFHO_400x400.jpg
+        Developer, enthousiast, working @easeeonline
+    avatar: assets/images/rik-de-groot.jpg
     social:
         - name: gitlab
           url: https://gitlab.com/hwdegroot
