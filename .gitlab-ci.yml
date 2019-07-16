@@ -7,26 +7,18 @@ variables:
 
 .deploy:
     stage: build
-    image: python:alpine
-    before_script:
-        - apk add hugo wget git curl openssh-client rsync
-        - eval $(ssh-agent -s)
-        - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
-        - mkdir -p ~/.ssh
-        - chmod 700 ~/.ssh
-        - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-        - chmod 644 ~/.ssh/known_hosts
-        - rm -rf build
-        - mkdir -p build
-        - cd static
-        - hugo --contentDir docs/ --buildDrafts --config config/config.yaml --destination ../build
-
+    image: registry.gitlab.com/pages/hugo:latest
 
 pages:
     extends: .deploy
     stage: pages
     script:
-        - echo 'bla'
+        - cd static
+        - hugo --contentDir content/ --buildDrafts --config config/config.yaml --destination ../public
+    artifacts:
+        paths:
+            - public
     only:
         - tags
+        - master
     when: manual
