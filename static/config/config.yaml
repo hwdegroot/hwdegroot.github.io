@@ -5,6 +5,7 @@ metaDataFormat: "yaml"
 baseURL: "https://www.forsure.dev/"
 permalinks:
     posts: /-/:year/:month/:day/:title
+    tags: /:slug
 languageCode: "en-us"
 paginate: 10
 themesDir: "themes"
