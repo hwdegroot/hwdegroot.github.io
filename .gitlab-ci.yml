@@ -13,6 +13,8 @@ pages:
     extends: .deploy
     stage: pages
     script:
+        - rm -rf public
+        - mkdir public
         - cd static
         - hugo --contentDir content/ --buildDrafts --config config/config.yaml --destination ../public
     artifacts:
@@ -21,4 +23,3 @@ pages:
     only:
         - tags
         - master
-    when: manual
