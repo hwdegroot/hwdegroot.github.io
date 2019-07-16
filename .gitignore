@@ -13,6 +13,6 @@
 .bash_*
 
 # hugo
-static/{public,build}
+static/{public,build,resources}
 public/*
 !public/.well-known
