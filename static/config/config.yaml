@@ -1,0 +1,53 @@
+title: Rik de Groot
+enableRobotsTXT: true
+metaDataFormat: "yaml"
+baseURL: "https://forsure.dev/"
+languageCode: "en-us"
+publishDir: "/publish"
+disableKinds:
+    - taxonomy
+    - taxonomyTerm
+paginate: 10
+themesDir: "themes"
+theme: "m10c"
+    # Book configuration
+disablePathToLower: true
+enableGitInfo: true
+
+# Code highlight
+pygmentsStyle: monokailight
+pygmentsCodeFences: true
+
+params:
+    author: Rik de Groot
+    description: >
+        I do stuff
+    #avatar: https://secure.gravatar.com/avatar/65eb257a2f06c264b7a29a484c48f3552=400
+    avatar: https://pbs.twimg.com/profile_images/1110632196967186434/d3JdQFHO_400x400.jpg
+    social:
+        - name: gitlab
+          url: https://gitlab.com/hwdegroot
+        - name: twitter
+          url: https://twitter.com/hwdegroot
+        - name: linkedin
+          url: https://www.linkedin.com/in/rikhwdegroot/
+          #avatar: https://media.licdn.com/dms/image/C4E03AQFACKeZ2LkArw/profile-displayphoto-shrink_200_200/0?e=1568851200&v=beta&t=5hihUTXk-DVpP_EUf-SCcz44LiQ4fCXYRcwAtlLwlDw
+    style:
+        # brown/yellow
+        #darkestColor: "#463625"
+        #darkColor: "#2a3738"
+        #primaryColor: "#eeee6a"
+        #lightColor: "#96a879"
+        #lightestColor: "#fff"
+        # red/black
+        #darkestColor: "#315659"
+        #darkColor: "#253031"
+        #primaryColor: "#dad865"
+        #lightColor: "#96a879"
+        #lightestColor: "#fff"
+        # green
+        darkestColor: "#282e37"
+        darkColor: "#3d434c"
+        primaryColor: "#67eba2"
+        lightColor: "#d3d3d3"
+        lighestColor: "#fff"

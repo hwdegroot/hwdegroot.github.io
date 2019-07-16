@@ -1,0 +1,16 @@
+# IDE
+.vscode
+.sw[a-z]
+.idea
+
+# Mac
+.DS_Store
+
+# Git
+*.orig
+
+# bash
+.bash_*
+
+# hugo
+static/{public,build}
