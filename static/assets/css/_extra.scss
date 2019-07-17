@@ -27,3 +27,70 @@ blockquote {
     padding-left: .5rem;
 }
 
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.card {
+    background-color: #ffd3d1;
+    color: #000000;
+    margin-top: 20px;
+    max-width: 500px;
+    padding: 75px 50px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+
+    &:hover {
+        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+        color: black;
+        margin-top: 50px;
+    }
+
+    img {
+        max-width: 80%;
+    }
+
+    a {
+        color: rgba(0, 0, 0, 0.7);
+        position: relative;
+
+        &::before,
+        &::after {
+            width: 50%;
+            bottom: 0;
+            content: "";
+            border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+            position: absolute;
+            overflow: hidden;
+            transition:  all 0.2s ease-in-out;
+            transition-duration: 0.75s;
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+
+        &:hover {
+            &:before {
+                width: 0;
+            }
+            &:after {
+                width: 0;
+            }
+        }
+    }
+}
