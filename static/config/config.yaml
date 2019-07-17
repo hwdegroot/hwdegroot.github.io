@@ -10,16 +10,16 @@ languageCode: "en-us"
 paginate: 10
 themesDir: "themes"
 theme: "m10c"
-disablePathToLower: true
+
 enableGitInfo: true
 googleAnalytics: UA-3891774-2
+#disqusShortname: rik_de_groot
 
 # Code highlight
 pygmentsCodefencesGuessSyntax: true
 pygmentsUseClasses: true
 pygmentsStyle: monokai
 pygmentsCodeFences: true
-disqusShortname: rik_de_groot
 
 params:
     author: Rik de Groot
