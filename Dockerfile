@@ -36,16 +36,11 @@ RUN mkdir -p /usr/local/src && \
     curl -sSLo minify-stable.tar.gz https://bin.equinox.io/c/dhgbqpS8Bvy/minify-stable-linux-amd64.tgz && \
     tar -xzf minify-stable.tar.gz && \
     mv minify /usr/local/bin/ && \
-    rm -f minify-stable.tar.gz && \
-\
-    addgroup -Sg 1000 hugo && \
-    adduser -SG hugo -u 1000 -h /tmp/hugo hugo
+    rm -f minify-stable.tar.gz
 
 VOLUME /src
 VOLUME /publish
 
 WORKDIR /src
-
-USER hugo
 
 EXPOSE ${PORT}
