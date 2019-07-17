@@ -23,8 +23,7 @@ pygmentsCodeFences: true
 
 params:
     author: Rik de Groot
-    description: >
-        Developer, enthousiast, working @easeeonline
+    description: !!!This is inlined in the baseof.html layout!!!
     avatar: assets/images/rik-de-groot.jpg
     images:
         - assets/og/cover.png
