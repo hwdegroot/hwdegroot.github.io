@@ -25,6 +25,8 @@ params:
     description: >
         Developer, enthousiast, working @easeeonline
     avatar: assets/images/rik-de-groot.jpg
+    images:
+        - assets/og/cover.png
     social:
         - name: gitlab
           url: https://gitlab.com/hwdegroot
