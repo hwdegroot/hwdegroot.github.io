@@ -19,6 +19,7 @@ pygmentsCodefencesGuessSyntax: true
 pygmentsUseClasses: true
 pygmentsStyle: monokai
 pygmentsCodeFences: true
+disqusShortname: rik_de_groot
 
 params:
     author: Rik de Groot
