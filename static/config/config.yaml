@@ -12,6 +12,7 @@ themesDir: "themes"
 theme: "m10c"
 disablePathToLower: true
 enableGitInfo: true
+googleAnalytics: UA-3891774-2
 
 # Code highlight
 pygmentsCodefencesGuessSyntax: true
