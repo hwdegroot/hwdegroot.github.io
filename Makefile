@@ -10,7 +10,7 @@ run: clean build
 		--workdir /src/static \
 		--publish ${PORT}:${PORT} \
 		--privileged \
-		registry.gitlab.com/easeeonline/docker/easee-docs:${HUGO_VERSION} \
+		registry.gitlab.com/hwdegroot/forsure.dev/hugo:${HUGO_VERSION} \
 		hugo server --contentDir /src/static/content/ --bind "0.0.0.0" --port ${PORT} --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
 
 stop:
@@ -18,7 +18,8 @@ stop:
 
 build:
 	docker build \
-		--tag registry.gitlab.com/easeeonline/docker/easee-docs:${HUGO_VERSION} \
+		--tag registry.gitlab.com/hwdegroot/forsure.dev/hugo:${HUGO_VERSION} \
+		--tag registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest \
 		--build-arg HUGO_VERSION=${HUGO_VERSION} \
 		--build-arg PORT=${PORT} \
 		.

@@ -7,13 +7,12 @@ variables:
 
 .deploy:
     stage: build
-    image: registry.gitlab.com/pages/hugo:latest
+    image: registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest
 
 pages:
     extends: .deploy
     stage: pages
     script:
-        - apk add --update git openssh-client ca-certificates curl
         - git clean -ffdx
         - cd static
         - hugo --contentDir content/
