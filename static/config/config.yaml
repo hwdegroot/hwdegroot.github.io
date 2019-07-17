@@ -23,7 +23,7 @@ pygmentsCodeFences: true
 
 params:
     author: Rik de Groot
-    description: !!!This is inlined in the baseof.html layout!!!
+    description: Code, cook and bake. Working @easeeonline
     avatar: assets/images/rik-de-groot.jpg
     images:
         - assets/og/cover.png
