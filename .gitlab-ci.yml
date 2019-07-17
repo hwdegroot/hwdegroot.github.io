@@ -16,7 +16,10 @@ pages:
         - apk add --update git openssh-client ca-certificates curl
         - git clean -ffdx
         - cd static
-        - hugo --contentDir content/ --buildDrafts --config config/config.yaml --destination ../public
+        - hugo --contentDir content/
+          --buildDrafts
+          --config config/config.yaml
+          --destination ../public/
     artifacts:
         paths:
             - public
