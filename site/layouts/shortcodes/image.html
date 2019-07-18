@@ -11,8 +11,9 @@
 {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
 {{ end }}
 {{ $image := .Scratch.Get "image" }}
-<figure>
-    <div class="image" style="max-width: calc({{ $image.Width }}px + 20px); max-height: calc({{ $image.Height }}px + 20px)">
+{{ $id := md5 (.Get 0) }}
+<figure id="{{ $id }}">
+    <div class="chroma image" style="max-width: calc({{ $image.Width }}px + 20px); max-height: calc({{ $image.Height }}px + 20px)">
         <img style="max-width: 100%; width: auto; height: auto;" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
     </div>
     <figcaption>
@@ -25,4 +26,10 @@
         </small>
     </figcaption>
 </figure>
+<div class="modal" data-target="{{ $id }}">
+    <div class="modal-content" style="max-width: {{ $original.Width }}px">
+        <span class="close" id="close-{{ $id }}">&times;</span>
+        <p><img src="{{ $original.RelPermalink }}" width="{{ $original.Width }}" height="{{ $original.Height }}" style="max-width: 100%; width: auto; height: auto;"></p>
+    </div>
+</div>
 
