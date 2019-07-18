@@ -31,6 +31,5 @@ clean:
 	) || true
 
 post:
-	docker exec -it ${CONTAINER_NAME} mkdir -p content/posts/${NAME}/images && \
-	docker exec -it ${CONTAINER_NAME} hugo new content/posts/${NAME}/index.md && \
-	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/${NAME}
+	docker exec -it ${CONTAINER_NAME} hugo new content/posts/${TITLE} --kind post && \
+	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/${TITLE}
