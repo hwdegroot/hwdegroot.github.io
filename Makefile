@@ -2,7 +2,7 @@ PORT := 8888
 HUGO_VERSION := 0.55.6
 CONTAINER_NAME := forsure.local
 
-run: clean build
+serve: clean build
 	docker run \
 		--rm \
 		--name ${CONTAINER_NAME} \
@@ -29,3 +29,8 @@ clean:
 	( \
 		docker images ${CONTAINER_NAME} && docker rm -f ${CONTAINER_NAME} \
 	) || true
+
+post:
+	docker exec -it ${CONTAINER_NAME} mkdir -p content/posts/${NAME}/images && \
+	docker exec -it ${CONTAINER_NAME} hugo new content/posts/${NAME}/index.md && \
+	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/${NAME}
