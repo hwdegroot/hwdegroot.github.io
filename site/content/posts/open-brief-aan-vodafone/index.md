@@ -5,7 +5,7 @@ tags:
     - twitter
     - telecom
     - nl
-date: 2019-07-16
+date: 2019-07-16T19:42:00Z
 images:
     - images/og/kastje-naar-de-muur.jpeg
 ---

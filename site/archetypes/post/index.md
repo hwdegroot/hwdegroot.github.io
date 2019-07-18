@@ -1,6 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}<Paste>
+date: {{ .Date }}
 tags:
     - development
     - en
