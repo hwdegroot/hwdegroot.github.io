@@ -166,7 +166,7 @@ Add a let's encrypt certificate to your page
 --
 
 Gitlab has this great help on how to use [let's encrypt](https://letsencrypt.org/) in combination with [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/).
-Following the steps listed here will get you all you need to register your https certificate to your domain.
+Following the steps from [their manual](https://gitlab.com/help/user/project/pages/lets_encrypt_for_gitlab_pages.md#lets-encrypt-for-gitlab-pages) will get you all you need to register your https certificate to your domain.
 
 You're done!
 
