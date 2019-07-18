@@ -105,5 +105,12 @@ blockquote {
     body {
         display: flex;
         flex-direction: column-reverse;
+
+        header {
+            .app-header-avatar {
+                max-height: calc(100vw - 5rem);
+                max-width: calc(100vw - 5rem);
+            }
+        }
     }
 }
