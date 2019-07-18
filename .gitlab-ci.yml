@@ -24,4 +24,3 @@ pages:
     only:
         - tags
         - master
-    when: manual
