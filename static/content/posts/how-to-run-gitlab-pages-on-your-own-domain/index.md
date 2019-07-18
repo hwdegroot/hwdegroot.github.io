@@ -8,7 +8,7 @@ tags:
     - en
 date: 2019-07-18
 images:
-    - assets/og/gitlab+letsencrypt.png
+    - images/og/gitlab+letsencrypt.png
 ---
 
 
@@ -109,6 +109,7 @@ pages:
 
 
 // configure gitlab pages to redirect
+{{< image "images/configure-gitlab-pages-domain" Fit "600x" />}}
 
 // configure letsencrypt
 Gitlab has this great help on how to use [let's encrypt](https://letsencrypt.org/) in combination with [gitlab pages](https://docs.gitlab.com/ee/user/project/pages/).

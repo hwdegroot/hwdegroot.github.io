@@ -7,7 +7,7 @@ tags:
     - nl
 date: 2019-07-16
 images:
-    - assets/og/kastje-naar-de-muur.jpeg
+    - images/og/kastje-naar-de-muur.jpeg
 ---
 
 Beste {{% twittername vodafoneNL %}},
