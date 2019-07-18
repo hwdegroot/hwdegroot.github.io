@@ -13,6 +13,10 @@ serve: clean build
 		registry.gitlab.com/hwdegroot/forsure.dev/hugo:${HUGO_VERSION} \
 		hugo server --contentDir /src/site/content/ --bind "0.0.0.0" --port ${PORT} --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
 
+publish:
+	docker exec -it ${CONTAINER_NAME} \
+		hugo --contentDir content --config config/config.yaml --destination ../public/
+
 stop:
 	docker stop --time 0 ${CONTAINER_NAME}
 
