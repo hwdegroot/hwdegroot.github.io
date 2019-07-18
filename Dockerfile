@@ -6,8 +6,6 @@ ARG HUGO_VERSION
 ARG PORT=1313
 ENV HUGO_RELEASE=hugo_extended_${HUGO_VERSION}_Linux-64bit
 
-RUN echo ${HUGO_RELEASE}
-
 RUN apk add --update \
         git \
         asciidoctor \

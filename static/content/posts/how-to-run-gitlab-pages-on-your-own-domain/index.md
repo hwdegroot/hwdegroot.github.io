@@ -24,6 +24,8 @@ But I am a huge fan of [gitlab](https://gitlab.com). Especially because they sup
 So in my case, I want to write my pages in markdown. A great tool for creating static sites from markdown is [hugo](https://gohugo.io/), also
 it gives you [great themes](https://themes.gohugo.io/) out of the box. FOr my site I used [m10c](https://themes.gohugo.io/hugo-theme-m10c/).
 
+You can find the repository of this site [here](https://gitlab.com/hwdegroot/forsure.dev)
+
 My config is as follows
 
 ```yaml
@@ -72,7 +74,8 @@ params:
 ```
 
 You can find all about deploying a hugo app to gitlab pages in [this example](https://gitlab.com/pages/hugo).
-I used the following `.gitlab-ci.yml` configuration to get the job done
+I used the following `.gitlab-ci.yml` configuration to get the job done. Gitlab published a [docker container](https://registry.gitlab.com/pages/hugo:latest),
+that can be used to build your project. But I like to have the extended features as well, so [I created my own](https://gitlab.com/hwdegroot/forsure.dev/blob/master/Dockerfile) which is available in the container registry of the project `registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest`, which is based on the container from [jguyomard](https://github.com/jguyomard). You can find the project on [GitHub](https://github.com/jguyomard).
 
 
 ```yaml
@@ -86,7 +89,7 @@ variables:
 
 .deploy:
     stage: build
-    image: registry.gitlab.com/pages/hugo:latest
+    image: registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest
     before_script:
         - apk add --update git ca-certificates
         - git clean -ffdx
@@ -107,12 +110,60 @@ pages:
         when: manual
 ```
 
+Now that you build your static site in gitlab, and deploy it to gitlab pages, you can add your own domain to
+gitlab pages by following a few steps.
 
-// configure gitlab pages to redirect
-{{< image "images/configure-gitlab-pages-domain" Fit "600x" />}}
+Add your domain to gitlab pages
+--
 
-// configure letsencrypt
+Now we can add the domain to gitlab pages. In your project, go to `Settings` > `Pages`. Here click the `New domain` button.
+
+Fill in your domain, and set the `Automatic certificate management using Let's Encrypt` switch on.
+
+{{< imgproc "images/configure-gitlab-pages-domain" Fit "600x" >}}
+Configure your own domain in gitlab pages settings.
+{{< /imgproc >}}
+
+Verify your domain
+---
+
+To verify your domain, you will need to add two fields to your DNS. I am using [Google domains](https://domains.google), but it is all more or less the same.
+All you need is privileges to alter the DNS settings of your domain.
+
+Youl will have to add two records, so gitlab can verify you own the domain.
+
+First you will have to add a `CNAME` record `<www.yourdomain.dev> CNAME <yourusername>.gitlab.io.` to forward the url to gitlab pages,
+and a `TXT` record to verify the domain is yours `_gitlab-pages-verification-code.www.yourdomain.dev TXT gitlab-pages-verification-code=<somerandomcode>`.
+
+{{< imgproc "images/configure-google-dns" Fit "600x" >}}
+Configure dns records in google domains.
+{{< /imgproc >}}
+
+Then hit the `verify` button. It might not work straight away because the records need to be synced. But in my case it was less than 5 minutes.
+
+{{< imgproc "images/gitlab-pages-domain-verify" Fit "600x" >}}
+Verify that the domain is yours after adding the verification code to your DNS
+{{< /imgproc >}}
+
+If it worked, the status will change to verified
+
+{{< imgproc "images/gitlab-pages-domain-verified" Fit "600x" >}}
+Domain verified by gitlab.
+{{< /imgproc >}}
+
+And in the overview, you will see that your domain is listed in the `Access pages section`
+
+{{< imgproc "images/gitlab-pages-domain-added" Fit "600x" >}}
+Domain added to gitlab pages.
+{{< /imgproc >}}
+
+Add a let's encrypt certificate to your page
+--
+
 Gitlab has this great help on how to use [let's encrypt](https://letsencrypt.org/) in combination with [gitlab pages](https://docs.gitlab.com/ee/user/project/pages/).
-Following the steps listed here will get you all you need to register your https certificater to If you follow that
+Following the steps listed here will get you all you need to register your https certificate to your domain.
 
-// add url to gitlab pages
+You're done!
+
+Hope it helps
+
