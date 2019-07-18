@@ -95,6 +95,12 @@ blockquote {
     }
 }
 
+.addthis_inline_share_toolbox {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
 @media only screen and (max-width: 939px) {
     body {
         display: flex;

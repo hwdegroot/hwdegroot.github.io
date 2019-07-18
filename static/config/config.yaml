@@ -22,6 +22,7 @@ pygmentsStyle: monokai
 pygmentsCodeFences: true
 
 params:
+    addthis: ra-5d30947f0078e16b
     author: Rik de Groot
     description: Code, cook and bake. Working @easeeonline
     avatar: assets/images/rik-de-groot.jpg
