@@ -5,16 +5,13 @@ stages:
 variables:
     GIT_SUBMODULE_STRATEGY: recursive
 
-.deploy:
-    stage: build
-    image: registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest
 
 pages:
-    extends: .deploy
+    image: registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest
     stage: pages
     script:
         - git clean -ffdx
-        - cd static
+        - cd site
         - hugo --contentDir content/
           --config config/config.yaml
           --destination ../public/

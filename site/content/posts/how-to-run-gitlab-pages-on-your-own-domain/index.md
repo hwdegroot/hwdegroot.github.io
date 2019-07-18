@@ -14,23 +14,23 @@ images:
 
 
 Not so long ago I had to make a static website, and was figuring out how to do this. I came across [hugo](https://gohugo.io). And I
-really liked how quickly you can build a website from markdown.
+really liked how quickly you can build and publish a website from markdown.
 
 A while ago google made the [.dev](https://domains.google/#/), so impulsively, I bought one.
-From $12 you can get one, and start doing awesome stuff with this. But I didn't.
-There are plenty of cloud providers that will host your website for you, like [AWS](https://aws.amazon.com/), [Netlify](https://www.netlify.com)
-and many more.
+From $12 you can get one, and start doing awesome stuff with this. But I didn't. There are plenty of cloud providers that will host
+your website for you, like [AWS](https://aws.amazon.com/), [Netlify](https://www.netlify.com) and many more.
 
 But I had no clue where to host this, because I am lazy and cheap. Then for work I had to do something similar, and I wondered if I could just host
 my [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/) on my own domain. And guess what, you can, and it is amazingly simple!
 
-So in my case, I want to write my pages in markdown. A great tool for creating static sites from markdown is [hugo](https://gohugo.io/), also
-it gives you [great themes](https://themes.gohugo.io/) out of the box. FOr my site I used [m10c](https://themes.gohugo.io/hugo-theme-m10c/).
+I started to write out some boilerplate (easy), picked a theme I liked (easy, I used [m10c](https://themes.gohugo.io/hugo-theme-m10c/)), and off I went.
+
+Here I will try to explain how I got from writing some basic markdown to running it on my own domain (well, technically it doesn't. Bu tit appears so).
 
 You can find the repository of this site [here](https://gitlab.com/hwdegroot/forsure.dev). I like `yaml` over `toml`, so I will use the `yaml` configuration option
 from hugo.
 
-My config is as follows, but also available [here](https://gitlab.com/hwdegroot/forsure.dev/blob/master/static/config/config.yaml)
+My config is as follows, but also available [here](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/config/config.yaml)
 
 ```yaml
 title: Rik de Groot
@@ -48,7 +48,7 @@ theme: m10c
 enableGitInfo: true
 googleAnalytics: <GA tracking code>
 
-# enable auto code highlighting
+# enable auto code highlighting without effort
 pygmentsCodefencesGuessSyntax: true
 pygmentsUseClasses: true
 pygmentsStyle: monokai
@@ -75,43 +75,44 @@ params:
         primaryColor: "#67eba2"
         lightColor: "#d3d3d3"
         lighestColor: "#fff"
+
 ```
 
-You can find all about deploying a hugo app to GitLab pages in [this example](https://gitlab.com/pages/hugo).
+The nice thing about using the tools that are popular, is that a lot of people already figured out stuff for you. All you need to do is Google it.
+So I did. You can find all about deploying a hugo app to GitLab pages in [this example](https://gitlab.com/pages/hugo).
+
 I used the following `.gitlab-ci.yml` configuration to get the job done. Gitlab published a [docker container](https://registry.gitlab.com/pages/hugo:latest),
-that can be used to build your project. But I like to have the extended features as well, so [I created my own](https://gitlab.com/hwdegroot/forsure.dev/blob/master/Dockerfile) which is available in the container registry of the project `registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest`, which is based on the container from [jguyomard](https://github.com/jguyomard). You can find the project on [GitHub](https://github.com/jguyomard/docker-hugo).
+that can be used to build your project (see the above example form GitLab). But I like to have the extended features as well, so [I created my own](https://gitlab.com/hwdegroot/forsure.dev/blob/master/Dockerfile) which is available in the [container registry of the project](https://gitlab.com/hwdegroot/forsure.dev/container_registry). But not too much credits to myself, because I based it on the container from [jguyomard](https://github.com/jguyomard).
+You can find the project on [GitHub](https://github.com/jguyomard/docker-hugo).
 
 
 ```yaml
 # .gitlab-ci.yml
 stages:
-    - build
     - pages
 
+# the theme is submoduled, so make sure to do a recursive clone
 variables:
     GIT_SUBMODULE_STRATEGY: recursive
 
-.deploy:
-    stage: build
+pages:
+    stage: pages
     image: registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest
     before_script:
-        - apk add --update git ca-certificates
         - git clean -ffdx
-
-pages:
-    extends: .deploy
-    stage: pages
     script:
+        # files are in a subdirectory of the project
+        - cd site
         - hugo --contentDir content/
           --config config/config.yaml
-          --destination public/
+          --destination ../public/
     artifacts:
         paths:
             - public
         only:
             - tags
             - master
-        when: manual
+
 ```
 
 Now that you build your static site in GitLab, and deploy it to GitLab Pages, you can add your own domain to
@@ -124,9 +125,9 @@ Now we can add the domain to GitLab Pages. In your project, go to `Settings` > `
 
 Fill in your domain, and set the `Automatic certificate management using Let's Encrypt` switch on.
 
-{{< imgproc "images/configure-gitlab-pages-domain" Fit "600x" >}}
+{{< image "images/configure-gitlab-pages-domain" Fit "600x600" >}}
 Configure your own domain in GitLab Pages settings.
-{{< /imgproc >}}
+{{< /image >}}
 
 Verify your domain
 ---
@@ -139,27 +140,27 @@ Youl will have to add two records, so GitLab can verify you own the domain.
 First you will have to add a `CNAME` record `<www.yourdomain.dev> CNAME <yourusername>.gitlab.io.` to forward the url to gitlab pages,
 and a `TXT` record to verify the domain is yours `_gitlab-pages-verification-code.www.yourdomain.dev TXT gitlab-pages-verification-code=<somerandomcode>`.
 
-{{< imgproc "images/configure-google-dns" Fit "600x" >}}
+{{< image "images/configure-google-dns" Fit "600x" >}}
 Configure dns records in google domains.
-{{< /imgproc >}}
+{{< /image >}}
 
 Then hit the `verify` button. It might not work straight away because the records need to be synced. But in my case it was less than 5 minutes.
 
-{{< imgproc "images/gitlab-pages-domain-verify" Fit "600x" >}}
+{{< image "images/gitlab-pages-domain-verify" Fit "600x" >}}
 Verify that the domain is yours after adding the verification code to your DNS
-{{< /imgproc >}}
+{{< /image >}}
 
 If it worked, the status will change to verified
 
-{{< imgproc "images/gitlab-pages-domain-verified" Fit "600x" >}}
+{{< image "images/gitlab-pages-domain-verified" Fit "600x" >}}
 Domain verified by GitLab.
-{{< /imgproc >}}
+{{< /image >}}
 
 And in the overview, you will see that your domain is listed in the `Access pages section`
 
-{{< imgproc "images/gitlab-pages-domain-added" Fit "600x" >}}
+{{< image "images/gitlab-pages-domain-added" Fit "600x" >}}
 Domain added to GitLab Pages.
-{{< /imgproc >}}
+{{< /image >}}
 
 Add a let's encrypt certificate to your page
 --
