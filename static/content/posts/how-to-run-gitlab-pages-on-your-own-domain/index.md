@@ -12,14 +12,17 @@ images:
 ---
 
 
-A while ago google made the [.dev](https://domains.google/#/) domains available for hosting your website.
-From $12 you can buy your own domain, and start doing awesome stuff with this.
 
-But you will still need a place to host this. Ofcourse nowadays hosting is also not that much of a problem
-anymore. There are plenty of cloud providers that will host your website for you, like [AWS](https://aws.amazon.com/), [Netlify](https://www.netlify.com)
+Not so long ago I had to make a static website, and was figuring out how to do this. I came across [hugo](https://gohugo.io). And I
+really liked how quickly you can build a website from markdown.
+
+A while ago google made the [.dev](https://domains.google/#/), so impulsively, I bought one.
+From $12 you can get one, and start doing awesome stuff with this. But I didn't.
+There are plenty of cloud providers that will host your website for you, like [AWS](https://aws.amazon.com/), [Netlify](https://www.netlify.com)
 and many more.
 
-But I am a huge fan of [GitLab](https://gitlab.com). Especially because they support private repos for free.
+But I had no clue where to host this, because I am lazy and cheap. Then for work I had to do something similar, and I wondered if I could just host
+my [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/) on my own domain. And guess what, you can, and it is amazingly simple!
 
 So in my case, I want to write my pages in markdown. A great tool for creating static sites from markdown is [hugo](https://gohugo.io/), also
 it gives you [great themes](https://themes.gohugo.io/) out of the box. FOr my site I used [m10c](https://themes.gohugo.io/hugo-theme-m10c/).
