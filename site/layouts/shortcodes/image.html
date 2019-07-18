@@ -11,8 +11,10 @@
 {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
 {{ end }}
 {{ $image := .Scratch.Get "image" }}
-<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #ffffff">
-    <img style="max-width: 100%; width: auto; height: auto;" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+<figure>
+    <div class="image" style="max-width: calc({{ $image.Width }}px + 20px); max-height: calc({{ $image.Height }}px + 20px)">
+        <img style="max-width: 100%; width: auto; height: auto;" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+    </div>
     <figcaption>
         <small>
             {{ with .Inner }}

@@ -140,25 +140,25 @@ Youl will have to add two records, so GitLab can verify you own the domain.
 First you will have to add a `CNAME` record `<www.yourdomain.dev> CNAME <yourusername>.gitlab.io.` to forward the url to gitlab pages,
 and a `TXT` record to verify the domain is yours `_gitlab-pages-verification-code.www.yourdomain.dev TXT gitlab-pages-verification-code=<somerandomcode>`.
 
-{{< image "images/configure-google-dns" Fit "600x" >}}
+{{< image "images/configure-google-dns" Fit "600x600" >}}
 Configure dns records in google domains.
 {{< /image >}}
 
 Then hit the `verify` button. It might not work straight away because the records need to be synced. But in my case it was less than 5 minutes.
 
-{{< image "images/gitlab-pages-domain-verify" Fit "600x" >}}
+{{< image "images/gitlab-pages-domain-verify" Fit "600x600" >}}
 Verify that the domain is yours after adding the verification code to your DNS
 {{< /image >}}
 
 If it worked, the status will change to verified
 
-{{< image "images/gitlab-pages-domain-verified" Fit "600x" >}}
+{{< image "images/gitlab-pages-domain-verified" Fit "600x600" >}}
 Domain verified by GitLab.
 {{< /image >}}
 
 And in the overview, you will see that your domain is listed in the `Access pages section`
 
-{{< image "images/gitlab-pages-domain-added" Fit "600x" >}}
+{{< image "images/gitlab-pages-domain-added" Fit "600x600" >}}
 Domain added to GitLab Pages.
 {{< /image >}}
 
