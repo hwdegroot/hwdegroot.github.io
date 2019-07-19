@@ -1,15 +1,15 @@
 title: Rik de Groot
 assetsDir: content/assets
 enableRobotsTXT: true
-metaDataFormat: "yaml"
-baseURL: "https://www.forsure.dev/"
+metaDataFormat: yaml
+baseURL: https://www.forsure.dev/
 permalinks:
     posts: /-/:year/:month/:day/:title
     tags: /:slug
-languageCode: "en-us"
+languageCode: en-us
 paginate: 10
-themesDir: "themes"
-theme: "m10c"
+themesDir: themes
+theme: m10c
 
 enableGitInfo: true
 googleAnalytics: UA-3891774-2
@@ -25,9 +25,9 @@ params:
     addthis: ra-5d30947f0078e16b
     author: Rik de Groot
     description: Code, cook and bake. Working @easeeonline
-    avatar: assets/images/rik-de-groot.jpg
+    avatar: images/rik-de-groot.jpg
     images:
-        - assets/og/cover.png
+        - images/og/cover.png
     social:
         - name: gitlab
           url: https://gitlab.com/hwdegroot

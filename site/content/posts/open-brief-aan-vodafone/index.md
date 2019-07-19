@@ -4,9 +4,10 @@ tags:
     - vodafone
     - twitter
     - telecom
-date: 2019-07-16
+    - lang-nl
+date: 2019-07-16T09:25:45Z
 images:
-    - assets/og/kastje-naar-de-muur.jpeg
+    - images/og/kastje-naar-de-muur.jpeg
 ---
 
 Beste {{% twittername vodafoneNL %}},
