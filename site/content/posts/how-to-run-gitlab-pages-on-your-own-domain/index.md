@@ -146,6 +146,10 @@ Configure dns records in google domains.
 
 Then hit the `verify` button. It might not work straight away because the records need to be synced. But in my case it was less than 5 minutes.
 
+{{< image "images/gitlab-domain-not-verfied-failed.png" Fit "600x600" >}}
+Before adding DNS records, domain fails to verify
+{{< /image >}}
+
 {{< image "images/gitlab-pages-domain-verify" Fit "600x600" >}}
 Verify that the domain is yours after adding the verification code to your DNS
 {{< /image >}}
