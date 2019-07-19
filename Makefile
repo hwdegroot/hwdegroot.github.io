@@ -2,20 +2,16 @@ PORT := 8888
 HUGO_VERSION := 0.55.6
 CONTAINER_NAME := forsure.local
 
-serve: clean build
+run: clean build
 	docker run \
 		--rm \
 		--name ${CONTAINER_NAME} \
 		--volume `pwd`:/src \
-		--workdir /src/site \
+		--workdir /src/static \
 		--publish ${PORT}:${PORT} \
 		--privileged \
 		registry.gitlab.com/hwdegroot/forsure.dev/hugo:${HUGO_VERSION} \
-		hugo server --contentDir /src/site/content/ --bind "0.0.0.0" --port ${PORT} --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
-
-publish:
-	docker exec -it ${CONTAINER_NAME} \
-		hugo --contentDir content --config config/config.yaml --destination ../public/
+		hugo server --contentDir /src/static/content/ --bind "0.0.0.0" --port ${PORT} --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
 
 stop:
 	docker stop --time 0 ${CONTAINER_NAME}
@@ -29,11 +25,7 @@ build:
 		.
 
 clean:
-	sudo rm -rf site/public && \
+	sudo rm -rf static/public && \
 	( \
 		docker images ${CONTAINER_NAME} && docker rm -f ${CONTAINER_NAME} \
 	) || true
-
-post:
-	docker exec -it ${CONTAINER_NAME} hugo new content/posts/${TITLE} --kind post && \
-	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/${TITLE}

@@ -5,7 +5,7 @@ tags:
     - see clearly
     - easee
     - en
-date: 2019-07-17T17:42:00Z
+date: 2019-07-17
 images:
     - images/og/see-clearly-in-80-days.png
 ---
