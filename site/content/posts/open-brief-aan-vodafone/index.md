@@ -4,7 +4,7 @@ tags:
     - vodafone
     - twitter
     - telecom
-    - nl
+    - lang-nl
 date: 2019-07-16T09:25:45Z
 images:
     - images/og/kastje-naar-de-muur.jpeg
