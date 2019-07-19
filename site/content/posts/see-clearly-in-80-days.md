@@ -4,10 +4,9 @@ tags:
     - eyesight
     - see clearly
     - easee
-    - en
 date: 2019-07-17
 images:
-    - images/og/see-clearly-in-80-days.png
+    - assets/og/see-clearly-in-80-days.png
 ---
 
 At {{% twittername easeeonline %}} we want everybody to have the oportunity to see clearly. For this reaseon we are giving
@@ -18,7 +17,7 @@ our optometrists.
 {{% center %}}
 {{% card %}}
 
-![easee logo](images/easee-logo.svg)
+![easee logo](/assets/images/easee-logo.svg)
 
 see clearly - in 80 days.
 ===
