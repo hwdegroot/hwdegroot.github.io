@@ -4,6 +4,7 @@ stages:
 
 variables:
     GIT_SUBMODULE_STRATEGY: recursive
+    GIT_STRATEGY: clone
 
 .deploy:
     stage: build
@@ -24,4 +25,3 @@ pages:
     only:
         - tags
         - master
-    when: manual
