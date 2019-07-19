@@ -172,6 +172,73 @@ Add a let's encrypt certificate to your page
 Gitlab has this great help on how to use [let's encrypt](https://letsencrypt.org/) in combination with [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/).
 Following the steps from [their manual](https://gitlab.com/help/user/project/pages/lets_encrypt_for_gitlab_pages.md#lets-encrypt-for-gitlab-pages) will get you all you need to register your https certificate to your domain.
 
+**TL;DR;**
+
+I had to register using [`certbot`](https://certbot.eff.org/). Just install the binary using the package manager of your OS.
+
+```sh
+certbot certonly -a manual -d www.forsure.dev --email hwdegroot@gmail.com
+```
+
+And it gave me the code in return of format `A.B`. Mine looked like
+
+```sh
+MXDCs3RTdKM5KNIJFbogSwTLoiduCbtyHKZ2k1zxvWQ.JEZ1UZmU4x3wCgSiV9gom4Irb8AgSkVFrsCju6sFLa8
+```
+
+then create a directory `public/.well-known/acme-challenge/A`, in my case `public/.well-known/acme-challenge/MXDCs3RTdKM5KNIJFbogSwTLoiduCbtyHKZ2k1zxvWQ/`.
+Inside this directory, put a file `index.html` with the full `A.B` key in it, just as suggested by the certbot output
+
+```sh
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+NOTE: The IP of this machine will be publicly logged as having requested this
+certificate. If you're running certbot in manual mode on a machine that is not
+your server, please ensure you're okay with that.
+
+Are you OK with your IP being logged?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(Y)es/(N)o: y
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Create a file containing just this data:
+
+MXDCs3RTdKM5KNIJFbogSwTLoiduCbtyHKZ2k1zxvWQ.JEZ1UZmU4x3wCgSiV9gom4Irb8AgSkVFrsCju6sFLa8
+
+And make it available on your web server at this URL:
+
+http://www.forsure.dev/.well-known/acme-challenge/TfBYIcpd4uO4y4kkH3GAYdsUXeCycAYLPcsF6JEiq1I
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+```
+
+At this point, pause. **DO NOT** continue yet. If you did, no problem. Validation will fail, but the next time you run it, you will get the same code.
+
+So the file `public/.well-known/acme-challenge/MXDCs3RTdKM5KNIJFbogSwTLoiduCbtyHKZ2k1zxvWQ/index.html` would look like
+
+```html
+<!-- index.html -->
+MXDCs3RTdKM5KNIJFbogSwTLoiduCbtyHKZ2k1zxvWQ.JEZ1UZmU4x3wCgSiV9gom4Irb8AgSkVFrsCju6sFLa8
+```
+
+Basically that is it. You can continue the certificate registration, although it will probably fail. Make sure that GitLab deploys your
+pages with the certificate directory `.well-known/acme-challenge/A` in it. You can check this by visiting `https://<your-domain>/.wel-known/acme-challenge/A/`. It should serve you this html page with the key in it. Then you can run the `certbot` command again, and it should present you the success message
+
+```sh
+IMPORTANT NOTES
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/blog.rikdegroot.dev/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/blog.rikdegroot.dev/privkey.pem
+   Your cert will expire on 2019-10-17. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot
+   again. To non-interactively renew *all* of your certificates, run
+   "certbot renew"
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+```
+
 You're done!
 
 Hope it helps
