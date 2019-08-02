@@ -10,6 +10,7 @@ languageCode: en-us
 paginate: 10
 themesDir: themes
 theme: m10c
+enableEmoji: true
 
 enableGitInfo: true
 googleAnalytics: UA-3891774-2
