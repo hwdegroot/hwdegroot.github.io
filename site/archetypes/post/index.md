@@ -3,7 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 tags:
     - development
-    - en
+    - lang-en
 images:
     - images/og/cover.png
 ---
