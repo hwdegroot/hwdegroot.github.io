@@ -5,7 +5,7 @@ variables:
     GIT_SUBMODULE_STRATEGY: recursive
     GIT_STRATEGY: clone
 
-pages:
+.pages:
     image: registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest
     stage: pages
     script:
@@ -17,6 +17,17 @@ pages:
     artifacts:
         paths:
             - public
+pages:
+    extends: .pages
     only:
         - tags
         - master
+
+pages_dev:
+    extends: .pages
+    except:
+        - tags
+        - master
+    when: manual
+
+
