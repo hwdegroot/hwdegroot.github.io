@@ -5,7 +5,8 @@ tags:
     - development
     - lang-en
     - TreeViewAdv
-    - C#.Net
+    - C#
+    - .Net
     - TestStack-White
 images:
     - images/og/cover.png
