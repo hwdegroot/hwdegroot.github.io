@@ -122,6 +122,15 @@ figure {
     }
 }
 
+.policy {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    left: 0;
+}
+
 .addthis_inline_share_toolbox {
     position: fixed;
     right: 0;
