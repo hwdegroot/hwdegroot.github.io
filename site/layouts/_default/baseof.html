@@ -35,6 +35,6 @@
     </main>
     {{ partial "addthis" . }}
     {{ $js := resources.Get "js/modal.js" | resources.Minify | resources.Fingerprint -}}
-    <script lamguage="text/javascript" src="{{ $js.RelPermalink }}"></script>
+    <script language="text/javascript" src="{{ $js.RelPermalink }}"></script>
   </body>
 </html>

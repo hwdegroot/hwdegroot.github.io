@@ -9,6 +9,8 @@ tags:
 date: 2019-07-18T21:50:57Z
 images:
     - images/og/gitlab+letsencrypt.png
+disqus_identifier: f4a52f36e0cf730fa44341524510fb8e
+disqus_title: "How to run and deploy gitlab pages on your own domain"
 ---
 
 

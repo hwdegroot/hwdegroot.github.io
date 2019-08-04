@@ -10,6 +10,8 @@ tags:
     - TestStack-White
 images:
     - images/og/cover.png
+disqus_identifier: 8be474c832f6e434371358a796917644
+disqus_title: "UI automation of a Custom Control"
 ---
 
 Recently I found a blog post I never really published (on an ancient blogger account). However I am not very active in `C#.NET` nowadays, so maybe noone is using this anymore.
