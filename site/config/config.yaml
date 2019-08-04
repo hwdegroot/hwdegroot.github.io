@@ -14,7 +14,7 @@ enableEmoji: true
 
 enableGitInfo: true
 googleAnalytics: UA-3891774-2
-disqusShortname: rik_de_groot
+#disqusShortname: rik_de_groot
 
 # Code highlight
 pygmentsCodefencesGuessSyntax: true
