@@ -34,6 +34,10 @@ clean:
 		docker images ${CONTAINER_NAME} && docker rm -f ${CONTAINER_NAME} \
 	) || true
 
+policy: .post
+	docker exec -it ${CONTAINER_NAME} hugo new content/policy/${TITLE} --kind policy && \
+	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/${TITLE}
+
 post: .post
 	docker exec -it ${CONTAINER_NAME} hugo new content/posts/${TITLE} --kind post && \
 	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/${TITLE}
