@@ -8,9 +8,6 @@ tags:
 date: 2019-07-16T09:25:45Z
 images:
     - images/og/kastje-naar-de-muur.jpeg
-disqus_identifier: 511fb2be307024cecab71afb19178706
-disqus_title: "Open brief aan Vodafone"
-type: post
 ---
 
 Beste {{% twittername vodafoneNL %}},
