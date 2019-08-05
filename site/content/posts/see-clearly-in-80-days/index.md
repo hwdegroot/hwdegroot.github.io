@@ -8,9 +8,6 @@ tags:
 date: 2019-07-17T17:42:00Z
 images:
     - images/og/see-clearly-in-80-days.png
-disqus_identifier: 8cd22fe6ddaa8091cc1c2e7068874a39
-disqus_title: "See clearly - in 80 days"
-type: post
 ---
 
 At {{% twittername easeeonline %}} we want everybody to have the oportunity to see clearly. For this reaseon we are giving
