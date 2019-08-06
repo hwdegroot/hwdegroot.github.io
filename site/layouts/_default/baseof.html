@@ -27,7 +27,7 @@
           <a target="_blank" href="{{ .url }}">{{ partial "icon.html" (dict "ctx" $ "name" .name ) }}</a>
         {{ end }}
       </div>
-      <div class="policy">
+      <div class="policy disqus">
           <p class="center bottom"><small><a href="/policy/comment-policy">Comment policy</a></small></p>
       </div>
     </header>
@@ -38,6 +38,10 @@
     </main>
     {{ partial "addthis" . }}
     {{ $js := resources.Get "js/modal.js" | resources.Minify | resources.Fingerprint -}}
-    <script language="text/javascript" src="{{ $js.RelPermalink }}"></script>
+    <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+
+    {{ if .Site.DisqusShortname }}
+        <script type="text/javascript" src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" async id="dsq-counter-scr"></script>
+    {{ end }}
   </body>
 </html>

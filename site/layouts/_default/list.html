@@ -1,28 +1,28 @@
 {{ define "main" }}
-  <article>
-    <h1>{{ .Title }}</h1>
-    <ul class="posts-list">
-      {{ range $index, $element := where .Paginator.Pages ".Type" "!=" "policy" }}
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <span class="posts-list-item-description">
-            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }} {{ .ReadingTime }} min read -
-            {{ .PublishDate.Format "Jan 2, 2006" }}
-          </span>
-          {{- with .Params.tags -}}
-          <div style="font-size: 0.8rem;">
-            {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
-            {{ range . -}}
-              {{- with $.Site.GetPage (printf "/%s/%s" "tags" . ) -}}
-                <a class="tag" href="{{ .RelPermalink }}">{{ .Title }}</a>
-              {{- end -}}
-            {{- end -}}
-          </div>
-          {{- end -}}
-        </li>
-      {{ end }}
-    </ul>
-    {{ partial "pagination.html" $ }}
-  </article>
+    <article>
+        <h1>{{ .Title }}</h1>
+        <ul class="posts-list">
+            {{ range $index, $element := where .Paginator.Pages ".Type" "!=" "policy" }}
+                <li class="posts-list-item">
+                    <a class="posts-list-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <span class="posts-list-item-description">
+                        {{ partial "icon.html" (dict "ctx" $ "name" "clock") }} {{ .ReadingTime }} min read -
+                        {{ .PublishDate.Format "Jan 2, 2006" }}
+                    </span>
+                    {{- with .Params.tags -}}
+                        <div style="font-size: 0.8rem;">
+                            {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
+                            {{ range . -}}
+                                {{- with $.Site.GetPage (printf "/%s/%s" "tags" . ) -}}
+                                    <a class="tag" href="{{ .RelPermalink }}#disqus_thread">{{ .Title }}</a>
+                                {{- end -}}
+                            {{- end -}}
+                        </div>
+                    {{- end -}}
+                </li>
+            {{ end }}
+        </ul>
+        {{ partial "pagination.html" $ }}
+    </article>
 {{ end }}
 
