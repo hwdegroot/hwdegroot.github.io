@@ -41,7 +41,7 @@
     <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
 
     {{ if .Site.DisqusShortname }}
-        <script type="text/javascript" src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" async id="dsq-counter-scr"></script>
+        <script src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" id="dsq-count-scr" async></script>
     {{ end }}
   </body>
 </html>

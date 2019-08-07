@@ -143,6 +143,24 @@ figure {
     margin-top: 15px;
 }
 
+.posts-list-item-description,
+.posts-list-item-comments {
+    display: inline-block;
+}
+
+.posts-list-item-comments {
+    position: relative;
+    svg {
+        stroke: #67eba2;
+        stroke-width: .25px;
+        fill: none;
+    }
+    a {
+        font-weight: normal;
+        font-size: 0.8rem;
+    }
+}
+
 @media only screen and (max-width: 939px) {
     body {
         display: flex;
