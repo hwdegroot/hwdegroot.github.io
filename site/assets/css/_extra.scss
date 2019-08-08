@@ -177,14 +177,30 @@ body {
     position: relative;
     line-height: 1em;
 
+    .imagewrapper {
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 5px;
+        }
+    }
+
     svg {
         stroke: #67eba2;
         stroke-width: .25px;
         fill: none;
     }
+
     a {
         font-weight: normal;
         font-size: 0.8rem;
+
+        &:hover {
+            svg {
+                stroke: white;
+            }
+        }
     }
 }
 
