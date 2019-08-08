@@ -22,6 +22,10 @@ pre {
     font-family: 'Fira Mono', monospace;
 }
 
+code {
+    overflow-wrap: break-word;
+}
+
 blockquote {
     background-color: rgba(255, 255,255, 0.1);
     border-left: 3px solid #d3d3d3;
@@ -215,5 +219,12 @@ body {
                 max-width: calc(100vw - 5rem);
             }
         }
+    }
+}
+
+@media only screen and (min-width: 940px) {
+    .app-container {
+        max-width: 65rem;
+        width: calc(100vw - 20rem);
     }
 }
