@@ -178,32 +178,47 @@ body {
 }
 
 .posts-list-item-comments {
+    --font-size: 15px;
+    --height: 26px;
+
     position: relative;
-    line-height: 1em;
+    line-height: 1rem;
+    height: var(--height);
 
-    .imagewrapper {
-        display: flex;
-        align-items: center;
+    i,
+    a {
+        font-size: var(--font-size);;
+        color: #67eba2;
+        margin-left: calc(var(--font-size) + 3px);
+        line-height: 1rem;
+        height: var(--height);
 
-        svg {
-            margin-right: 5px;
+        &::before {
+            content: "forum";
+            position: absolute;
+            left: 0;
+            bottom: calc((var(--height) - var(--font-size)) - 2px);
+            margin-right: 0.1rem;
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
         }
     }
 
-    svg {
-        stroke: #67eba2;
-        stroke-width: .25px;
-        fill: none;
-    }
-
-    a {
-        font-weight: normal;
-        font-size: 0.8rem;
-
-        &:hover {
-            svg {
-                stroke: white;
-            }
+    &:hover {
+        i,
+        a {
+            color: white;
+            transition: color .35s
         }
     }
 }
