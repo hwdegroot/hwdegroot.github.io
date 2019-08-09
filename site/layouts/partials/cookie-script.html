@@ -1,0 +1,18 @@
+{{ if $.Site.Params.cookiePolicy }}
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#efefef",
+      "text": "#000000"
+    },
+    "button": {
+      "background": "transparent",
+      "text": "#8ec760",
+      "border": "#8ec760"
+    }
+  }
+});
+</script>
+{{ end }}
