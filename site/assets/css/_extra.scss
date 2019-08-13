@@ -187,7 +187,7 @@ body {
     --height: 26px;
 
     position: relative;
-    line-height: 1rem;
+    //line-height: 1rem;
     height: var(--height);
 
     i,
@@ -197,13 +197,14 @@ body {
         margin-left: calc(var(--font-size) + 3px);
         line-height: 1.2rem;
         height: var(--height);
+        opacity: 0.8;
 
         &::before {
             content: "comment";
             position: absolute;
             left: 0;
-            bottom: calc((var(--height) - var(--font-size)) - 3px);
-            margin-right: 0.1rem;
+            bottom: calc((var(--height) - var(--font-size)) - .25rem);
+            margin-right: 0.4rem;
             font-family: 'Material Icons';
             font-weight: normal;
             font-style: normal;
@@ -226,6 +227,10 @@ body {
             transition: color .35s
         }
     }
+}
+
+.cc-btn {
+    font-size: 1em !important;
 }
 
 @media only screen and (max-width: 939px) {

@@ -11,7 +11,7 @@
                             {{ .PublishDate.Format "Jan 2, 2006" }}
                         </span>
                         <span class="posts-list-item-comments">
-                            <a href="{{ .RelPermalink }}#disqus_thread">comments</a>
+                            <a class="disqus-comments" href="{{ .RelPermalink }}#disqus_thread">comments</a>
                         </span>
                     </div>
                     {{- with .Params.tags -}}

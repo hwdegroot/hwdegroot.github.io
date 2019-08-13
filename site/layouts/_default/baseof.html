@@ -42,7 +42,15 @@
     <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
 
     {{ if .Site.DisqusShortname }}
-        <script src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" id="dsq-count-scr" async></script>
+        {{ if in (.Site.BaseURL | string) "localhost" }}
+            <script>
+                document.querySelectorAll('a.disqus-comments').forEach(link => {
+                    link.innerHTML = `${Math.floor(100 * Math.random())} ${link.innerHTML}`;
+                });
+            </script>
+        {{ else }}
+            <script src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" id="dsq-count-scr" async></script>
+        {{end }}
     {{ end }}
     {{ partial "cookie-script.html" . }}
   </body>
