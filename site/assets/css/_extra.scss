@@ -184,7 +184,7 @@ body {
 
 .posts-list-item-comments {
     --font-size: 1rem;
-    --height: 26px;
+    --height: 100%;
 
     position: relative;
     //line-height: 1rem;
@@ -198,6 +198,7 @@ body {
         line-height: 1.2rem;
         height: var(--height);
         opacity: 0.8;
+        text-transform: lowercase;
 
         &::before {
             content: "comment";
