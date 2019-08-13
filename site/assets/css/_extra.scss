@@ -173,12 +173,17 @@ body {
     display: inline-block;
 }
 
+.posts-list-item-title {
+    font-size: 1.2rem;
+}
+
 .posts-list-item-description {
     margin-right: 10px;
+    font-size: 1rem;
 }
 
 .posts-list-item-comments {
-    --font-size: 15px;
+    --font-size: 1rem;
     --height: 26px;
 
     position: relative;
@@ -190,14 +195,14 @@ body {
         font-size: var(--font-size);;
         color: #67eba2;
         margin-left: calc(var(--font-size) + 3px);
-        line-height: 1rem;
+        line-height: 1.2rem;
         height: var(--height);
 
         &::before {
-            content: "forum";
+            content: "comment";
             position: absolute;
             left: 0;
-            bottom: calc((var(--height) - var(--font-size)) - 2px);
+            bottom: calc((var(--height) - var(--font-size)) - 3px);
             margin-right: 0.1rem;
             font-family: 'Material Icons';
             font-weight: normal;

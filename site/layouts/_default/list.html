@@ -15,7 +15,7 @@
                         </span>
                     </div>
                     {{- with .Params.tags -}}
-                        <div style="font-size: 0.8rem;">
+                        <div>
                             {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
                             {{ range . -}}
                                 {{- with $.Site.GetPage (printf "/%s/%s" "tags" . ) -}}
