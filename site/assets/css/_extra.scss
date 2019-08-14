@@ -154,9 +154,10 @@ body {
 }
 
 .addthis_inline_share_toolbox {
-    position: fixed;
-    right: 0;
-    bottom: 0;
+    color:white;
+    //position: fixed;
+    //right: 0;
+    //bottom: 0;
 }
 
 .post-footer {
@@ -232,6 +233,62 @@ body {
 
 .cc-btn {
     font-size: 1em !important;
+}
+
+.share {
+    display: flex;
+
+    .social {
+        --fill: white;
+        --hover-color: #d3d3d3;
+        --hover-fill: #3d434c;
+
+        display: flex;
+        flex-direction: column;
+        color: white;
+        margin: 0.3rem;
+        transition: 0.25s;
+        width: 3rem;
+        height: 3rem;
+        line-height: 1rem;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            fill: var(--fill);
+        }
+
+
+        &:hover,
+        &:focus {
+            box-shadow: inset -1.6rem 0 0 0 var(--hover-color),
+                inset 1.6rem 0 0 0 var(--hover-color);
+
+            svg {
+                fill: var(--hover-fill);
+            }
+        }
+
+        &.facebook {
+            background-color: #337AB6;
+        }
+
+        &.twitter {
+            background-color: #55acee;
+        }
+
+        &.reddit {
+            background-color: #ff4500;
+        }
+
+        &.ycombinator {
+            background-color: #ff6600;
+        }
+
+        &.linkedin {
+            background-color: #0077b5;
+        }
+    }
 }
 
 @media only screen and (max-width: 939px) {
