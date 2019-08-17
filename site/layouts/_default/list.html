@@ -10,9 +10,11 @@
                             {{ partial "icon.html" (dict "ctx" $ "name" "clock") }} {{ .ReadingTime }} min read -
                             {{ .PublishDate.Format "Jan 2, 2006" }}
                         </span>
-                        <span class="posts-list-item-comments">
-                            <a class="disqus-comments" href="{{ .RelPermalink }}#disqus_thread">Comments</a>
-                        </span>
+                        {{ if (and (.Params.showComments) (.Site.DisqusShortname)) }}
+                            <span class="posts-list-item-comments">
+                                <a class="disqus-comments" href="{{ .RelPermalink }}#disqus_thread">Comments</a>
+                            </span>
+                        {{ end }}
                     </div>
                     {{- with .Params.tags -}}
                         <div>

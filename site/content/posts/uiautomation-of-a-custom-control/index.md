@@ -10,6 +10,7 @@ tags:
     - TestStack-White
 images:
     - images/og/cover.png
+showComments: true
 ---
 
 Recently I found a blog post I never really published (on an ancient blogger account). However I am not very active in `C#.NET` nowadays, so maybe noone is using this anymore.
