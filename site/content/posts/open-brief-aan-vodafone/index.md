@@ -1,5 +1,6 @@
 ---
 title: Open brief aan Vodafone
+type: post
 tags:
     - vodafone
     - twitter

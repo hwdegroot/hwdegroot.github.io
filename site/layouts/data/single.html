@@ -1,6 +1,6 @@
 {{- $.Scratch.Add "index" slice -}}
 
-{{- $searchablePages := where .Site.Pages "Params.type" "!=" "policy" -}}
+{{- $searchablePages := where .Site.Pages "Params.type" "==" "post" -}}
 
 {{- range $index, $page := $searchablePages -}}
   {{- .Scratch.Set "pageData" "" -}}
@@ -13,7 +13,7 @@
     {{- .Scratch.Set "pageContent" $page.Plain -}}
     {{- .Scratch.Set "pageURL" $page.Permalink -}}
     {{- if (isset $page.Params "tags") -}}
-    {{- .Scratch.Set "pageTag" (delimit $page.Params.tags ",") -}}
+    {{- .Scratch.Set "pageTag" (delimit $page.Params.tags " ") -}}
     {{- end -}}
 
     {{- .Scratch.Set "pageData" (dict "id" $index "title" $page.Title "url" (.Scratch.Get "pageURL") "content" (.Scratch.Get "pageContent") "tag" (.Scratch.Get "pageTag")) -}}

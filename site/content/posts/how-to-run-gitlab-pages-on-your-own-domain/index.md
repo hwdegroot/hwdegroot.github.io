@@ -1,5 +1,6 @@
 ---
 title: How to run and deploy gitlab pages on your own domain
+type: post
 tags:
     - development
     - gitlab

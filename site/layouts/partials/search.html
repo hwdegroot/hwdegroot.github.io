@@ -23,7 +23,7 @@
         </li>
     </ul>
 </aside>
-{{ $script := resources.Get "js/search.js"  | resources.Fingerprint }}
+{{ $script := resources.Get "js/search.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $script.RelPermalink }}"></script>
 
 

@@ -1,5 +1,6 @@
 ---
 title: See clearly - in 80 days
+type: post
 tags:
     - eyesight
     - see clearly
