@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function tags(tags, searchString) {
-        let tagHTML = (tags.split(",") || [])
+        let tagHTML = (tags.split(" ; ") || [])
             .filter(function (i) {
                 return i && i.length > 0;
             })
