@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (s && s.startsWith("+")) {
                     s = s.substring(1);
                 }
+                if (s && s.indexOf("~") > 0 && s.length > s.indexOf("~") && parseInt(s.substring(s.indexOf("~") + 1)) == s.substring(s.indexOf("~") + 1)) {
+                    s = s.substring(0, s.indexOf("~"));
+                }
                 if (!s || s.startsWith("-")) {
                     return;
                 }
