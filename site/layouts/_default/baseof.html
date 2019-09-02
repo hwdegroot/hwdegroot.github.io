@@ -1,56 +1,58 @@
 <!doctype html>
 <html lang="{{ .Site.LanguageCode | default "en-us" }}">
-  <head>
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} // {{ .Site.Title }}{{ end }}</title>
-    <meta charset="utf-8" />
-    {{ hugo.Generator }}
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
-    <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
-    {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-    {{ partial "head/meta.html" }}
-    {{ partial "head/cookie-policy.html" . }}
+    <head>
+        <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} // {{ .Site.Title }}{{ end }}</title>
+        <meta charset="utf-8" />
+        {{ hugo.Generator }}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
+        <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
+        {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+        <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+        {{ partial "head/meta.html" }}
+        {{ partial "head/cookie-policy.html" . }}
 
-    {{ template "_internal/google_analytics.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
-    {{ template "_internal/opengraph.html" . }}
-    {{ partial "head/link.html" }}
+        {{ template "_internal/google_analytics.html" . }}
+        {{ template "_internal/twitter_cards.html" . }}
+        {{ template "_internal/opengraph.html" . }}
+        {{ partial "head/link.html" }}
+        {{ partial "scripts.html" }}
 
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="{{ .Site.BaseURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author }}" /></a>
-      <h1>{{ .Site.Title }}</h1>
-      <p>Code, cook, bake. Working <a href="https://twitter.com/easeeonline" target="_new">@easeeonline</a></p>
-      <div class="app-header-social">
-        {{ range .Site.Params.social }}
-          <a target="_blank" href="{{ .url }}">{{ partial "icon.html" (dict "ctx" $ "name" .name ) }}</a>
-        {{ end }}
-      </div>
-      <div class="policy disqus">
-          <p class="center bottom"><small><a href="/policy/comment-policy">Comment policy</a></small></p>
-      </div>
-    </header>
-    <main class="app-container">
-      {{ block "main" . }}
+    </head>
+    <body>
+        <header class="app-header">
+            <a href="{{ .Site.BaseURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author }}" /></a>
+            <h1>{{ .Site.Title }}</h1>
+            <p>Code, cook, bake. Working <a href="https://twitter.com/easeeonline" target="_new">@easeeonline</a></p>
+            <div class="app-header-social">
+                {{ range .Site.Params.social }}
+                <a target="_blank" href="{{ .url }}">{{ partial "icon.html" (dict "ctx" $ "name" .name ) }}</a>
+                {{ end }}
+            </div>
+            <div class="policy disqus">
+                <p class="center bottom"><small><a href="/policy/comment-policy">Comment policy</a></small></p>
+            </div>
+        </header>
+        <main class="app-container">
+        {{ partial "search" }}
+        {{ block "main" . }}
         {{ .Content }}
-      {{ end }}
-    </main>
-    {{ $js := resources.Get "js/modal.js" | resources.Minify | resources.Fingerprint -}}
-    <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+        {{ end }}
+        </main>
+        {{ $modal := resources.Get "js/modal.js" | resources.Minify | resources.Fingerprint -}}
+        <script type="text/javascript" src="{{ $modal.RelPermalink }}"></script>
 
-    {{ if .Site.DisqusShortname }}
+        {{ if .Site.DisqusShortname }}
         {{ if in (.Site.BaseURL | string) "localhost" }}
-            <script>
-                document.querySelectorAll('a.disqus-comments').forEach(link => {
-                    link.innerHTML = `${Math.floor(100 * Math.random())} ${link.innerHTML}`;
-                });
-            </script>
+        <script>
+document.querySelectorAll('a.disqus-comments').forEach(link => {
+    link.innerHTML = `${Math.floor(100 * Math.random())} ${link.innerHTML}`;
+});
+        </script>
         {{ else }}
-            <script src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" id="dsq-count-scr" async></script>
+        <script src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" id="dsq-count-scr" async></script>
         {{end }}
-    {{ end }}
-    {{ partial "cookie-script.html" . }}
-  </body>
+        {{ end }}
+        {{ partial "cookie-script.html" . }}
+    </body>
 </html>
