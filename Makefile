@@ -1,5 +1,5 @@
 PORT := 8888
-HUGO_VERSION := 0.55.6
+HUGO_VERSION := 0.57.2
 CONTAINER_NAME := forsure.local
 
 serve: clean build
@@ -11,7 +11,7 @@ serve: clean build
 		--publish ${PORT}:${PORT} \
 		--privileged \
 		registry.gitlab.com/hwdegroot/forsure.dev/hugo:${HUGO_VERSION} \
-		hugo server --contentDir /src/site/content/ --bind "0.0.0.0" --port ${PORT} --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
+		hugo server --contentDir content/ --bind "0.0.0.0" --port ${PORT} --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
 
 publish:
 	docker exec -it ${CONTAINER_NAME} \

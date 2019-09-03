@@ -24,7 +24,7 @@ RUN mkdir -p /usr/local/src && \
     cd /usr/local/src && \
 \
     curl -sSLo ${HUGO_RELEASE}.tar.gz  https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_RELEASE}.tar.gz && \
-    curl -sSL https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_checksums.txt | \
+    curl -sSL https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_checksums.txt | \
         grep ${HUGO_RELEASE}.tar.gz > ${HUGO_RELEASE}.sha256 && \
     cat ${HUGO_RELEASE}.sha256 | sha256sum -c && \
     tar -xzf ${HUGO_RELEASE}.tar.gz && \
