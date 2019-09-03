@@ -19,22 +19,24 @@ When I was working on a static site, generated with hugo, the amount of pages st
 out of hand. I was looking for pages, but wasn't entirely sure where to look for them. This was the
 point that it crossed my mind that searching the site would be extremely convenient.
 
-So my first thoufht was, let's install a search package. However this was not as available as I initially
-thought. Hugo has [some docs on search Functionality](https://gohugo.io/tools/search/), however none of them give a full
+So my first thought was, let's install a search package. However this was not as available as I initially
+thought. Hugo has [some docs on search functionality](https://gohugo.io/tools/search/), however none of them give a full
 implementation example. This post will.
 
 ## The problem
 
 Static sites are generated into all available paths, and then those files are served. The server won't be
 running a nice database that you can query for some content. This means that the database that will be used for
-searching has to be generated as well. In this example that database will be a generated `json` file that can be served
-over `/search`.
+searching has to be generated as well. In this example that database will be a generated `json` file that will be served
+over the path `/search`.
 
 
 ## Getting started
 
 Here I will describe the functionality that is available on this site. It will use [lunrjs](https://lunrjs.com) as a client side
-search engine, that is lightweight and super easy to get started with. The source is available [here](https://gitlab.com/hwdegroot/forsure.dev).
+search engine, that is lightweight and super easy to get started with search library.
+
+The source is of the implementation described in this post is available [here](https://gitlab.com/hwdegroot/forsure.dev).
 
 The solution is not exactly rocket science, but it took me some time to get it all working and integrated, so
 hopefully this example will save you some time.
@@ -45,18 +47,17 @@ To get this up and running we are going to need 4 things
 
 1. An endpoint that can serve the `json` database
 1. A template that will generate the `json` file, so we can query it
-1. A client side script that retrieves the database file, and allows searching in the file (we will use [lunr](https://lunrjs.com) for that
-1. A search page (in this case a partial)
+1. A client side script that retrieves the database file, and allows searching in the file (I will use [`lunr`](https://lunrjs.com) for that
+1. A search page (in this case a partial), so it is actually possible to jot down search words
 
 ### The endpoint
 
 If you have a default layout for your hugo site, like I do, you will need to make the `/search` endpoint available. There are multiple
-ways to do that, but I chose to make a directory `search` inside the content directory, containing an `index.md` file. Yo can see it
+ways to do that, but I chose to make a directory `search` inside the content directory, containing an `index.md` file. You can see it
 [here](https://gitlab.com/hwdegroot/forsure.dev/tree/master/site/content/search). The `index.md` file will contain dummy content. You can
-use this to add some documentation for the team if you'd prefer. But really, what's in there doesn't matter, because we won't be serving
-this content.
+use this to add some documentation for the team if you'd prefer. But really, what's in there doesn't matter, because the actual file won't be served.
 
-What is important is the `type` of the file. I used `data`, but it doesn't matter at this point. We will only have to make sure that we use it
+What _is_ important is the `type` of the file. I used `data`, but it doesn't matter at this point. We will only have to make sure that we use it
 when we are creating the `json` template. Make sure to put it in the [front matter](https://gohugo.io/content-management/front-matter/#readout).
 
 Mine looks like this
@@ -87,19 +88,19 @@ because I only want to list pages of type `post`. But you can change this to
 
 ```
 
-You see, nothing fancy so far. Now we made the `/search` path available, however hugo will error out on this, because there is no template for this
+You see, nothing fancy so far. Now that the `/search` endpoint is available, it's time to proceed, however hugo will error out on this, because there is no template for this
 type. So let's do that next.
 
 ### Creating the data template
 
-Because I chose the `type` to be `data` and to use a directory `search` with a file `index.md`, I have to create a directory `data` in
+Because I chose the `type` to be `data` and to use a directory `search` with a file `index.md`, I created a directory `data` in
 [`/content/layouts`](https://gitlab.com/hwdegroot/forsure.dev/tree/master/site/layouts/data/).
 Inside this directory I put the template `single.html`. This is the file that hugo expects for a file called `index.md`. If you prefer `_index.md`
 make sure to call this file `baseof.html`. If you don't want to put the search file inside a directory, but want to add `search.md` to the root of the content
-dir, then call this file `list.html`. You get the point.
+dir, then call this file `list.html`.
 
-Once this is done, you might have to restart your local hugo server, if you are running it locally like me. When that is done, you will see an empty page
-when you browse `http://localhost/search` (if you are running on localhoist. For me it is http://localhost:8888/search).
+Once this is done, you might have to restart your local hugo server, if you are running it locally like me. When that is done, there will be an empty page
+when you browse `http://localhost:8888/search` (or whatever port it runs locally).
 
 But we want this url to show a nice `json` representation of all the pages, because that we can load into [lunr][lunr-js].
 
@@ -138,9 +139,9 @@ The example is based on [this gist](https://github.com/goblindegook/goblindegook
 {{ $.Scratch.Get "index" | jsonify }}
 ```
 
-You can edit the fields to whatever you like
+You can edit the fields to whatever you like. For convenience I set the `id` field to the incrementor of the list.
 
-Now when you visit the search endpoint, it will return `json` with the following layout
+Now when you visit the `/search` endpoint, it will return `json` with the following layout
 
 ```json
 [
@@ -157,9 +158,9 @@ Now when you visit the search endpoint, it will return `json` with the following
 
 ### Client side searching
 
-Now we are ready to use this in the client. For this, the `lunrjs` library is required. Also it is a wise choice
-to load the `json` file `async`, because it can get out of hand. I will use [axios](https://www.axios.com/) for this.
-Make sure that if you do so, and you really can't drop all the IE users, that you will load a polyfill for IE as well.
+Now we are ready to use this in the client. I am loading the json file in a promise, so it won't annoy the user when the file gets huge.
+I will use [axios](https://www.axios.com/) for this.
+Make sure that if you do so, and you really can't drop all the IE users, that you will need to polyfill `Promise` as well.
 
 I don't care about IE users, so I didn't. Also I was too lazy to setup a webpack config. So you will notice that the
 javascript syntax is not ES5+, and I will load the libraries from a cdn ([unpkg](https://unpkg.com/) in this case, but there
@@ -193,8 +194,8 @@ If you need more, it is pretty straight-forward. Make sure that you put the poly
 I put them all in a [partial](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/layouts/partials/scripts.html), that I
 load in my head (except the polyfill, because, like I said, I don't care).
 
-Now that we did that, lest create a partial for the search. You can find the partial
-[here](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/layouts/partials/search.html).
+So all set there, time to create a partial for the client side search. You can find the partial
+[here](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/layouts/partials/search.html), but it looks like this.
 
 ```html
 <div class="show-search">
@@ -229,11 +230,10 @@ Now that we did that, lest create a partial for the search. You can find the par
 Note that the javascript file is already included here. I will come back to that in the next paragraph
 
 
-It will need some styling, so the
-styling can be found [here](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/assets/css/_search.scss).
+It will need some styling. Take a peek [here](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/assets/css/_search.scss).
 
-Additionally, if you put the styling in a `scss` file, make sure to load it. The template I am using allows you to create
-a `_extra.scss` file in the `assets/css` directory. so, I just created a `_search.scss` file, in the assets directory, and include
+Additionally, if you put the styling in a `scss` file, make sure to load it. The [template](https://themes.gohugo.io/hugo-book/) I am using,  allows
+injection of css via an  `_extra.scss` file in the `assets/css` directory. So I just created a `_search.scss` file in the assets directory, and included
 it in the [`_extra.scss`](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/assets/css/_extra.scss) like so
 
 ```scss
@@ -418,7 +418,7 @@ axios.get("/search")
         });
 ```
 
-This loads the json database in a promise from our search url. Then when that is successful it will load the data into `lunr`.
+This loads the json in a `Promise` from our search url. Then when that is successful it will load the data into `lunr`.
 
 ```js
 const searchContent = result.data;
@@ -435,7 +435,7 @@ const searchIndex = lunr(function () {
 })
 ```
 
-So now `lunr` index all the fields we wanted. Notie that we tell `lunr` what the identity field is
+So now `lunr` indexes all the fields we wanted. Here the index from before is used as a reference
 
 ```js
 this.ref("id")
@@ -450,7 +450,7 @@ this.field("title");
 this.field("url");
 ```
 
-And then finally, load the results into a template, that can be injected into the `.search-results` list
+And then finally, load the results into a template, that can be injected into the `ul.search-results` element
 
 ```js
 if (searchResults.length > 0) {
@@ -474,7 +474,7 @@ if (searchResults.length > 0) {
 
 And all wrapped nicely into the `keypup` event on the search input.
 
-BOOM, all set {{< image-inline "images/100.png"  Fit "24x24">}}
+BOOM, all set {{< image-inline "images/100.png"  Fit "24x24">}}. Happy copy-pasting
 
 
 If you want to use [`Fusejs`](https://fusejs.io/), there's a nice post [here](https://gist.github.com/eddiewebb/735feb48f50f0ddd65ae5606a1cb41ae)

@@ -18,6 +18,18 @@ a {
     font-family: 'Fira Sans', sans-serif;
 }
 
+a {
+    code {
+        color: #67eba2;
+    }
+
+    &:hover {
+        code {
+            color: white;
+        }
+    }
+}
+
 code,
 pre {
     font-family: 'Fira Mono', monospace;
