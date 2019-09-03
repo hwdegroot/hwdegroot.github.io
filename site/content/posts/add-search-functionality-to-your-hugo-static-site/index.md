@@ -475,3 +475,6 @@ if (searchResults.length > 0) {
 And all wrapped nicely into the `keypup` event on the search input.
 
 BOOM, all set {{< image-inline "images/100.png"  Fit "24x24">}}
+
+
+If you want to use [`Fusejs`](https://fusejs.io/), there's a nice post [here](https://gist.github.com/eddiewebb/735feb48f50f0ddd65ae5606a1cb41ae)
