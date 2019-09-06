@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+    <head>
+        <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} // {{ .Site.Title }}{{ end }}</title>
+        <meta charset="utf-8" />
+        {{ hugo.Generator }}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
+        <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
+        {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+        <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.8.0/css/reveal.css" />
+        <link rel="stylesheet" href="https://unpkg.com/reveal.js-menu@1.2.0/css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+        {{ $presentationStyle := resources.Get "css/presentation.scss" | resources.ExecuteAsTemplate "css/presentation.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+        <link rel="stylesheet" href="{{ $presentationStyle.RelPermalink }}" />
+        {{ partial "head/meta.html" }}
+        {{ partial "head/cookie-policy.html" . }}
+
+        {{ template "_internal/google_analytics.html" . }}
+        {{ template "_internal/twitter_cards.html" . }}
+        {{ template "_internal/opengraph.html" . }}
+        {{ partial "head/link.html" }}
+        {{ partial "scripts.html" }}
+
+    </head>
+    <body>
+        <span class="back">
+            <a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492 492" >
+                    <path d="M464.344,207.418l0.768,0.168H135.888l103.496-103.724c5.068-5.064,7.848-11.924,7.848-19.124    c0-7.2-2.78-14.012-7.848-19.088L223.28,49.538c-5.064-5.064-11.812-7.864-19.008-7.864c-7.2,0-13.952,2.78-19.016,7.844    L7.844,226.914C2.76,231.998-0.02,238.77,0,245.974c-0.02,7.244,2.76,14.02,7.844,19.096l177.412,177.412    c5.064,5.06,11.812,7.844,19.016,7.844c7.196,0,13.944-2.788,19.008-7.844l16.104-16.112c5.068-5.056,7.848-11.808,7.848-19.008    c0-7.196-2.78-13.592-7.848-18.652L134.72,284.406h329.992c14.828,0,27.288-12.78,27.288-27.6v-22.788    C492,219.198,479.172,207.418,464.344,207.418z"/>
+                </svg>
+            </a>
+        </span>
+        <main class="app-container">
+<div class="reveal">
+            <div class="slides">
+                {{ block "main" . }}
+                {{ .Content }}
+                {{ end }}
+            </div>
+</div>
+        </main>
+        {{ partial "cookie-script.html" . }}
+        <script crossorigin src="https://unpkg.com/reveal.js@3.8.0/js/reveal.js"></script>
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                width: 1200,
+                height: 800,
+                mouseWheel: true,
+                previewLinks: true,
+                theme: Reveal.getQueryHash().theme,
+                transition: 'fade',
+                transitionSpeed: 'slow',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'https://unpkg.com/reveal.js-menu@1.2.0/menu.js', async: true },
+                    { src: 'https://unpkg.com/reveal.js@3.8.0/plugin/highlight/highlight.js', async: true },
+                    // Zoom in and out with Alt+click
+                    { src: 'https://unpkg.com/reveal.js@3.8.0/plugin/zoom-js/zoom.js', async: true },
+                    // Speaker notes
+                    { src: 'https://unpkg.com/reveal.js@3.8.0/plugin/notes/notes.js', async: true },
+                    // MathJax
+                    { src: 'https://unpkg.com/reveal.js@3.8.0/plugin/math/math.js', async: true }
+                ],
+            });
+
+        </script>
+    </body>
+</html>
