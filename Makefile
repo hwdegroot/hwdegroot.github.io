@@ -38,9 +38,16 @@ policy: .post
 	docker exec -it ${CONTAINER_NAME} hugo new content/policy/${TITLE} --kind policy && \
 	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/${TITLE}
 
+presentation: .presentation
+	docker exec -it ${CONTAINER_NAME} hugo new content/presentations/${TITLE} --kind presentation && \
+	sudo chown -R $(shell id -u):$(shell id -g) site/content/presentations/${TITLE}
+
 post: .post
 	docker exec -it ${CONTAINER_NAME} hugo new content/posts/${TITLE} --kind post && \
 	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/${TITLE}
+
+.presentation:
+	$(call check_defined TITLE, post title)
 
 .post:
 	$(call check_defined TITLE, post title)

@@ -57,6 +57,18 @@ aside[role="search"] {
         cursor: pointer;
     }
 
+    .type {
+        &:before {
+            content: "Type";
+            margin-right: 0.2rem;
+            font-family: monospace;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            opacity: 0.6;
+        }
+    }
+
     .close {
         position: fixed;
         top: 9px;

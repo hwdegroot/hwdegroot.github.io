@@ -1,0 +1,32 @@
+.back {
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.2;
+    z-index: 2;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    a {
+        margin: 5px;
+
+        svg {
+            height: 45px;
+            width: 45px;
+
+            circle {
+                stroke: white;
+            }
+
+            path {
+                fill: white;
+            }
+        }
+
+    }
+}

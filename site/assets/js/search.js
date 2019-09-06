@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.field("tag");
                 this.field("title");
                 this.field("url");
+                this.field("type");
 
                 Array.from(result.data).forEach(function (doc) {
                     this.add(doc)
@@ -92,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         });
                         return "<li>" +
                             "<h4 title='field: title'><a href='" + item.url + "'>" + mark(item.title, searchString) + "</a></h4>" +
+                            "<p class='type'>" + item.type + "</p>" +
                             "<p class='summary' title='field: content'>" +
                             mark((item.content.length > 200 ? (item.content.substring(0, 200) + "...") : item.content), searchString) +
                             "</p>" +
