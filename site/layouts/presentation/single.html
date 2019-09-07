@@ -36,7 +36,7 @@
             </a>
         </span>
         <main class="app-container">
-            <div class="reveal">
+            <div class="reveal {{ lower (replace .Page.Title '-' ' ') }}">
                 <div class="slides">
                     {{ block "main" . }}
                         {{ .Content }}
