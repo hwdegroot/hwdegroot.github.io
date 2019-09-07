@@ -13,6 +13,14 @@
         <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
         {{ $presentationStyle := resources.Get "css/presentation.scss" | resources.ExecuteAsTemplate "css/presentation.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
         <link rel="stylesheet" href="{{ $presentationStyle.RelPermalink }}" />
+
+        {{ if isset .Page.Params "customCss" }}
+        {{ $custom := resources.FromString (path.Join .Page.RelPermalink "custom.css") (readFile (path.Join .Page.RelPermalink .Page.Params.customCss)) | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+        <link rel="stylesheet" href="{{ $custom.RelPermalink }}" />
+        {{ end }}
+        {{ partial "head/meta.html" }}
+        {{ partial "head/cookie-policy.html" . }}
+
         {{ template "_internal/twitter_cards.html" . }}
         {{ template "_internal/opengraph.html" . }}
         {{ partial "head/link.html" }}
@@ -28,13 +36,13 @@
             </a>
         </span>
         <main class="app-container">
-<div class="reveal">
-            <div class="slides">
-                {{ block "main" . }}
-                {{ .Content }}
-                {{ end }}
+            <div class="reveal">
+                <div class="slides">
+                    {{ block "main" . }}
+                        {{ .Content }}
+                    {{ end }}
+                </div>
             </div>
-</div>
         </main>
         <script crossorigin src="https://unpkg.com/reveal.js@3.8.0/js/reveal.js"></script>
         <script>
