@@ -25,6 +25,8 @@ showComments: false
 # Fun facts
 
 * https://regexcrossword.com/
-
+https://twitter.com/s0md3v/status/1171394403065155584?s=09
+https://link.medium.com/EUXRpcrBWZ
+https://link.medium.com/K3cF58wBWZ
 {{% /slide %}}
 

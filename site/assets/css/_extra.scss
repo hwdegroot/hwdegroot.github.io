@@ -196,6 +196,14 @@ body {
 .posts-list-item-description {
     margin-right: 10px;
     font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & > * {
+        margin-right: 5px;
+    }
+
 }
 
 .posts-list-item-comments {
@@ -330,3 +338,27 @@ body {
 .document {
     @import "document";
 }
+.list-title {
+    display: flex;
+
+    .presentation {
+        margin-right: .5rem;
+        margin-left: -3px;
+    }
+}
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    svg {
+        height: 24px;
+        width: 24px;
+
+        path.image {
+            fill: #d3d3d3;
+        }
+    }
+}
+
