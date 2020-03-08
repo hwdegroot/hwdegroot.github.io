@@ -1,0 +1,12 @@
+<div class="toc-wrapper">
+    <aside class="menu-wrapper">
+        <div class="menu">
+            <div class="toc-toggle">
+                <i class="material-icons">list_alt</i>
+            </div>
+            {{ .TableOfContents }}
+        </div>
+    </aside>
+</div>
+{{ $menujs := resources.Get "js/menu.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $menujs.RelPermalink }}"></script>

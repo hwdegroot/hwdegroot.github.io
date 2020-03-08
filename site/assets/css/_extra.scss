@@ -1,6 +1,7 @@
 @import 'syntax';
 @import 'modal';
 @import 'search';
+@import 'toc';
 
 html {
     font-size:  1.2rem;
@@ -16,6 +17,10 @@ h4,
 div,
 a {
     font-family: 'Fira Sans', sans-serif;
+}
+
+h1 {
+    color: #67eba2;
 }
 
 a {
@@ -294,6 +299,13 @@ body {
         &.linkedin {
             background-color: #0077b5;
         }
+    }
+}
+
+#personalia {
+    & ~ ul {
+        list-style-type: none;
+        padding: 0;
     }
 }
 
