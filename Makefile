@@ -1,5 +1,5 @@
 PORT := 8888
-HUGO_VERSION := 0.57.2
+HUGO_VERSION := 0.66.0
 CONTAINER_NAME := forsure.local
 
 serve: clean build
