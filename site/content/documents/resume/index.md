@@ -21,7 +21,7 @@ Also I love to cook and bake. I am not a chef, but it gives me zen.
 
 * {{% materialicon "language" %}} **Dutch** (native), **English** (good)
 * {{% materialicon "calendar_today" %}} May 1st, 1983
-* {{% materialicon "place" %}} <a href="https://www.google.nl/maps/place/Patrijslaan+22,+3738+GD+Maartensdijk/@52.1541196,5.1741839,17z/data=!3m1!4b1!4m5!3m4!1s0x47c66967bc98e9e5:0x8ca2ca62c15bb55f!8m2!3d52.1541163!4d5.1763726" target="_blank">Fugahof 9, 2992 NR, Barendrecht</a>
+* {{% materialicon "place" %}} <a href="https://www.google.nl/maps/place/Patrijslaan+22,+3738+GD+Maartensdijk/@52.1541196,5.1741839,17z/data=!3m1!4b1!4m5!3m4!1s0x47c66967bc98e9e5:0x8ca2ca62c15bb55f!8m2!3d52.1541163!4d5.1763726" target="_blank">Patrijslaan 22, 3738 GD, Maartensdijk</a>
 * {{% materialicon "phone" %}} <a href="tel:+31648082623">+31 6 4808 26 23</a>
 * {{% materialicon "alternate_email" %}} <a href="mailto:hwdegroot@gmail.com">hwdegroot@gmail.com</a>
 * {{% linkedinicon %}} [rikhwdegroot](https://www.linkedin.com/in/rikhwdegroot/)
