@@ -17,12 +17,15 @@
         {{ template "_internal/opengraph.html" . }}
         {{ partial "head/link.html" }}
         {{ partial "scripts.html" }}
-
     </head>
     <body>
         <header class="app-header">
-            <a href="{{ .Site.BaseURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author }}" /></a>
-            <h1>{{ .Site.Title }}</h1>
+            <a href="{{ .Site.BaseURL }}">
+                <img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author }}" />
+                <span style="display: inline-flex">What's been on my mind</span>
+            </a>
+
+            <h1><a href="/doc/resume">{{ .Site.Title }}</a></h1>
             <p>Code, cook, bake. Working <a href="https://twitter.com/easeeonline" target="_new">@easeeonline</a></p>
             <div class="app-header-social">
                 {{ range .Site.Params.social }}
@@ -39,19 +42,22 @@
         {{ .Content }}
         {{ end }}
         </main>
+        {{ if (eq .Type "document") }}
+            {{ partial "toc" . }}
+        {{ end }}
         {{ $modal := resources.Get "js/modal.js" | resources.Minify | resources.Fingerprint -}}
         <script type="text/javascript" src="{{ $modal.RelPermalink }}"></script>
 
         {{ if .Site.DisqusShortname }}
-        {{ if in (.Site.BaseURL | string) "localhost" }}
-        <script>
-document.querySelectorAll('a.disqus-comments').forEach(link => {
-    link.innerHTML = `${Math.floor(100 * Math.random())} ${link.innerHTML}`;
-});
-        </script>
-        {{ else }}
-        <script src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" id="dsq-count-scr" async></script>
-        {{end }}
+            {{ if in (.Site.BaseURL | string) "localhost" }}
+            <script>
+                document.querySelectorAll('a.disqus-comments').forEach(link => {
+                    link.innerHTML = `${Math.floor(100 * Math.random())} ${link.innerHTML}`;
+                });
+            </script>
+            {{ else }}
+            <script src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" id="dsq-count-scr" async></script>
+            {{end }}
         {{ end }}
         {{ partial "cookie-script.html" . }}
     </body>
