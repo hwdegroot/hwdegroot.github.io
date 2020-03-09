@@ -302,48 +302,6 @@ body {
     }
 }
 
-#personalia ~ h4 {
-    & ~ ul {
-        list-style-type: none;
-        padding: 0;
-
-        li {
-            display: flex;
-            align-items: center;
-
-            i.material-icons,
-            svg {
-                margin-right: 0.5rem;
-            }
-
-            svg {
-                align-self: flex-start;
-            }
-        }
-    }
-}
-
-#experience {
-    & ~ h4 {
-        color: #67eba2;
-    }
-
-    & ~ hr {
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-}
-
-#education ~ h4,
-#skills ~ h4 {
-    color: #d3d3d3;
-    margin-bottom: 0.2em;
-
-    & ~ p,
-    & ~ ul {
-        margin-top: 0;
-    }
-}
-
 @media only screen and (max-width: 939px) {
     body {
         display: flex;
@@ -363,4 +321,8 @@ body {
         max-width: 65rem;
         width: calc(100vw - 20rem);
     }
+}
+
+.document {
+    @import "document";
 }
