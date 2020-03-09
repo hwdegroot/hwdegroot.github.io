@@ -12,12 +12,11 @@ images:
 showComments: false
 ---
 
-At {{% twittername easeeonline %}} we want everybody to have the oportunity to see clearly. For this reaseon we are giving
+At {{< twittername easeeonline >}} we want everybody to have the oportunity to see clearly. For this reaseon we are giving
 out vouchers to get a free validation. Visit us at [easee.online](https://www.easee.online/en/) or
 [do the test](https://easee.online/start/refraction?voucher_code=Q3-RED-R) and get your results validated by one of
 our optometrists.
 
-{{% center %}}
 {{% card %}}
 
 ![easee logo](images/easee-logo.svg)
@@ -34,4 +33,3 @@ All you need to do: **Participate** in Easee’s online eye-exam and **share** t
 ### [Q3-RED-R](https://easee.online/start/refraction?voucher_code=Q3-RED-R)
 
 {{% /card %}}
-{{% /center %}}

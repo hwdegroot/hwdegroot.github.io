@@ -19,14 +19,15 @@ Also I love to cook and bake. I am not a chef, but it gives me zen.
 
 ### Personalia
 
-* {{% materialicon "language" %}} **Dutch** (native), **English** (good)
-* {{% materialicon "calendar_today" %}} May 1st, 1983
-* {{% materialicon "place" %}} <a href="https://www.google.nl/maps/place/Patrijslaan+22,+3738+GD+Maartensdijk/@52.1541196,5.1741839,17z/data=!3m1!4b1!4m5!3m4!1s0x47c66967bc98e9e5:0x8ca2ca62c15bb55f!8m2!3d52.1541163!4d5.1763726" target="_blank">Patrijslaan 22, 3738 GD, Maartensdijk</a>
-* {{% materialicon "phone" %}} <a href="tel:+31648082623">+31 6 4808 26 23</a>
-* {{% materialicon "alternate_email" %}} <a href="mailto:hwdegroot@gmail.com">hwdegroot@gmail.com</a>
-* {{% linkedinicon %}} [rikhwdegroot](https://www.linkedin.com/in/rikhwdegroot/)
-* {{% twittericon %}} [*@hwdegroot*](https://twitter.com/hwdegroot)
-* {{% materialicon "face" %}} Male
+* {{< materialicon "language" >}} **Dutch** (native), **English** (good)
+* {{< materialicon "calendar_today" >}} May 1st, 1983
+* {{< materialicon "place" >}} <a href="https://www.google.nl/maps/place/Patrijslaan+22,+3738+GD+Maartensdijk/@52.1541196,5.1741839,17z/data=!3m1!4b1!4m5!3m4!1s0x47c66967bc98e9e5:0x8ca2ca62c15bb55f!8m2!3d52.1541163!4d5.1763726" target="_blank">Patrijslaan 22, 3738 GD, Maartensdijk</a>
+* {{< materialicon "phone" >}} <a href="tel:+31648082623">+31 6 4808 26 23</a>
+* {{< materialicon "alternate_email" >}} <a href="mailto:hwdegroot@gmail.com">hwdegroot@gmail.com</a>
+* {{< linkedinicon >}} [rikhwdegroot](https://www.linkedin.com/in/rikhwdegroot/)
+* {{< twittericon >}} [*@hwdegroot*](https://twitter.com/hwdegroot)
+* {{< urlicon >}} [forsure.dev](https://www.forsure.dev)
+* {{< materialicon "face" >}} Male
 
 ### Profile
 
@@ -46,8 +47,6 @@ I try to stay up with new technologies by reading about them and visiting confer
 
 #### easee
 
-website: https://easee.online
-
 **Scrum master** - *February 2020 - now*
 
 Just doing the good ol' SM things...
@@ -56,10 +55,11 @@ Just doing the good ol' SM things...
 
 Developing and designing easee online eye exam. A php/laravel application. Setting up development environment and release management and scripts.
 
+* {{< urlicon >}} https://easee.online
+* {{< linkedinicon >}} https://www.linkedin.com/company/easeeonline/
+
 ------
 #### Mendix
-
-website: https://mendix.com
 
 **Developer (Ops)**  - *January 2017 - September 2017*
 
@@ -71,6 +71,8 @@ Supporting teams with their CI/CD process and the implementation of build pipeli
 Setting up and scripting deployment pipelines and automating release process.
 Automating quality processes and setting up UI test framework.
 
+* {{< urlicon >}} https://mendix.com
+
 ------
 #### NetInvent
 
@@ -78,46 +80,56 @@ Automating quality processes and setting up UI test framework.
 
 Lead several projects as a consultant. Successfully delivered (html) applications for customers in different domains (government, music industries). Implementing C# webapplications (C#.NET, Code First).
 
+* {{< linkedinicon >}} https://www.linkedin.com/company/netinvent-bv/about/
+
 ------
 #### ExpertDoc
-
-website: https://www.expertdoc.nl/
 
 **QA Manager** - *January 2013 - December 2014*
 
 Implementation of guideline MDD/93/42/EEG (software as a medical device) processes and certification.
 Introduced a Quality Management System as required by the guidelines for software as a medical device.
 
+* {{< urlicon >}} https://www.expertdoc.nl/
+* {{< linkedinicon >}} https://www.linkedin.com/company/expertdoc/
+
+------
+
 ### Education
 
-* **Biomedical Imaging Sciences** - *MSc*
-  Graduated: *2009*
+#### **Biomedical Imaging Sciences**
+* *MSc*
+* Graduated in 2009
 
-* **Physics & Astronomy** - *BSc*
-  Graduated: *2007*
+#### **Physics & Astronomy**
+* *BSc*
+* Graduated in 2007
 
-* **Veterinary Science** - *Propedeuse*
-  Graduated: *2002*
+#### **Veterinary Science**
+* *Propedeuse*
+* Graduated in 2002
 
-* **VWO** - *Highschool*
-  Graduated: *2001*
+#### **VWO**
+* *Highschool*
+* Graduated in 2001
 
 ### Skills
 
-* **Programming**
-  I prefer using the language that will get the job done, over using it for the sake of i
-  the language.
+#### **Programming**
 
-* **Operations**
-  Very skilled with configuration management tools such as Ansible, Puppet and Chef
-  Setting up (local) environments using containerization with `docker`
+I prefer using the language that will get the job done, over using it for the sake of using the language.
 
-* **CI/CD** _(continuous integration/continuous delivery)_
-  Scripting and maintaining release scripts and pipelines. Very clear view and idea about continuous delivery and deployment.
-  Very experienced in setting up pipelines with `docker` and `docker-compose` and high availability clusters using orchestration tools such as `kubernetes`
+#### **Operations**
 
-* **Release management**
-  Very familiar with the processes to manage releases, using containerized pipelines, and automated deployments.
+Very skilled with configuration management tools such as Ansible, Puppet and Chef Setting up (local) environments using containerization with `docker`
+
+#### **CI/CD**
+
+_(continuous integration/continuous delivery)_ Scripting and maintaining release scripts and pipelines. Very clear view and idea about continuous delivery and deployment. Very experienced in setting up pipelines with `docker` and `docker-compose` and high availability clusters using orchestration tools such as `kubernetes`
+
+#### **Release management**
+
+Very familiar with the processes to manage releases, using containerized pipelines, and automated deployments.
 
 ### Tools
 
