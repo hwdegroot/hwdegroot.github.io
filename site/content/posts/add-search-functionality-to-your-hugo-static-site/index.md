@@ -5,8 +5,8 @@ tags:
     - development
     - lang-en
     - hugo
-    - search
     - lunrjs
+    - search
 images:
     - images/og/cover.png
 disqus_identifier: "b41840651158f972d21cb59b5cce4952"

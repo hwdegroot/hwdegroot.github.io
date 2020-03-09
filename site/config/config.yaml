@@ -5,7 +5,7 @@ metaDataFormat: yaml
 baseURL: https://www.forsure.dev/
 permalinks:
     posts: /-/:year/:month/:day/:title
-    tags: /:slug
+    tags: /t/:slug
     policies: /policy/:title
     documents: /doc/:title
 languageCode: en-us
