@@ -18,6 +18,11 @@ enableGitInfo: true
 googleAnalytics: UA-3891774-2
 disqusShortname: www-forsure-dev
 
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+
 # Code highlight
 pygmentsCodefencesGuessSyntax: true
 pygmentsUseClasses: true
