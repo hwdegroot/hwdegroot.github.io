@@ -80,7 +80,7 @@ Automating quality processes and setting up UI test framework.
 
 Lead several projects as a consultant. Successfully delivered (html) applications for customers in different domains (government, music industries). Implementing C# webapplications (C#.NET, Code First).
 
-* {{< linkedinicon >}} https://www.linkedin.com/company/netinvent-bv/about/
+* {{< linkedinicon >}} https://www.linkedin.com/company/netinvent-bv/
 
 ------
 #### ExpertDoc
