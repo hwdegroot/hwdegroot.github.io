@@ -89,11 +89,11 @@ And more refresh rate. The mesmerizing fading away of the fonts into the backgro
 {{< /video >}}
 
 {{< video "videos/booting-into-dos.mp4" >}}
-[SOUND ON] The startup is amazing as well. The sound of the fan, and the nostalgic beep.
+[🔈 SOUND ON] The startup is amazing as well. The sound of the fan, and the nostalgic beep.
 {{< /video >}}
 
 {{< video "videos/booting-into-dos-again.mp4" >}}
-[SOUND ON] One more time. I could loop this forever.
+[🔈 SOUND ON] One more time. I could loop this forever.
 {{< /video >}}
 
 {{< image "images/ibm-dos-edit-dutch.jpg" Fit "600x600" >}}
