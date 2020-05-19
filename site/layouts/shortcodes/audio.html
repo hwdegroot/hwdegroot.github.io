@@ -1,35 +1,18 @@
 {{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
-{{ $command := .Get 1 }}
-{{ $options := .Get 2 }}
-{{ if eq $command "Fit"}}
-{{ .Scratch.Set "image" ($original.Fit $options) }}
-{{ else if eq $command "Resize"}}
-{{ .Scratch.Set "image" ($original.Resize $options) }}
-{{ else if eq $command "Fill"}}
-{{ .Scratch.Set "image" ($original.Fill $options) }}
-{{ else }}
-{{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
-{{ end }}
-{{ $image := .Scratch.Get "image" }}
 {{ $id := md5 (.Get 0) }}
 <figure id="{{ $id }}">
-    <div class="chroma image" style="max-width: calc({{ $image.Width }}px + 20px); max-height: calc({{ $image.Height }}px + 20px)">
-        <img style="max-width: 100%; width: auto; height: auto;" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+    <div class="audio" style="max-width: 320px">
+        <audio controls>
+            <source src="{{ $original.RelPermalink }}" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
     </div>
+    {{ with .Inner }}
     <figcaption>
         <small>
-            {{ with .Inner }}
             {{ . }}
-            {{ else }}
-            .{{ $command }} "{{ $options }}"
-            {{ end }}
         </small>
     </figcaption>
+    {{ end }}
 </figure>
-<div class="modal" data-target="{{ $id }}">
-    <div class="modal-content" style="max-width: {{ $original.Width }}px">
-        <span class="close" id="close-{{ $id }}">&times;</span>
-        <p><img src="{{ $original.RelPermalink }}" width="{{ $original.Width }}" height="{{ $original.Height }}" style="max-width: 100%; width: auto; height: auto;"></p>
-    </div>
-</div>
 
