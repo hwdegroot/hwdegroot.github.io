@@ -23,6 +23,10 @@ as an excuse to look into older computers, because _nostalgics_.
 My kids grew up with LED monitors and TV's and never really saw a real cathode tube, except on the episodes of [Pat & Mat](https://en.wikipedia.org/wiki/Pat_%26_Mat).
 I still remember the soft fading sound of of the tv turning off and the graphics vanishing into this thin line.
 
+{{< video "videos/mesmerizing-shutdown.mp4" >}}
+Mesmerizing shutdown. The terminal vanishes into a line.
+{{< /video >}}
+
 Besides that, I am a fan of clicky keyboards. I have a [DasKeyboard 4C ultimate](https://www.daskeyboard.com/daskeyboard-4C-ultimate/) tenkeyless with Cherry Blue switches and a [4C Profressional](https://www.daskeyboard.com/daskeyboard-4C-tenkeyless-professional/) with brown switches. Sitting at home during the
 corona period, made me google old skool stuff a lot.
 
@@ -84,6 +88,14 @@ Check this insane refresh rate of the cathode tube. The color of the terminal is
 And more refresh rate. The mesmerizing fading away of the fonts into the background. Beautiful, just beautiful
 {{< /video >}}
 
+{{< video "videos/booting-into-dos.mp4" >}}
+[SOUND ON] The startup is amazing as well. The sound of the fan, and the nostalgic beep.
+{{< /video >}}
+
+{{< video "videos/booting-into-dos-again.mp4" >}}
+[SOUND ON] One more time. I could loop this forever.
+{{< /video >}}
+
 {{< image "images/ibm-dos-edit-dutch.jpg" Fit "600x600" >}}
 un DOS tres. The fluorescent is soooo pretty.
 {{< /image >}}
@@ -113,5 +125,3 @@ windows key for this. But the Model M2 does not have one. But I will overcome.
 Besides that, I found this great archive with [manuals](ihttps://archive.org/search.php?query=dos%20ibm) and [bootdisks](http://www.retroarchive.org/dos/disks/). Currently I am trying to get a VM up running PC DOS 5.0 (yes, that is possible in [virtualbox](https://www.youtube.com/watch?v=xfjUkJMe_kw))
 
 The downside, my Cherry MX blue switches feel like second class now.
-
-
