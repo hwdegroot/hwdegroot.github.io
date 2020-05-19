@@ -5,52 +5,54 @@ CONTAINER_NAME := forsure.local
 serve: clean build
 	docker run \
 		--rm \
-		--name ${CONTAINER_NAME} \
+		--name $(CONTAINER_NAME) \
 		--volume `pwd`:/src \
 		--workdir /src/site \
-		--publish ${PORT}:${PORT} \
+		--publish $(PORT):$(PORT) \
 		--privileged \
-		registry.gitlab.com/hwdegroot/forsure.dev/hugo:${HUGO_VERSION} \
-		hugo server --contentDir content/ --bind "0.0.0.0" --port ${PORT} --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
+		registry.gitlab.com/hwdegroot/forsure.dev/hugo:$(HUGO_VERSION) \
+		hugo server --contentDir content/ --bind "0.0.0.0" --port $(PORT) --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
 
 publish:
-	docker exec -it ${CONTAINER_NAME} \
+	docker exec -it $(CONTAINER_NAME) \
 		hugo --contentDir content --config config/config.yaml --destination ../public/
 
 stop:
-	docker stop --time 0 ${CONTAINER_NAME}
+	docker stop --time 0 $(CONTAINER_NAME)
 
 build:
 	docker build \
-		--tag registry.gitlab.com/hwdegroot/forsure.dev/hugo:${HUGO_VERSION} \
+		--tag registry.gitlab.com/hwdegroot/forsure.dev/hugo:$(HUGO_VERSION) \
 		--tag registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest \
-		--build-arg HUGO_VERSION=${HUGO_VERSION} \
-		--build-arg PORT=${PORT} \
+		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
+		--build-arg PORT=$(PORT) \
 		.
 
 clean:
 	sudo rm -rf site/public && \
 	( \
-		docker images ${CONTAINER_NAME} && docker rm -f ${CONTAINER_NAME} \
+		docker images $(CONTAINER_NAME) && docker rm -f $(CONTAINER_NAME) \
 	) || true
 
-policy: .post
-	docker exec -it ${CONTAINER_NAME} hugo new content/policy/${TITLE} --kind policy && \
-	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/${TITLE}
+NAME := $(shell echo "${TITLE}" | sed 's/ /-/g;s/://g' | sed -e 's/\(.*\)/\L\1/')
+preview: .check_title_defined
+	@echo $(NAME)
 
-presentation: .presentation
-	docker exec -it ${CONTAINER_NAME} hugo new content/presentations/${TITLE} --kind presentation && \
-	sudo chown -R $(shell id -u):$(shell id -g) site/content/presentations/${TITLE}
+policy: .check_title_defined
+	docker exec -it $(CONTAINER_NAME) hugo new content/policy/$(NAME) --kind policy  --config config/config.yaml && \
+	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/$(NAME)
 
-post: .post
-	docker exec -it ${CONTAINER_NAME} hugo new content/posts/${TITLE} --kind post && \
-	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/${TITLE}
+presentation: .check_title_defined
+	docker exec -it $(CONTAINER_NAME) hugo new content/presentations/$(NAME) --kind presentation --config config/config.yaml && \
+	sudo chown -R $(shell id -u):$(shell id -g) site/content/presentations/$(NAME)
 
-.presentation:
-	$(call check_defined TITLE, post title)
+post: .check_title_defined
+	docker exec -it $(CONTAINER_NAME) hugo new content/posts/$(NAME) --kind post --config config/config.yaml && \
+	sudo chown -R $(shell id -u):$(shell id -g) site/content/posts/$(NAME)
 
-.post:
-	$(call check_defined TITLE, post title)
+.PHONY:
+.check_title_defined:
+	$(call check_defined TITLE)
 
 # Check that given variables are set and all have non-empty values,
 # die with an error otherwise.
