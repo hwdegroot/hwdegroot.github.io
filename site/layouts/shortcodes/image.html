@@ -13,18 +13,18 @@
 {{ $image := .Scratch.Get "image" }}
 {{ $id := md5 (.Get 0) }}
 <figure id="{{ $id }}">
-    <div class="chroma image" style="max-width: calc({{ $image.Width }}px + 20px); max-height: calc({{ $image.Height }}px + 20px)">
+    <div class="chroma image" style="max-width: calc({{ $image.Width }}px + 20px);">
         <img style="max-width: 100%; width: auto; height: auto;" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+        <figcaption>
+            <small>
+                {{ with .Inner }}
+                {{ . }}
+                {{ else }}
+                .{{ $command }} "{{ $options }}"
+                {{ end }}
+            </small>
+        </figcaption>
     </div>
-    <figcaption>
-        <small>
-            {{ with .Inner }}
-            {{ . }}
-            {{ else }}
-            .{{ $command }} "{{ $options }}"
-            {{ end }}
-        </small>
-    </figcaption>
 </figure>
 <div class="modal" data-target="{{ $id }}">
     <div class="modal-content" style="max-width: {{ $original.Width }}px">

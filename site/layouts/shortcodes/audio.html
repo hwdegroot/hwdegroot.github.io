@@ -1,0 +1,18 @@
+{{ $original := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
+{{ $id := md5 (.Get 0) }}
+<figure id="{{ $id }}">
+    <div class="audio" style="max-width: 320px">
+        <audio controls>
+            <source src="{{ $original.RelPermalink }}" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+    {{ with .Inner }}
+    <figcaption>
+        <small>
+            {{ . }}
+        </small>
+    </figcaption>
+    {{ end }}
+</figure>
+
