@@ -97,7 +97,7 @@ And more refresh rate. The mesmerizing fading away of the fonts into the backgro
 {{< /video >}}
 
 {{< image "images/ibm-dos-edit-dutch.jpg" Fit "600x600" >}}
-un DOS tres. The fluorescent is soooo pretty.
+un DOS tres. The fluorescence is soooo pretty.
 {{< /image >}}
 
 {{< image "images/wpview-printer-driver-bat-file.jpg" Fit "600x600" >}}
