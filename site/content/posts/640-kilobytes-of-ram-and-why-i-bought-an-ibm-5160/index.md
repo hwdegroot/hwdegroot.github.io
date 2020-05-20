@@ -68,7 +68,7 @@ Stuck in BASIC
 Trying to exit QBASIC. Epic fail
 {{< /video >}}
 
-So, now I can start a few commands, but getting all available commands is not that straight forward. There is a lot in the `DOS` directory, but there is no scrolling, and the monitor only is 24 lines.
+So, now I can start a few commands, but getting all available commands is not that straight forward. There is a lot in the `DOS` directory, but there is no scrolling, and the monitor only is 25 lines.
 
 So figuring out the available commands is using a lot of `DIR *.EXE`'s and `DIR *.COM`'s.
 
@@ -76,7 +76,7 @@ First class fun.
 
 ## Show me the pics
 
-Not so long ago I was explaining my collegue (who is using a screensaver), [where a screensaver got its name from](https://en.wikipedia.org/wiki/Screensaver). Back in the days, when we were all running the [pipes](https://www.youtube.com/watch?v=Uzx9ArZ7MUU) so the screen would not f*** up.
+Not so long ago I was explaining my collegue (who is using a screensaver), [where a screensaver got its name from](https://en.wikipedia.org/wiki/Screensaver). Back in the days, when we were all running the [pipes](https://www.youtube.com/watch?v=Uzx9ArZ7MUU) so the screen would not {{< censor >}}fuck up{{< /censor >}}.
 
 But now, sit back and relax...
 
@@ -101,7 +101,7 @@ un DOS tres. The fluorescence is soooo pretty.
 {{< /image >}}
 
 {{< image "images/wpview-printer-driver-bat-file.jpg" Fit "600x600" >}}
-WpPreview
+wppreview, I totally miss the point of this program. But, hey, it's there.
 {{< /image >}}
 
 ## What next?
@@ -122,6 +122,16 @@ I will definitely have to up my [`GOTO`](https://www.qb64.org/wiki/GOTO) skills 
 I will start using my Model M2 for work (sorry collegues), for sure. I will have to remap my function key in [`i3`](https://i3wm.org/), because I am currently using the
 windows key for this. But the Model M2 does not have one. But I will overcome.
 
-Besides that, I found this great archive with [manuals](ihttps://archive.org/search.php?query=dos%20ibm) and [bootdisks](http://www.retroarchive.org/dos/disks/). Currently I am trying to get a VM up running PC DOS 5.0 (yes, that is possible in [virtualbox](https://www.youtube.com/watch?v=xfjUkJMe_kw))
+Besides that, I found this great archive with [manuals](ihttps://archive.org/search.php?query=dos%20ibm) and [bootdisks](http://www.retroarchive.org/dos/disks/) and even [PC DOS 5.02](https://winworldpc.com/download/40c2a543-4218-c39a-11c3-a4e284a2c3a5). Currently I am trying to get a VM up running PC DOS 5.0 (yes, that is possible in [virtualbox](https://www.youtube.com/watch?v=xfjUkJMe_kw))
 
 The downside, my Cherry MX blue switches feel like second class now.
+
+## UPDATE
+
+When I was installing my VM with `PC DOS`, at the end of the installation I was aske if I wanted to start in `shell` mode. It turns out there is a command `DOSSHELL` (needs to be executed fron `C:\DOS`) which gives you a very fancy
+gui.
+
+{{< image "images/dosshell.jpg" Fit "600x600" >}}
+😱 It has a GUI.
+{{< /image >}}
+
