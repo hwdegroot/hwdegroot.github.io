@@ -109,7 +109,7 @@ wppreview, I totally miss the point of this program. But, hey, it's there.
 So far I had to explain to my son what a `file(name)` and a `command` is (when they were typing "words" the IBM kept returning
 
 ```cmd
-command or filename incorrect
+Bad command or file name
 ```
 
 So the experience is already educational :)
