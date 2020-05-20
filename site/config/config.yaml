@@ -31,7 +31,7 @@ pygmentsCodeFences: true
 
 params:
     # show cookie policy
-    cookiePolicy: true
+    cookiePolicy: false
     author: Rik de Groot
     description: Code, cook and bake. Working @easeeonline
     avatar: images/rik-de-groot.jpg
