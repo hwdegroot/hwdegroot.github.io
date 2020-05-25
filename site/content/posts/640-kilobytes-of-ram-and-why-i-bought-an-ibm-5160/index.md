@@ -14,11 +14,13 @@ disqus_title: "640 Kilobytes of RAM??! and Why I Bought an IBM 5160"
 showComments: true
 ---
 
-> 640 Kilobytes!!!!1!!1 I shit you not. That is like 10 times the brainsize of Donald Trump.
+> 640 Kilobytes!!!!1!!1 I shit you not. That is like 10 times the size of Donald Trump's brain.
 
 Recently I was trying to get my son enthousiastic for programming. He is currently 7 years old and getting interested in all kinds of electronics,
 so I thought that getting acquainted with programming would not hurt him. And I like to think of myself as a parent that stimulates his kids, so I used that
 as an excuse to look into older computers, because _nostalgics_.
+
+[Show me them footage](#show-me-the-pics)
 
 My kids grew up with LED monitors and TV's and never really saw a real cathode tube, except on the episodes of [Pat & Mat](https://en.wikipedia.org/wiki/Pat_%26_Mat).
 I still remember the soft fading sound of of the tv turning off and the graphics vanishing into this thin line.
