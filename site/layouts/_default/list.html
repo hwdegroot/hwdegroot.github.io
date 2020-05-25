@@ -21,11 +21,11 @@
                             {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
                             {{ range . -}}
                                 {{- with $.Site.GetPage (printf "/%s/%s" "tags" . ) -}}
-                                {{ if (eq (substr .Title 0 5) "lang-") }}
-                                    <a class="tag" href="{{ .RelPermalink }}">{{ upper (substr .Title 5) }}</a>
-                                    {{ else }}
-                                    <a class="tag" href="{{ .RelPermalink }}">{{ replace .Title "-" " " }}</a>
-                                    {{end}}
+                                    {{- if (eq (substr .Title 0 5) "lang-") -}}
+                                        <a class="tag" href="{{ .RelPermalink }}">{{ upper (substr .Title 5) }}</a>
+                                    {{- else -}}
+                                        <a class="tag" href="{{ .RelPermalink }}">{{ replace .Title "-" " " }}</a>
+                                    {{- end -}}
                                 {{- end -}}
                             {{- end -}}
                         </div>
