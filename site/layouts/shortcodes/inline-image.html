@@ -8,9 +8,14 @@
 {{ else if eq $command "Fill"}}
 {{ .Scratch.Set "image" ($original.Fill $options) }}
 {{ else }}
-{{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+{{ .Scratch.Set "image" ($original.Fill $options) }}
 {{ end }}
 {{ $image := .Scratch.Get "image" }}
 {{ $id := md5 (.Get 0) }}
-<img id="{{ $id }}" src="{{ $image.RelPermalink }}" style="max-width: calc({{ $image.Width }}px + 20px); max-height: calc({{ $image.Height }}px + 20px)">
+<img
+    id="{{ $id }}"
+    src="{{ $image.RelPermalink }}"
+    style="max-width: calc({{ $image.Width }}px + 20px); max-height: calc({{ $image.Height }}px + 20px)"
+>
+
 
