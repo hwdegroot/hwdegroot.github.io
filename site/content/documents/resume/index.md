@@ -136,9 +136,9 @@ Introduced a Quality Management System as required by the guidelines for softwar
 * Issuer: [TU Delft](http://www.rid.tudelft.nl/en/cooperation/facilities/reactor-instituut-delft/radiation-protection-professional-education/health-physics-courses/)
 * Url: http://www.rid.tudelft.nl/en/cooperation/facilities/reactor-instituut-delft/radiation-protection-professional-education/health-physics-courses/
 
-------
 
 ### Skills
+------
 
 #### **Programming**
 
@@ -156,9 +156,9 @@ _(continuous integration/continuous delivery)_ Scripting and maintaining release
 
 Very familiar with the processes to manage releases, using containerized pipelines, and automated deployments.
 
-------
 
 ### Education
+------
 
 #### **Biomedical Imaging Sciences**
 * *MSc*
@@ -176,9 +176,9 @@ Very familiar with the processes to manage releases, using containerized pipelin
 * *Highschool*
 * Graduated in 2001
 
-------
 
 ### Tools
+------
 
 * [ansible](https://www.ansible.com/)/[puppet](https://puppet.com/) (expert)
 * [cloud foundry](https://www.cloudfoundry.org/) and spin-offs (advanced)
