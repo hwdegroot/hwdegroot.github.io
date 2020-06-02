@@ -172,11 +172,6 @@ Very familiar with the processes to manage releases, using containerized pipelin
 * *Propedeuse*
 * Graduated in 2002
 
-#### **VWO**
-* *Highschool*
-* Graduated in 2001
-
-
 ### Tools
 ------
 
