@@ -102,7 +102,7 @@ Introduced a Quality Management System as required by the guidelines for softwar
 ### Certificates
 ------
 
-### IEC 62304 Introduction course Online
+#### IEC 62304 Introduction course Online
 
 * Date obtained: May 28, 2020
 * Issuer: [Lorit Consultancy](https://lorit-consultancy.com/en/home/)
