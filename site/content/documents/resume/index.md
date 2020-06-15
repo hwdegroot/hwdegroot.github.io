@@ -102,6 +102,11 @@ Introduced a Quality Management System as required by the guidelines for softwar
 ### Certificates
 ------
 
+#### Boost your impact
+
+Date obtained: June 12, 2020
+Issuer: [FP&P](https://www.fpnp.nl/boost-your-impact-programma-voor-young-professionals/)
+
 #### IEC 62304 Introduction course Online
 
 * Date obtained: May 28, 2020
