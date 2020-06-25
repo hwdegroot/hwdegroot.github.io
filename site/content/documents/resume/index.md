@@ -56,7 +56,7 @@ I try to stay up with new technologies by reading about them and visiting confer
 
 Just doing the good ol' SM things...
 
-**Lead developer**  - *October 2017 - now*
+**Senior Software Engineer**  - *October 2017 - now*
 
 Developing and designing easee online eye exam. A php/laravel application. Setting up development environment and release management and scripts.
 
