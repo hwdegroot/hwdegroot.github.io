@@ -56,7 +56,16 @@ So, I know the `DIR` command. But now what. Let's see what commands are availabl
 * No tab completion. `TAB` just places the cursor somewhere down the line
 * No `HISTORY`. You can repeat the last command by pressing the right-arrow.
 
+**FEEDBACK**
+
+> This is incorrect. You say that you have IBM PC DOS 5. If so, this includes the DOSKEY command. This will give you a command-line history with editing. Just type `dos\doskey` to load it.
+
 For a starters, on `IBM DOS` (version 5.0) there is no `$PATH`. The executables are located in `C:\DOS` (or `c:\dos`, because `DOS` don't care about casing). the most executables are located. After a day or two I figured this out, so I finally managed to open my first `BASIC` program. All fine, until I wanted to quit the program. It's not that easy as [exiting `Vim`](https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor). It took me quite some time googling, until I finally found this [lifesaver](https://stackoverflow.com/questions/44253055/how-can-i-exit-microsoft-gw-basic-ibm-basica-or-other-similar-old-dialects-of).
+
+**FEEDBACK**
+
+> There certainly should be! DOS has 2 configuration files, which live in the root directory of the boot drive (A: or C:). They are called [1] CONFIG.SYS and [2] AUTOEXEC.BAT. In the 2nd, there should be a line:
+> `PATH=C:\DOS; C:\`
 
 {{< image "images/basic-startup-screen.jpg" Fit "600x600" >}}
 Entering BASIC is peanuts
@@ -70,7 +79,17 @@ Stuck in BASIC
 Trying to exit QBASIC. Epic fail
 {{< /video >}}
 
+**FEEDBACK**
+
+> That is *not* `QBASIC`; `QBASIC` has a GUI. You were in either `BASICA` or `GWBASIC`. The command to quit is `syst em`, if I remember correctly after 30 years.
+
 So, now I can start a few commands, but getting all available commands is not that straight forward. There is a lot in the `DOS` directory, but there is no scrolling, and the monitor only is 25 lines.
+
+**FEEDBACK**
+
+> Yes there is [scrolling]. Type `dir /p` for page-by-page. `dir /w` gives a wide listing. You can combine these: `dir /w /p`. You can also do `dir | more`
+
+> [the monitor is only 25 lines] This depends on the graphics card. If you have an MDA card, no, 25 lines is all. Try `mode con: lines=43` or `mode con: lines=50`. This will only work on a VGA-compatible card, though, and you will need ANSI.SYS installed, I think.
 
 So figuring out the available commands is using a lot of `DIR *.EXE`'s and `DIR *.COM`'s.
 
@@ -106,6 +125,10 @@ un DOS tres. The fluorescence is soooo pretty.
 wppreview, I totally miss the point of this program. But, hey, it's there.
 {{< /image >}}
 
+**FEEDBACK**
+
+> It [wppreview] is not part of DOS. Sounds like a WordPerfect preview program for use with mailmerge.
+
 ## What next?
 
 So far I had to explain to my son what a `file(name)` and a `command` is (when they were typing "words" the IBM kept returning
@@ -124,7 +147,29 @@ I will definitely have to up my [`GOTO`](https://www.qb64.org/wiki/GOTO) skills 
 I will start using my Model M2 for work (sorry collegues), for sure. I will have to remap my function key in [`i3`](https://i3wm.org/), because I am currently using the
 windows key for this. But the Model M2 does not have one. But I will overcome.
 
+**FEEDBACK**
+
+> It is easy to remap CapsLock to be a “Windows” (Super) key. This is how I use my IBM Model M in Linux. I suggest `xmodmap`.
+
 Besides that, I found this great archive with [manuals](ihttps://archive.org/search.php?query=dos%20ibm) and [bootdisks](http://www.retroarchive.org/dos/disks/) and even [PC DOS 5.02](https://winworldpc.com/download/40c2a543-4218-c39a-11c3-a4e284a2c3a5). Currently I am trying to get a VM up running PC DOS 5.0 (yes, that is possible in [virtualbox](https://www.youtube.com/watch?v=xfjUkJMe_kw))
+
+**FEEDBACK**
+
+> If you are willing to change the DOS version, I suggest DR DOS 3.41. The reason is this: MS/PC DOS 5, 6 & later are designed for 386 memory management. This is impossible on an 8088 chip, and as a result, you will have very little free memory. Many DOS programs won’t work.
+
+> DR-DOS is a better 3rd party clone of DOS, by the company that wrote the original OS (CP/M) that MS-DOS was ripped-off from. The first version is 3.41 (before that it had different names) and it is far more memory-efficient. https://winworldpc.com/product/dr-dos/3x
+
+> But if you want to stay with an IBM original DOS, then IBM developed PC DOS all the way to version 7.1, which supports EIDE hard disks over 8GB, FAT32 and some other nice features. It is a free download.
+
+> I have described how to get it here: https://liam-on-linux.livejournal.com/59703.html
+
+> PC DOS 7 is a bit strange; IBM removed Microsoft’s GUI editor and replaced it with an OS/2-derived one called E, which has a weird UI. IBM also removed GWBASIC and replaced it with the Rexx scripting language.
+
+> Personally, I combine bits of PC-DOS 7.1 with Microsoft’s editor, Microsoft’s diagnostics, Scandisk disk-repair tool and some other bits, but that is more than I can cover in a comment!
+
+> There is a lot you can do to upgrade a 5160 if you wish. Here is a crazy example: https://sites.google.com/site/misterzeropage/
+
+> I would not go that far, but a VGA card, VGA CRT, a serial mouse and an XTIDE card with a CF card in it, and it would be a lot easier to use…
 
 The downside, my Cherry MX blue switches feel like second class now.
 
@@ -136,4 +181,10 @@ gui.
 {{< image "images/dosshell.jpg" Fit "600x600" >}}
 😱 It has a GUI.
 {{< /image >}}
+
+## UPDATE 2
+
+I recently received some awesome feedback from [Liam Proven](https://disqus.com/by/liamproven/). If you read through the post there will
+be updates with the feedback. Thanks for the feedback @Liam.
+
 
