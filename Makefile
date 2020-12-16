@@ -34,7 +34,7 @@ clean:
 		docker images $(CONTAINER_NAME) && docker rm -f $(CONTAINER_NAME) \
 	) || true
 
-NAME := $(shell echo "${TITLE}" | sed 's/ /-/g;s/://g' | sed -e 's/\(.*\)/\L\1/')
+NAME := $(shell echo "${TITLE}" | sed 's/ /-/g;s/[:?!.]//g;' | sed -e 's/\(.*\)/\L\1/')
 preview: .check_title_defined
 	@echo $(NAME)
 
