@@ -1,6 +1,6 @@
 {{ define "main" }}
     <article>
-        <h1>What's been on my mind...</h1>
+        <h1><em>The</em> edge of glory...</h1>
         <ul class="posts-list">
             {{ range $index, $element := where .Paginator.Pages ".Type" "in" (slice "post" "presentation") }}
                 <li class="posts-list-item">
