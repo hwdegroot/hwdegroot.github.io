@@ -6,6 +6,7 @@ tags:
     - presentation
     - lang-en
     - regular expressions
+draft: true
 images:
     - images/og/power+of+the+regex.png
 customCss: css/custom.css
