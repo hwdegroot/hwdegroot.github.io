@@ -3,6 +3,7 @@
 @import 'search';
 @import 'toc';
 @import 'table';
+@import 'presentation';
 
 html {
     font-size:  1.2rem;
@@ -337,28 +338,5 @@ body {
 
 .document {
     @import "document";
-}
-.list-title {
-    display: flex;
-
-    .presentation {
-        margin-right: .5rem;
-        margin-left: -3px;
-    }
-}
-
-.presentation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    svg {
-        height: 24px;
-        width: 24px;
-
-        path.image {
-            fill: #d3d3d3;
-        }
-    }
 }
 
