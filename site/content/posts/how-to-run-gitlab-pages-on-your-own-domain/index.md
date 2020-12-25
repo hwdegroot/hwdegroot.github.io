@@ -18,19 +18,20 @@ showComments: true
 Not so long ago I had to make a static website, and was figuring out how to do this. I came across [hugo](https://gohugo.io). And I
 really liked how quickly you can build and publish a website from markdown.
 
-A while ago google made the [.dev](https://domains.google/#/), so impulsively, I bought one.
-From $12 you can get one, and start doing awesome stuff with this. But I didn't. There are plenty of cloud providers that will host
-your website for you, like [AWS](https://aws.amazon.com/), [Netlify](https://www.netlify.com) and many more.
+A while ago google made the [.dev](https://domains.google/#/) available for peanuts, so, impulsively, I bought one.
+From $12 you can get one, and start doing awesome stuff with this. But I didn't. I parked the domain for a while.
+There are plenty of cloud providers that will host your website for you, like [AWS](https://aws.amazon.com/), [Netlify](https://www.netlify.com) and many more.
 
 But I had no clue where to host this, because I am lazy and cheap. Then for work I had to do something similar, and I wondered if I could just host
 my [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/) on my own domain. And guess what, you can, and it is amazingly simple!
 
 I started to write out some boilerplate (easy), picked a theme I liked (easy, I used [m10c](https://themes.gohugo.io/hugo-theme-m10c/)), and off I went.
 
-Here I will try to explain how I got from writing some basic markdown to running it on my own domain (well, technically it doesn't. Bu tit appears so).
+Here I will try to explain how I got from writing some basic _markdown_ to running it on my own domain
+(well, technically it doesn't. But it appears so).
 
-You can find the repository of this site [here](https://gitlab.com/hwdegroot/forsure.dev). I like `yaml` over `toml`, so I will use the `yaml` configuration option
-from hugo.
+You can find the repository of this site [here](https://gitlab.com/hwdegroot/forsure.dev). I like `yaml` over `toml`.
+Therefor I will use the `yaml` configuration option from hugo.
 
 My config is as follows, but also available [here](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/config/config.yaml)
 
