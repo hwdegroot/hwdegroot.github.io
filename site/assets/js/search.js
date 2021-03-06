@@ -74,10 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return content;
     }
 
-    axios.get("/search")
-        .then(function (result) {
-            const searchContent = result.data;
-            const searchIndex = lunr(function () {
+    fetch("/search")
+        .then(response => response.json())
+        .then(result => {
+            debugger
+            const searchContent = result;
+            const searchIndex = lunr(function() {
                 this.ref("id")
                 this.field("content");
                 this.field("tag");
