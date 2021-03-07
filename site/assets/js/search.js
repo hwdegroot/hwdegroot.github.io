@@ -25,13 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("keydown", e => {
         // dismiss search on  ESC
-        if (e.keyCode == 27 && searchWrapper.classList.contains("active")) {
+        if (e.key == "Escape" && searchWrapper.classList.contains("active")) {
             e.preventDefault();
             toggleSearch(searchWrapper, searchInput);
         }
 
-        // open search on CTRL+F
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 70 && !searchWrapper.classList.contains("active")) {
+        // open search on CTRL+SHIFT+F
+        if (e.ctrlKey && e.shiftKey && e.key == "F" && !searchWrapper.classList.contains("active")) {
             e.preventDefault();
             toggleSearch(searchWrapper, searchInput);
         }
@@ -55,12 +55,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (pattern.test(s)) {
                     s = s.replace(pattern, "");
                 }
+
                 if (s && s.startsWith("+")) {
                     s = s.substring(1);
                 }
-                if (s && s.indexOf("~") > 0 && s.length > s.indexOf("~") && parseInt(s.substring(s.indexOf("~") + 1)) == s.substring(s.indexOf("~") + 1)) {
+
+                if (s && s.indexOf("~") > 0
+                    && s.length > s.indexOf("~")
+                    && parseInt(s.substring(s.indexOf("~") + 1)) == s.substring(s.indexOf("~") + 1)
+                ) {
                     s = s.substring(0, s.indexOf("~"));
                 }
+
                 if (!s || s.startsWith("-")) {
                     return;
                 }
@@ -77,19 +83,18 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("/search")
         .then(response => response.json())
         .then(result => {
-            debugger
             const searchContent = result;
-            const searchIndex = lunr(function() {
-                this.ref("id")
-                this.field("content");
-                this.field("tag");
-                this.field("title");
-                this.field("url");
-                this.field("type");
+            const searchIndex = lunr(builder => {
+                builder.ref("id")
+                builder.field("content");
+                builder.field("tag");
+                builder.field("title");
+                builder.field("url");
+                builder.field("type");
 
                 Array.from(result).forEach(doc => {
-                    this.add(doc)
-                }, this)
+                    builder.add(doc)
+                }, builder)
             })
             searchInput.removeAttribute("disabled");
             searchInput.addEventListener("keyup", e => {
