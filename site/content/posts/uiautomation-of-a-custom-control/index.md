@@ -14,7 +14,8 @@ images:
 showComments: true
 ---
 
-Recently I found a blog post I never really published (on an ancient blogger account). However I am not very active in `C#.NET` nowadays, so maybe noone is using this anymore.
+Recently I found a blog post I never really published (on an ancient blogger account).
+However I am not very active in `C#.NET` nowadays, so maybe no-one is using this anymore.
 
 Anyway this might actually help some people, so here it is, dug up from the past...
 
