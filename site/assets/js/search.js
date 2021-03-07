@@ -1,14 +1,13 @@
-
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     let searchResults = [];
     const searchWrapper = document.querySelector("aside[role=search]");
     const searchResultElement = searchWrapper.querySelector(".search-results");
     const searchInput = searchWrapper.querySelector("input");
 
-    function toggleSearch(searchWrapper, searchInput) {
+    const toggleSearch = (searchWrapper, searchInput)  =>{
         if (searchWrapper.classList.contains("active")) {
             searchWrapper.classList.add("visible");
-            setTimeout(function () {
+            setTimeout(() => {
                 searchWrapper.classList.remove("visible");
             }, 300);
             searchWrapper.classList.remove("active");
@@ -18,55 +17,61 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.querySelectorAll(".toggle-search").forEach(function (el) {
-        el.addEventListener("click", function (e) {
+    document.querySelectorAll(".toggle-search").forEach(el => {
+        el.addEventListener("click", e => {
             toggleSearch(searchWrapper, searchInput);
         });
     });
 
-    window.addEventListener("keydown", function (e) {
+    window.addEventListener("keydown", e => {
         // dismiss search on  ESC
-        if (e.keyCode == 27 && searchWrapper.classList.contains("active")) {
+        if (e.key == "Escape" && searchWrapper.classList.contains("active")) {
             e.preventDefault();
             toggleSearch(searchWrapper, searchInput);
         }
 
-        // open search on CTRL+F
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 70 && !searchWrapper.classList.contains("active")) {
+        // open search on CTRL+SHIFT+F
+        if (e.ctrlKey && e.shiftKey && e.key == "F" && !searchWrapper.classList.contains("active")) {
             e.preventDefault();
             toggleSearch(searchWrapper, searchInput);
         }
     });
 
-    function tags(tags, searchString) {
+    const tags = (tags, searchString) => {
         let tagHTML = (tags.split(" ; ") || [])
-            .filter(function (i) {
+            .filter(i => {
                 return i && i.length > 0;
             })
-            .map(function (i) {
+            .map(i => {
                 return "<span class='tag'>" + mark(i, searchString) + "</span>";
             })
         return tagHTML.join("");
     }
 
-    function mark(content, search) {
+    const mark = (content, search) => {
         if (search) {
             let pattern = /^[a-zA-Z0-9]*:/i;
-            search.split(" ").forEach(function (s) {
+            search.split(" ").forEach(s => {
                 if (pattern.test(s)) {
                     s = s.replace(pattern, "");
                 }
+
                 if (s && s.startsWith("+")) {
                     s = s.substring(1);
                 }
-                if (s && s.indexOf("~") > 0 && s.length > s.indexOf("~") && parseInt(s.substring(s.indexOf("~") + 1)) == s.substring(s.indexOf("~") + 1)) {
+
+                if (s && s.indexOf("~") > 0
+                    && s.length > s.indexOf("~")
+                    && parseInt(s.substring(s.indexOf("~") + 1)) == s.substring(s.indexOf("~") + 1)
+                ) {
                     s = s.substring(0, s.indexOf("~"));
                 }
+
                 if (!s || s.startsWith("-")) {
                     return;
                 }
                 let re = new RegExp(s, "i");
-                content = content.replace(re, function (m) {
+                content = content.replace(re, m => {
                     return "<mark>"+m+"</mark>";
                 });
             });
@@ -75,23 +80,24 @@ document.addEventListener("DOMContentLoaded", function () {
         return content;
     }
 
-    axios.get("/search")
-        .then(function (result) {
-            const searchContent = result.data;
-            const searchIndex = lunr(function () {
-                this.ref("id")
-                this.field("content");
-                this.field("tag");
-                this.field("title");
-                this.field("url");
-                this.field("type");
+    fetch("/search")
+        .then(response => response.json())
+        .then(result => {
+            const searchContent = result;
+            const searchIndex = lunr(builder => {
+                builder.ref("id")
+                builder.field("content");
+                builder.field("tag");
+                builder.field("title");
+                builder.field("url");
+                builder.field("type");
 
-                Array.from(result.data).forEach(function (doc) {
-                    this.add(doc)
-                }, this)
+                Array.from(result).forEach(doc => {
+                    builder.add(doc)
+                }, builder)
             })
             searchInput.removeAttribute("disabled");
-            searchInput.addEventListener("keyup", function (e) {
+            searchInput.addEventListener("keyup", e => {
                 let searchString = e.target.value;
                 if (searchString && searchString.length > 2) {
                     try {
@@ -106,9 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 if (searchResults.length > 0) {
-                    searchResultElement.innerHTML = searchResults.map(function (match) {
-                        let item = searchContent.find(function(e) {
-                            return e.id == parseInt(match.ref);
+                    searchResultElement.innerHTML = searchResults.map(match => {
+                        let item = searchContent.find(el => {
+                            return el.id == parseInt(match.ref);
                         });
                         return "<li>" +
                             "<h4 title='field: title'><a href='" + item.url + "'>" + mark(item.title, searchString) + "</a></h4>" +
@@ -125,8 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         })
-        .catch(function (error) {
-            console.error(error);
+        .catch(err => {
+            console.error(err);
         });
 });
 

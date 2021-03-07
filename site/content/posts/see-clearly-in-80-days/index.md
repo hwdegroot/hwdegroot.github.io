@@ -12,7 +12,9 @@ images:
 showComments: false
 ---
 
-At {{< twittername easeeonline >}} we want everybody to have the oportunity to see clearly. For this reaseon we are giving
+UPDATE: This has expired, however if you want to use our service, got to https://easee.online, or feel free to reach out.
+
+At {{< twittername easeeonline >}} we want everybody to have the oportunity to see clearly. For this reason we are giving
 out vouchers to get a free validation. Visit us at [easee.online](https://www.easee.online/en/) or
 [do the test](https://easee.online/start/refraction?voucher_code=Q3-RED-R) and get your results validated by one of
 our optometrists.

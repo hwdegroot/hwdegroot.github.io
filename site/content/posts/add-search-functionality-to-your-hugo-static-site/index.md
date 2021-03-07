@@ -159,24 +159,29 @@ Now when you visit the `/search` endpoint, it will return `json` with the follow
 ### Client side searching
 
 Now we are ready to use this in the client. I am loading the json file in a promise, so it won't annoy the user when the file gets huge.
-I will use [axios](https://www.axios.com/) for this.
+~~I will use [axios](https://www.axios.com/) for this.~~
+
+**UPDATE:** axios has been replcaed by browser's native [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+
 Make sure that if you do so, and you really can't drop all the IE users, that you will need to polyfill `Promise` as well.
 
-I don't care about IE users, so I didn't. Also I was too lazy to setup a webpack config. So you will notice that the
-javascript syntax is not ES5+, and I will load the libraries from a cdn ([unpkg](https://unpkg.com/) in this case, but there
+I don't care about IE users, so I didn't. Also I was too lazy to setup a webpack config. ~~So you will notice that the
+javascript syntax is not ES5+, and~~ I will load the libraries from a cdn ([unpkg](https://unpkg.com/) in this case, but there
 are plenty)
 
 So add the following scripts to your base template if you are also lazy
 
 #### Axios
 
-```
+The axios part is deprecated for my site, but if you chose to use axios, you will need to add this as well.
+
+```html
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 ```
 
 #### Lunr
 
-```
+```html
 <script src="https://unpkg.com/lunr/lunr.js"></script>
 ```
 
@@ -185,8 +190,11 @@ So add the following scripts to your base template if you are also lazy
 On [polyfill.io](https://polyfill.io/v3/url-builder/) you can click the bundle you want, and it will generate
 a script tag for you. If you do this for `Promise` only you will get something like this
 
-```
-<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated%2Calways&features=Promise"></script>
+```html
+<script
+    crossorigin="anonymous"
+    src="https://polyfill.io/v3/polyfill.min.js?flags=gated%2Calways&features=Promise"
+></script>
 ```
 
 If you need more, it is pretty straight-forward. Make sure that you put the polyfill as the first element after `<body>`.
@@ -208,7 +216,9 @@ So all set there, time to create a partial for the client side search. You can f
 </div>
 <aside role="search">
     <div class="close toggle-search">
-    <svg height="512" width="512" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M443.6 387.1L312.4 255.4l131.5-130c5.4-5.4 5.4-14.2 0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4-3.7 0-7.2 1.5-9.8 4L256 197.8 124.9 68.3c-2.6-2.6-6.1-4-9.8-4-3.7 0-7.2 1.5-9.8 4L68 105.9c-5.4 5.4-5.4 14.2 0 19.6l131.5 130L68.4 387.1c-2.6 2.6-4.1 6.1-4.1 9.8 0 3.7 1.4 7.2 4.1 9.8l37.4 37.6c2.7 2.7 6.2 4.1 9.8 4.1 3.5 0 7.1-1.3 9.8-4.1L256 313.1l130.7 131.1c2.7 2.7 6.2 4.1 9.8 4.1 3.5 0 7.1-1.3 9.8-4.1l37.4-37.6c2.6-2.6 4.1-6.1 4.1-9.8-.1-3.6-1.6-7.1-4.2-9.7z"/></svg>
+        <svg height="512" width="512" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M443.6 387.1L312.4 255.4l131.5-130c5.4-5.4 5.4-14.2 0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4-3.7 0-7.2 1.5-9.8 4L256 197.8 124.9 68.3c-2.6-2.6-6.1-4-9.8-4-3.7 0-7.2 1.5-9.8 4L68 105.9c-5.4 5.4-5.4 14.2 0 19.6l131.5 130L68.4 387.1c-2.6 2.6-4.1 6.1-4.1 9.8 0 3.7 1.4 7.2 4.1 9.8l37.4 37.6c2.7 2.7 6.2 4.1 9.8 4.1 3.5 0 7.1-1.3 9.8-4.1L256 313.1l130.7 131.1c2.7 2.7 6.2 4.1 9.8 4.1 3.5 0 7.1-1.3 9.8-4.1l37.4-37.6c2.6-2.6 4.1-6.1 4.1-9.8-.1-3.6-1.6-7.1-4.2-9.7z"/>
+        </svg>
     </div>
     <div class="search-wrapper">
         <form class="search" method="get">
@@ -247,59 +257,83 @@ it in the [`_extra.scss`](https://gitlab.com/hwdegroot/forsure.dev/blob/master/s
 Now the final step is to make the search work. For that, just create a javascript file in the assets directory. For me
 that is [`assets/js/search.js`](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/assets/js/search.js).
 
-It looks like this
+It looks like this:
 
 ```js
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     let searchResults = [];
     const searchWrapper = document.querySelector("aside[role=search]");
     const searchResultElement = searchWrapper.querySelector(".search-results");
     const searchInput = searchWrapper.querySelector("input");
 
-    document.querySelectorAll(".toggle-search").forEach(function (el) {
-        el.addEventListener("click", function (e) {
-            if (searchWrapper.classList.contains("active")) {
-                searchWrapper.classList.add("visible");
-                setTimeout(function () {
-                    searchWrapper.classList.remove("visible");
-                }, 300);
-                searchWrapper.classList.remove("active");
-            } else {
-                searchWrapper.classList.add("active");
-                searchInput.focus();
-            }
+    const toggleSearch = (searchWrapper, searchInput)  =>{
+        if (searchWrapper.classList.contains("active")) {
+            searchWrapper.classList.add("visible");
+            setTimeout(() => {
+                searchWrapper.classList.remove("visible");
+            }, 300);
+            searchWrapper.classList.remove("active");
+        } else {
+            searchWrapper.classList.add("active");
+            searchInput.focus();
+        }
+    }
+
+    document.querySelectorAll(".toggle-search").forEach(el => {
+        el.addEventListener("click", e => {
+            toggleSearch(searchWrapper, searchInput);
         });
     });
 
-    function tags(tags, searchString) {
+    window.addEventListener("keydown", e => {
+        // dismiss search on  ESC
+        if (e.key == "Escape" && searchWrapper.classList.contains("active")) {
+            e.preventDefault();
+            toggleSearch(searchWrapper, searchInput);
+        }
+
+        // open search on CTRL+SHIFT+F
+        if (e.ctrlKey && e.shiftKey && e.key == "F" && !searchWrapper.classList.contains("active")) {
+            e.preventDefault();
+            toggleSearch(searchWrapper, searchInput);
+        }
+    });
+
+    const tags = (tags, searchString) => {
         let tagHTML = (tags.split(" ; ") || [])
-            .filter(function (i) {
+            .filter(i => {
                 return i && i.length > 0;
             })
-            .map(function (i) {
+            .map(i => {
                 return "<span class='tag'>" + mark(i, searchString) + "</span>";
             })
         return tagHTML.join("");
     }
 
-    function mark(content, search) {
+    const mark = (content, search) => {
         if (search) {
             let pattern = /^[a-zA-Z0-9]*:/i;
-            search.split(" ").forEach(function (s) {
+            search.split(" ").forEach(s => {
                 if (pattern.test(s)) {
                     s = s.replace(pattern, "");
                 }
+
                 if (s && s.startsWith("+")) {
                     s = s.substring(1);
                 }
-                if (s && s.indexOf("~") > 0 && s.length > s.indexOf("~") && parseInt(s.substring(s.indexOf("~") + 1)) == s.substring(s.indexOf("~") + 1)) {
+
+                if (s && s.indexOf("~") > 0
+                    && s.length > s.indexOf("~")
+                    && parseInt(s.substring(s.indexOf("~") + 1)) == s.substring(s.indexOf("~") + 1)
+                ) {
                     s = s.substring(0, s.indexOf("~"));
                 }
+
                 if (!s || s.startsWith("-")) {
                     return;
                 }
                 let re = new RegExp(s, "i");
-                content = content.replace(re, function (m) {
+                content = content.replace(re, m => {
                     return "<mark>"+m+"</mark>";
                 });
             });
@@ -308,22 +342,24 @@ document.addEventListener("DOMContentLoaded", function () {
         return content;
     }
 
-    axios.get("/search")
-        .then(function (result) {
-            const searchContent = result.data;
-            const searchIndex = lunr(function () {
-                this.ref("id")
-                this.field("content");
-                this.field("tag");
-                this.field("title");
-                this.field("url");
+    fetch("/search")
+        .then(response => response.json())
+        .then(result => {
+            const searchContent = result;
+            const searchIndex = lunr(builder => {
+                builder.ref("id")
+                builder.field("content");
+                builder.field("tag");
+                builder.field("title");
+                builder.field("url");
+                builder.field("type");
 
-                Array.from(result.data).forEach(function (doc) {
-                    this.add(doc)
-                }, this)
+                Array.from(result).forEach(doc => {
+                    builder.add(doc)
+                }, builder)
             })
             searchInput.removeAttribute("disabled");
-            searchInput.addEventListener("keyup", function (e) {
+            searchInput.addEventListener("keyup", e => {
                 let searchString = e.target.value;
                 if (searchString && searchString.length > 2) {
                     try {
@@ -338,12 +374,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 if (searchResults.length > 0) {
-                    searchResultElement.innerHTML = searchResults.map(function (match) {
-                        let item = searchContent.find(function(e) {
-                            return e.id == parseInt(match.ref);
+                    searchResultElement.innerHTML = searchResults.map(match => {
+                        let item = searchContent.find(el => {
+                            return el.id == parseInt(match.ref);
                         });
                         return "<li>" +
                             "<h4 title='field: title'><a href='" + item.url + "'>" + mark(item.title, searchString) + "</a></h4>" +
+                            "<p class='type'>" + item.type + "</p>" +
                             "<p class='summary' title='field: content'>" +
                             mark((item.content.length > 200 ? (item.content.substring(0, 200) + "...") : item.content), searchString) +
                             "</p>" +
@@ -356,8 +393,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         })
-        .catch(function (error) {
-            console.error(error);
+        .catch(err => {
+            console.error(err);
         });
 });
 ```
@@ -365,57 +402,60 @@ document.addEventListener("DOMContentLoaded", function () {
 There are some functions in there to make a nice transition for open/closing the search. But the important part is
 
 ```js
-axios.get("/search")
-        .then(function (result) {
-            const searchContent = result.data;
-            const searchIndex = lunr(function () {
-                this.ref("id")
-                this.field("content");
-                this.field("tag");
-                this.field("title");
-                this.field("url");
+fetch("/search")
+    .then(response => response.json())
+    .then(result => {
+        const searchContent = result;
+        const searchIndex = lunr(builder => {
+            builder.ref("id")
+            builder.field("content");
+            builder.field("tag");
+            builder.field("title");
+            builder.field("url");
+            builder.field("type");
 
-                Array.from(result.data).forEach(function (doc) {
-                    this.add(doc)
-                }, this)
-            })
-            searchInput.removeAttribute("disabled");
-            searchInput.addEventListener("keyup", function (e) {
-                let searchString = e.target.value;
-                if (searchString && searchString.length > 2) {
-                    try {
-                        searchResults = searchIndex.search(searchString);
-                    } catch (err) {
-                        if (err instanceof lunr.QueryParseError) {
-                            return;
-                        }
-                    }
-                } else {
-                    searchResults = [];
-                }
-
-                if (searchResults.length > 0) {
-                    searchResultElement.innerHTML = searchResults.map(function (match) {
-                        let item = searchContent.find(function(e) {
-                            return e.id == parseInt(match.ref);
-                        });
-                        return "<li>" +
-                            "<h4 title='field: title'><a href='" + item.url + "'>" + mark(item.title, searchString) + "</a></h4>" +
-                            "<p class='summary' title='field: content'>" +
-                            mark((item.content.length > 200 ? (item.content.substring(0, 200) + "...") : item.content), searchString) +
-                            "</p>" +
-                            "<p class='tags' title='field: tag'>" + tags(item.tag, searchString) + "</p>" +
-                            "<a href='" + item.url + "' title='field: url'>" + mark(item.url, searchString) + "</a>" +
-                            "</li>";
-                    }).join("");
-                } else {
-                    searchResultElement.innerHTML = "<li><p class='no-result'>No results found</p></li>";
-                }
-            });
+            Array.from(result).forEach(doc => {
+                builder.add(doc)
+            }, builder)
         })
-        .catch(function (error) {
-            console.error(error);
+        searchInput.removeAttribute("disabled");
+        searchInput.addEventListener("keyup", e => {
+            let searchString = e.target.value;
+            if (searchString && searchString.length > 2) {
+                try {
+                    searchResults = searchIndex.search(searchString);
+                } catch (err) {
+                    if (err instanceof lunr.QueryParseError) {
+                        return;
+                    }
+                }
+            } else {
+                searchResults = [];
+            }
+
+            if (searchResults.length > 0) {
+                searchResultElement.innerHTML = searchResults.map(match => {
+                    let item = searchContent.find(el => {
+                        return el.id == parseInt(match.ref);
+                    });
+                    return "<li>" +
+                        "<h4 title='field: title'><a href='" + item.url + "'>" + mark(item.title, searchString) + "</a></h4>" +
+                        "<p class='type'>" + item.type + "</p>" +
+                        "<p class='summary' title='field: content'>" +
+                        mark((item.content.length > 200 ? (item.content.substring(0, 200) + "...") : item.content), searchString) +
+                        "</p>" +
+                        "<p class='tags' title='field: tag'>" + tags(item.tag, searchString) + "</p>" +
+                        "<a href='" + item.url + "' title='field: url'>" + mark(item.url, searchString) + "</a>" +
+                        "</li>";
+                }).join("");
+            } else {
+                searchResultElement.innerHTML = "<li><p class='no-result'>No results found</p></li>";
+            }
         });
+    })
+    .catch(err => {
+        console.error(err);
+    });
 ```
 
 This loads the json in a `Promise` from our search url. Then when that is successful it will load the data into `lunr`.

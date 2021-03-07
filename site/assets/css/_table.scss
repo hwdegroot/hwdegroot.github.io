@@ -1,19 +1,21 @@
 table {
-    border: 1px solid rgba(103,235,162,.8);
+    border: 1px solid rgb(103,235,162);
     background-color: #272822;
+    border-collapse: collapse;
 
     thead tr {
         font-weight: 900;
 
         th,
         td {
-            border: 0;
-            border-bottom: 1px solid rgba(103,235,162,.8);
+            color: #272822;
+            background-color: rgb(103,235,162);
         }
     }
 
     td,
     th {
         padding: 5px 10px;
+        border: 1px solid rgb(103,235,162);
     }
 }
