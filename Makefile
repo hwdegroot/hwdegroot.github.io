@@ -1,5 +1,5 @@
 PORT := 8888
-HUGO_VERSION := 0.71.0
+HUGO_VERSION := 0.81.0
 CONTAINER_NAME := forsure.local
 
 serve: clean build
@@ -16,6 +16,10 @@ serve: clean build
 publish:
 	docker exec -it $(CONTAINER_NAME) \
 		hugo --contentDir content --config config/config.yaml --destination ../public/
+
+push_docker: clean build
+	docker push registry.gitlab.com/hwdegroot/forsure.dev/hugo:$(HUGO_VERSION)
+
 
 stop:
 	docker stop --time 0 $(CONTAINER_NAME)
