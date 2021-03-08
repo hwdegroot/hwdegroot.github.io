@@ -1,5 +1,5 @@
 ---
-title: "Who Still Uses Them CSV Files??!1."
+title: "Who Still Uses Them CSV Files??!1"
 date: 2020-12-16T10:31:34Z
 type: post
 tags:
