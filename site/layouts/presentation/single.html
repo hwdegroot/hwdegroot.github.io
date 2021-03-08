@@ -13,10 +13,6 @@
         <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
         {{ $presentationStyle := resources.Get "css/presentation.scss" | resources.ExecuteAsTemplate "css/presentation.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
         <link rel="stylesheet" href="{{ $presentationStyle.RelPermalink }}" />
-        {{ partial "head/meta.html" }}
-        {{ partial "head/cookie-policy.html" . }}
-
-        {{ template "_internal/google_analytics.html" . }}
         {{ template "_internal/twitter_cards.html" . }}
         {{ template "_internal/opengraph.html" . }}
         {{ partial "head/link.html" }}
@@ -40,7 +36,6 @@
             </div>
 </div>
         </main>
-        {{ partial "cookie-script.html" . }}
         <script crossorigin src="https://unpkg.com/reveal.js@3.8.0/js/reveal.js"></script>
         <script>
             // Full list of configuration options available here:

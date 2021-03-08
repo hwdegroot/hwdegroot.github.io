@@ -15,7 +15,6 @@ theme: m10c
 enableEmoji: true
 
 enableGitInfo: true
-googleAnalytics: UA-3891774-2
 disqusShortname: www-forsure-dev
 
 markup:
