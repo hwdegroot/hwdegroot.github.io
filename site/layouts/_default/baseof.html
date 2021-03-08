@@ -9,10 +9,6 @@
         <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
         {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
         <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-        {{ partial "head/meta.html" }}
-        {{ partial "head/cookie-policy.html" . }}
-
-        {{ template "_internal/google_analytics.html" . }}
         {{ template "_internal/twitter_cards.html" . }}
         {{ template "_internal/opengraph.html" . }}
         {{ partial "head/link.html" }}
@@ -60,6 +56,6 @@
             <script src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" id="dsq-count-scr" async></script>
             {{end }}
         {{ end }}
-        {{ partial "cookie-script.html" . }}
+        <!-- NO GA -->
     </body>
 </html>
