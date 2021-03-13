@@ -11,6 +11,7 @@ date: 2019-07-18T21:50:57Z
 images:
     - images/og/gitlab+letsencrypt.png
 showComments: true
+
 ---
 
 Not so long ago I had to make a static website, and was figuring out how to do this. I came across [hugo](https://gohugo.io). And I

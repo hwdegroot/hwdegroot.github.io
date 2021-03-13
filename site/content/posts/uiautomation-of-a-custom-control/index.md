@@ -12,6 +12,7 @@ tags:
 images:
     - images/og/cover.png
 showComments: true
+
 ---
 
 Recently I found a blog post I never really published (on an ancient blogger account).

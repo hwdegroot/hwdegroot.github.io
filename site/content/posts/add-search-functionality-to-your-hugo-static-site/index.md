@@ -13,6 +13,7 @@ disqus_identifier: "b41840651158f972d21cb59b5cce4952"
 disqus_title: "Add Search Functionality to Your Hugo Static Site"
 type: post
 showComments: true
+
 ---
 
 When I was working on a static site, generated with hugo, the amount of pages started to get really
