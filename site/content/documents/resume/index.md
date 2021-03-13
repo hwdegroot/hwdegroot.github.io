@@ -1,10 +1,13 @@
 ---
 title: Resume
 date: 2020-03-04T10::50:00Z
+_build:
+    list: never
 images:
     - images/og/nerd+resume.png
 type: document
 showComments: false
+
 ---
 
 ### What am I?

@@ -12,6 +12,7 @@ images:
 disqus_identifier: "f355ef2ad8ff0047813f58db28ac801d"
 disqus_title: "640 Kilobytes of RAM??! and Why I Bought an IBM 5160"
 showComments: true
+
 ---
 
 > 640 Kilobytes!!!!1!!1 I shit you not. That is like 10 times the size of Donald Trump's brain.
