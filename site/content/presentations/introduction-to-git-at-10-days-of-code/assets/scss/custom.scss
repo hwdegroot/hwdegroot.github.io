@@ -1,0 +1,170 @@
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is darkblue.
+ *
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+@import url('https://fonts.googleapis.com/css?family=PT+Mono|PT+Sans');
+
+//*********************************************
+// GLOBAL STYLES
+//*********************************************/
+body::before {
+  background-image: url('bgimg/unicorn.png');
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  content: '';
+  height: 100%;
+  left: 0;
+  opacity: .7;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+img:not([title=""]) {
+  &::after {
+    content: attr(title);
+  }
+}
+
+.wrapper {
+  text-align: center;
+
+  > img {
+    margin-bottom: 0;
+
+    + .caption {
+      background-color: #ffffff;
+      bottom: 1em;
+      color: #808080;
+      font-size: .5em;
+      opacity: .5;
+      position: relative;
+      text-transform: lowercase;
+      width: 100%;
+    }
+}
+}
+
+.reveal {
+  font-family: "PT Sans", sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "PT Sans", sans-serif;
+  }
+
+  section {
+    height: 90%;
+  }
+
+  .footer {
+    bottom: 5px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 99999;
+  }
+
+  .ref div {
+    display: inline;
+    font-family: "PT Mono", monospace;
+    font-size: .5em;
+    margin: auto;
+  }
+
+  .fa {
+    margin-right: 3px;
+  }
+
+  .slide-number {
+    background-color: transparent;
+    color: #00008B;
+    font-family: "PT Sans", sans-serif;
+
+    .slide-number-a {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+  }
+
+  ul {
+    max-width: 60%;
+
+    &.plain {
+      position: relative;
+      width: 60%;
+      left: 10%;
+
+      li {
+        list-style-type: none;
+      }
+    }
+
+    &.who-am-i {
+      left: 0;
+      width: initial;
+    }
+
+    li {
+      //white-space: nowrap;
+
+      &.fragment {
+        p {
+          white-space: normal;
+        }
+        .description {
+          display: none;
+        }
+
+        &.current-fragment .description {
+          color: #c5c5c5;
+          display: block;
+          //width: 70%;
+        }
+      }
+    }
+  }
+}
+
+.col-2 {
+  float: left;
+  margin-left: 0 !important;
+  padding-left: 0;
+  width: 25%;
+  //margin-left: 20% !important;
+}
+
+.indent-4 {
+  padding-left: 25% !important;
+}
+
+.rindent-4 {
+  padding-right: 25% !important;
+}
+
+//.left {
+//  float: left;
+//  margin-left: 20% !important;
+//}
+
+code {
+  font-family: 'PT Mono', monospace !important;
+
+  .keyword {
+    color: #ffa500;
+  }
+
+  &.git {
+    font-size: 1.3em;
+  }
+}
+

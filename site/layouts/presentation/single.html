@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="https://unpkg.com/reveal.js-menu@1.2.0/css/theme/black.css" id="theme">
         <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
         {{ $presentationStyle := resources.Get "css/presentation.scss" | resources.ExecuteAsTemplate "css/presentation.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+        <link rel="icon" href="/presentations/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="{{ $presentationStyle.RelPermalink }}" />
 
         {{ if isset .Page.Params "customCss" }}
@@ -25,6 +26,11 @@
         {{ template "_internal/opengraph.html" . }}
         {{ partial "head/link.html" }}
         {{ partial "scripts.html" }}
+
+        {{ if isset .Page.Params "customCss" }}
+        {{ $custom := resources.FromString (path.Join .Page.RelPermalink "custom.css") (readFile (path.Join .Page.RelPermalink .Page.Params.customCss)) | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+            <link rel="stylesheet" href="{{ $custom.RelPermalink }}" />
+        {{ end }}
 
     </head>
     <body>
