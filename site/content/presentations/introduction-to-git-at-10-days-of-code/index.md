@@ -2,6 +2,7 @@
 title: "Introduction to Git - 10 Days of Code"
 date: 2017-07-23T12:28:30Z
 type: presentation
+draft: true
 tags:
     - presentation
     - lang-en
