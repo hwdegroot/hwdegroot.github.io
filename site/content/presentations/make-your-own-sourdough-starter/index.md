@@ -15,6 +15,8 @@ disqus_title: "Make Your Own Sourdough Starter"
 {{% slide %}}
 ## Bake your own sourdough from scratch
 
+![like a boss](images/flat,750x,075,f-pad,750x1000,f8f8f8.jpg)
+
 Haha, fooled you. At some point (or never) I will port this presentation
 I once gave at [easee](https://www.easee.online) to html. For now, enjoy the
 [pdf export from google slides](images/bake-your-own-sourdough-bread-from-scratch.pdf)

@@ -109,7 +109,7 @@ different domains (government, music industries). Implementing C#.NET webapplica
 
 **QA Manager** - *January 2013 - December 2014*
 
-Implementation of guideline MDD/93/42/EEG (software as a medical device) processes and certification.
+Implementation of guideline MDD/93/42/EEC (software as a medical device) processes and certification.
 At the time at ExpertDoc the Medical device software sector was transitioning to more and more stand alone software.
 The MDD became also applicable to Standalone software. Together with a consultant I created the QMS according to ISO 13485
 (self certified).
