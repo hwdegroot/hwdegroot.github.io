@@ -15,10 +15,9 @@ showComments: false
 I am a *Software Engineer*. Just like that. I like to participate in sports in the weekends.
 I have 2 kids, with whom I like to investigate the forest when we have time.
 I like games, and am always in for a match of *foosball*.
+I tend to be allergic to BS, and like to give people autonomy in their work.
 
-I tend to be allergic to bullshit, and like to give people autonomy in their work.
-
-Also I love to cook and bake. I am not a chef, but it gives me zen. But when I grow up I want to be baker in my own bakery.
+Also I love to cook and bake. I am not a chef, but it gives me zen. But when I grow up I want to be baker in my own bakery. My corona-hobby is baking sourdough bread. I started with my own starter and want to bake at least one bread a week (so far I am holding up).
 
 
 ### Personalia
@@ -57,11 +56,25 @@ I try to stay up with new technologies by reading about them and visiting confer
 
 **Scrum master** - *February 2020 - now*
 
-Just doing the good ol' SM things...
+As a Scrum master my main focus is supporting the development team.
+Enabling the daily stand-ups and facilitating retrospectives are two of the main tasks.
+I introduced working according to SCRUM and introduced the Sprints. Together with the
+Product owner we started the weekly company demo's where the RnD team demos the work
+that was accomplished during the week.
+
 
 **Senior Software Engineer**  - *October 2017 - now*
 
-Developing and designing easee online eye exam. A php/laravel application. Setting up development environment and release management and scripts.
+At easee we create an online eye exam. Because our device has a measuring function we are classified
+as a MDD 93/42/EEC medical device class I with measuring function (also known as class Im). Together with
+the RnD we implemented ISO 13485 Quality Management System and got certified by TUV Rheinland.
+Working in a regulated environment requires a different approach which can be challenging in its own way,
+changes are stricter and more controlled than in other fields of the profession, but this will challenge a
+different mindset.
+My role, more specifically, has focus on the development and operations of the application.
+
+The application itself is a php/laravel and VueJS/python application. The architecture is hosted on AWS.
+
 
 * {{< urlicon >}} https://easee.online
 * {{< linkedinicon >}} https://www.linkedin.com/company/easeeonline/
@@ -86,7 +99,8 @@ Automating quality processes and setting up UI test framework.
 
 **C# Developer** - *January 2014 - October 2014*
 
-Lead several projects as a consultant. Successfully delivered (html) applications for customers in different domains (government, music industries). Implementing C# webapplications (C#.NET, Code First).
+Lead several projects as a consultant. Successfully delivered (html) applications for customers in
+different domains (government, music industries). Implementing C#.NET webapplications (C#.NET, Code First).
 
 * {{< linkedinicon >}} https://www.linkedin.com/company/netinvent-bv/
 
@@ -96,7 +110,10 @@ Lead several projects as a consultant. Successfully delivered (html) application
 **QA Manager** - *January 2013 - December 2014*
 
 Implementation of guideline MDD/93/42/EEG (software as a medical device) processes and certification.
-Introduced a Quality Management System as required by the guidelines for software as a medical device.
+At the time at ExpertDoc the Medical device software sector was transitioning to more and more stand alone software.
+The MDD became also applicable to Standalone software. Together with a consultant I created the QMS according to ISO 13485
+(self certified).
+Introduced and implemented workflows for the QMS in Microsoft Sharepoint.
 
 * {{< urlicon >}} https://www.expertdoc.nl/
 * {{< linkedinicon >}} https://www.linkedin.com/company/expertdoc/
@@ -153,13 +170,33 @@ Introduced a Quality Management System as required by the guidelines for softwar
 ### Skills
 ------
 
+#### **Regulation**
+
+Familiar with working in regulated environments (Medical device software) according to and with the
+following standards:
+
+* ISO 13485 - Medical Devices — Quality Management Systems
+* ISO 14971 - Medical devices — Application of risk management to medical devices
+* IEC 62366-1 - Medical Devices — Usability Engineering
+* IEC 62304 - Medical Device Software — Software life cycle processes
+
+
 #### **Programming**
 
 I prefer using the language that will get the job done, over using it for the sake of using the language.
+I like to peek around in new languages. My most recent interest is functional programming (Haskell).
+During my studies at University I got in touch with C++. I still think it is one of the coolest programming languages around. But I am not afraid to write some pretty shell script to get a job done either.
+
+> Why do something that takes 90 minutes if you can spent weeks on automating it.
+
+A really nice quote, that might be applicable to me every now and then from a really cool blog post: http://tom7.org/lowercase/. Really worthwhile watching. It will cheer you up, trust me.
 
 #### **Operations**
 
-Very skilled with configuration management tools such as Ansible, Puppet and Chef Setting up (local) environments using containerization with `docker`
+Very skilled with configuration management tools such as Ansible, Puppet and Chef Setting up (local)
+environments using containerization with `docker`.
+
+Skilled with AWS environments.
 
 #### **CI/CD**
 
@@ -167,7 +204,8 @@ _(continuous integration/continuous delivery)_ Scripting and maintaining release
 
 #### **Release management**
 
-Very familiar with the processes to manage releases, using containerized pipelines, and automated deployments.
+Very familiar with the processes to manage releases, using containerized pipelines, and orchestrating automated deployments.
+Also, or especially, in regulated environments.
 
 
 ### Education
@@ -184,21 +222,4 @@ Very familiar with the processes to manage releases, using containerized pipelin
 #### **Veterinary Science**
 * *Propedeuse*
 * Graduated in 2002
-
-### Tools
-------
-
-* [ansible](https://www.ansible.com/)/[puppet](https://puppet.com/) (expert)
-* [cloud foundry](https://www.cloudfoundry.org/) and spin-offs (advanced)
-* [docker](https://www.docker.com/) (expert)
-* [git](https://git-scm.com/) (expert)
-* [jenkins](https://jenkins.io) (expert)
-* [kubernetes](https://kubernetes.io/) (advanced)
-* [lambda](https://aws.amazon.com/lambda/)/[openwhisk](https://www.ibm.com/cloud-computing/bluemix/openwhisk) (beginner)
-* [laravel](http://laravel.com) (advanced)
-* [php](http://php.net) (advanced)
-* [python](https://www.python.org/) (expert)
-* [vue](https://vuejs.org) (expert)
-* [haskell](https://www.haskell.org/) (beginner)
-* [gitlab-ci](https://docs.gitlab.com/ee/ci/) (expert)
 
