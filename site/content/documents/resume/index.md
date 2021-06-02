@@ -10,9 +10,10 @@ showComments: false
 
 ---
 
-### What am I?
+### Who am I?
 
-I am a *Software Engineer*. Just like that. I like to participate in sports in the weekends.
+I am a *Software Engineer*. Just like that. I like to participate in sports in the weekends
+(drink beer on the terrace with friends after exercising).
 I have 2 kids, with whom I like to investigate the forest when we have time.
 I like games, and am always in for a match of *foosball*.
 I tend to be allergic to BS, and like to give people autonomy in their work.
@@ -36,17 +37,24 @@ Also I love to cook and bake. I am not a chef, but it gives me zen. But when I g
 ### Profile
 ------
 
-Passionate developer with a focus on operations, who loves new technologies.
+I am a passionate developer with a focus on operations, who loves (new, current and old) technology.
 But most of all I like tools to get the job done.
-In my career I started as a tester. I always had an keen interest for programming
+In my career I started as a tester. I always had a keen interest for programming
 and automating processes.
-I do not like to repeat myself, which drills down to scripting processes when I do it the second time.
+I do not like to repeat myself, which drills down to: scripting processes when I do it the second time.
+As a result I transistioned from tester with affinity for automating to developer (with affinity for
+continuous integration).
 
-Extensive background in full life-cycle of software development process, including design, development, quality cycle, release and maintenance. My motto is _You build it, you own it!_. I see myself as a code critic, on self-written code, but also code written by others.
+Extensive background in full life-cycle of software development process (also in a regulated environment according to
+IEC 62304), including design, development, quality cycle, release and maintenance. My motto is _You build it, you own it!_.
+I see myself as a code critic, on self-written code, but also code written by others.
 
-Autodidact and _can-do_ mentality. This makes me a driver in teams. In the role as scrum master I believe in the team coming up with the best solution for the problem, instead of executing a plan thought of by someone else. Telling teams what to do, or strict hierarchical organizational structures will not get the best out of people.
+Autodidact and _can-do_ mentality. This makes me a driver in teams. In the role as scrum master I try to facilitate the team coming
+up with the best solution for the problem, instead of executing a plan thought of by someone else. Telling teams what to do,
+or strict hierarchical organizational structures will not get the best out of people.
 
-I try to stay up with new technologies by reading about them and visiting conferences. Besides that I like contributing to open source projects, and developing in my spare time.
+I try to stay up with new technologies by reading about them and visiting conferences. Besides that I like contributing to
+open source projects, and developing in my spare time.
 
 
 ### Experience
