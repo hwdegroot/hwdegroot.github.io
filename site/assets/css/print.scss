@@ -1,0 +1,67 @@
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@mixin print {
+    display: flex;
+    color: black;
+    background-color: white;
+    width: 210mm;
+    height: 297mm;
+    margin: auto;
+
+
+    a {
+        color: blue;
+        text-decoration: underline;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-size: 2rem;
+        text-transform: lowercase;
+        font-variant: small-caps;
+        color: #313131 !important;
+        & + hr {
+            display: none;
+        }
+
+        margin-top: initial !important;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+
+    .toc-wrapper,
+    .show-search,
+    aside[role=search],
+    header {
+        display: none;
+
+    }
+
+    svg.url-icon {
+        path {
+            stroke: black;
+        }
+    }
+
+    svg.social {
+        path {
+            fill: black;
+        }
+    }
+}
+
+body.print {
+    @include print;
+}
+
+@media print {
+    @include print;
+}
