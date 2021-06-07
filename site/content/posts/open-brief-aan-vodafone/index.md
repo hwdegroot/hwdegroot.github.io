@@ -7,6 +7,7 @@ tags:
     - telecom
     - lang-nl
 date: 2019-07-16T09:25:45Z
+draft: true
 images:
     - images/og/kastje-naar-de-muur.jpeg
 showComments: false
