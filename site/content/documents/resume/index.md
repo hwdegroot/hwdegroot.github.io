@@ -16,9 +16,11 @@ I am a *Software Engineer*. Just like that. I like to participate in sports in t
 (drink beer on the terrace with friends after exercising).
 I have 2 kids, with whom I like to investigate the forest when we have time.
 I like games, and am always in for a match of *foosball*.
-I tend to be allergic to BS, and like to give people autonomy in their work.
+I like direct communication with respect for one another. I prefer autonomy over micromanagement.
 
-Also I love to cook and bake. I am not a chef, but it gives me zen. But when I grow up I want to be baker in my own bakery. My corona-hobby is baking sourdough bread. I started with my own starter and want to bake at least one bread a week (so far I am holding up).
+When I have time left in a busy family life, I love to cook and bake. I am not a chef, but it gives me zen.
+Maybe in an afterlife I will open my own bakery. My Covid-hobby is baking sourdough bread.
+I started with my own starter and want to bake at least one bread a week (so far I am holding up).
 
 
 ### Personalia
@@ -41,17 +43,19 @@ I am a passionate developer with a focus on operations, who loves (new, current 
 But most of all I like tools to get the job done.
 In my career I started as a tester. I always had a keen interest for programming
 and automating processes.
-I do not like to repeat myself, which drills down to: scripting processes when I do it the second time.
-As a result I transistioned from tester with affinity for automating to developer (with affinity for
+I do not like to repeat myself, which drills down to: scripting processes when I do it for the second time.
+As a result I shifted from tester with affinity for automating to developer (with affinity for
 continuous integration).
 
-Extensive background in full life-cycle of software development process (also in a regulated environment according to
-IEC 62304), including design, development, quality cycle, release and maintenance. My motto is _You build it, you own it!_.
+Throughout the years I have gained an extensive background in the full life-cycle of software development process
+(also in a regulated environment according to IEC 62304), including design, development, quality cycle, release and maintenance.
+I believe that I am (or at least should be) responsible for what I made (replace I with team), and _You build it, you own it!_.
 I see myself as a code critic, on self-written code, but also code written by others.
 
-Autodidact and _can-do_ mentality. This makes me a driver in teams. In the role as scrum master I try to facilitate the team coming
-up with the best solution for the problem, instead of executing a plan thought of by someone else. Telling teams what to do,
-or strict hierarchical organizational structures will not get the best out of people.
+I like to keep developing myself, and am an autodidact with a _can-do_ mentality. This makes me a driver in teams.
+In the role as scrum master I try to facilitate the team coming up with the best solution for the problem, instead of
+executing a plan thought of by someone else telling teams what to do (autonomy over micromanagement). For me strict
+hierarchical organizational structures will not get the best out of me.
 
 I try to stay up with new technologies by reading about them and visiting conferences. Besides that I like contributing to
 open source projects, and developing in my spare time.
@@ -64,18 +68,18 @@ open source projects, and developing in my spare time.
 
 **Scrum master** - *February 2020 - now*
 
-As a Scrum master my main focus is supporting the development team.
-Enabling the daily stand-ups and facilitating retrospectives are two of the main tasks.
-I introduced working according to SCRUM and introduced the Sprints. Together with the
-Product owner we started the weekly company demo's where the RnD team demos the work
+As a Scrum master my main focus is supporting the development team,
+enabling the daily stand-ups and facilitating retrospectives are two of the main tasks.
+I introduced working according to SCRUM and working in sprints. Together with the
+Product Owner we started the weekly company demo's where the RnD team demos the work
 that was accomplished during the week.
 
 
 **Senior Software Engineer**  - *October 2017 - now*
 
-At easee we create an online eye exam. Because our device has a measuring function we are classified
+At easee we create an online eye exam. Because the device has a measuring function we are classified
 as a MDD 93/42/EEC medical device class I with measuring function (also known as class Im). Together with
-the RnD we implemented ISO 13485 Quality Management System and got certified by TUV Rheinland.
+the RnD team, ISO 13485 Quality Management Systems was implemented and certified by TÜV Rheinland.
 Working in a regulated environment requires a different approach which can be challenging in its own way,
 changes are stricter and more controlled than in other fields of the profession, but this will challenge a
 different mindset.
@@ -83,6 +87,12 @@ My role, more specifically, has focus on the development and operations of the a
 
 The application itself is a php/laravel and VueJS/python application. The architecture is hosted on AWS.
 
+_Key achievements and responsibilities_
+
+* Application production ready and scalable
+* Process automation (CI, test framework, release)
+* Process guards (Code reviews, tests, sprints)
+* Introduced SCRUM
 
 * {{< urlicon >}} https://easee.online
 * {{< linkedinicon >}} https://www.linkedin.com/company/easeeonline/
@@ -90,17 +100,28 @@ The application itself is a php/laravel and VueJS/python application. The archit
 
 #### Mendix
 
+At mendix I started working as a testengineer. In this role I made the desktop application
+more testable by exposing form elements, so they can be detected by `Windows.Automation` framework.
+
+At the time the application build at mendix consisted of many repositories, that were all bundled
+and tested with CI. I started optimizing this process and became owner of these processes and architecture.
+First alone, later the team grew.
+
+* {{< urlicon >}} https://mendix.com
+
 **Developer (Ops)**  - *January 2017 - September 2017*
 
-Setting up and scripting deployment pipelines and automating release process and pipelines.
-Supporting teams with their CI/CD process and the implementation of build pipelines and git hooks.
+_Key achievements and responsibilities_
+
+ * Setting up and scripting deployment pipelines and automating release process and pipelines.
+ * Supporting teams with their CI/CD process and the implementation of build pipelines and git hooks.
 
 **Test Engineer** - *November 2014 - December 2016*
 
-Setting up and scripting deployment pipelines and automating release process.
-Automating quality processes and setting up UI test framework.
+_Key achievements and responsibilities_
 
-* {{< urlicon >}} https://mendix.com
+* Setting up and scripting deployment pipelines and automating release process.
+* Automating quality processes and setting up UI test framework.
 
 
 #### NetInvent
@@ -117,11 +138,17 @@ different domains (government, music industries). Implementing C#.NET webapplica
 
 **QA Manager** - *January 2013 - December 2014*
 
-Implementation of guideline MDD/93/42/EEC (software as a medical device) processes and certification.
-At the time at ExpertDoc the Medical device software sector was transitioning to more and more stand alone software.
-The MDD became also applicable to Standalone software. Together with a consultant I created the QMS according to ISO 13485
-(self certified).
-Introduced and implemented workflows for the QMS in Microsoft Sharepoint.
+ExpertDoc makes a decision support system for first line medical professionals (GP). At the time companies
+that create standalone Medical Device Software, have to adhere to the MDD as well.
+
+In the beginning my work was building, implementing and maintaining the decision steps for the supported domains.
+Later, when the QMS was to implemented in scope of MDD/93/42/EEC my role was more QA/RA officer.
+
+_Key achievements and responsibilities_
+
+* Implementation of guideline MDD/93/42/EEC (software as a medical device) processes and certification.
+* Introduced and implemented workflows for the QMS in Microsoft Sharepoint.
+* Implementing domain decision trees
 
 * {{< urlicon >}} https://www.expertdoc.nl/
 * {{< linkedinicon >}} https://www.linkedin.com/company/expertdoc/
@@ -197,7 +224,11 @@ During my studies at University I got in touch with C++. I still think it is one
 
 > Why do something that takes 90 minutes if you can spent weeks on automating it.
 
-A really nice quote, that might be applicable to me every now and then from a really cool blog post: http://tom7.org/lowercase/. Really worthwhile watching. It will cheer you up, trust me.
+This is really nice quote (with a good pun of course), that might be applicable to me every now and then from a
+really cool blog post: http://tom7.org/lowercase/. Really worthwhile watching. It will cheer you up, trust me.
+There is, however, some truth in this as well, because any developer will have a few of these totally overengineered
+projects. On the other hand, these are great learning experiences as well. Just need to know when and when not to do
+it.
 
 #### **Operations**
 
@@ -212,9 +243,15 @@ _(continuous integration/continuous delivery)_ Scripting and maintaining release
 
 #### **Release management**
 
-Very familiar with the processes to manage releases, using containerized pipelines, and orchestrating automated deployments.
+I am very familiar with the processes to manage releases, using containerized pipelines, and orchestrating automated deployments.
 Also, or especially, in regulated environments.
 
+
+#### **Risk Management**
+
+I am very familiar with risk assessment and risk management, especially according to ISO 14971. For most of the roles
+I had I was involved in the risk management processes. Especially in my current role, where I am also part of the risk
+management team, whose responsibility it is to guard the risk manangement processes.
 
 ### Education
 ------
