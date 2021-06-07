@@ -12,7 +12,7 @@ showComments: false
 
 ### Who am I?
 
-I am a *Software Engineer*. Just like that. I like to participate in sports in the weekends
+I am a *Software Engineer*, like to participate in sports in the weekends
 (drink beer on the terrace with friends after exercising).
 I have 2 kids, with whom I like to investigate the forest when we have time.
 I like games, and am always in for a match of *foosball*.

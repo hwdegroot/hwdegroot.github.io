@@ -19,6 +19,22 @@ const throttle = (fn, delay) => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    let location = window.location.search;
+    if (location && location.length > 1) {
+        let search = location.substr('1')
+            .split("&")
+            .map(q => q.split("="))
+            .reduce((a, c) => {
+                a[c[0]] = c[1];
+                return a;},
+                {}
+            );
+
+        if (search.hasOwnProperty("print")) {
+            setTimeout(() => { document.body.classList.add("print") }, 0);
+            return;
+        }
+    }
     const activeClass = "current";
     const menuItems = Array.from(document.querySelectorAll('#TableOfContents a[href^="#"]'));
     const contentItems = menuItems.map(item => {
@@ -36,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     const activate = target => {
+        if (document.body.classList.contains("print")) {
+            return;
+        }
         menuItems.filter(item => {
             return item.classList.contains(activeClass);
         })
@@ -44,7 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
         target.classList.add(activeClass);
-        history.pushState(null, null, target.hash);
+        let title = `${document.title} | ${target.hash.substring(1)}`;
+        history.pushState(null, title, target.hash);
     }
 
     const highlightItem = () => {

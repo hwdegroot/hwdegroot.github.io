@@ -1,4 +1,2 @@
 <script src="https://unpkg.com/lunr/lunr.js"></script>
-{{ $print := resources.Get "js/print.js" | resources.Minify | resources.Fingerprint -}}
-<script type="text/javascript" src="{{ $print.RelPermalink }}" async></script>
 
