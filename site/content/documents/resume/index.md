@@ -227,7 +227,7 @@ I prefer using the language that will get the job done, over using it for the sa
 I like to peek around in new languages. My most recent interest is functional programming (Haskell).
 During my studies at University I got in touch with C++. I still think it is one of the coolest programming languages around. But I am not afraid to write some pretty shell script to get a job done either.
 
-> Why do something that takes 90 minutes if you can spent weeks on automating it.
+> Why do easy things by hand in 90 minutes, when you could spend weeks coming up with a super complicated automatic solution that doesn't work that well?
 
 This is really nice quote (with a good pun of course), that might be applicable to me every now and then from a
 really cool blog post: http://tom7.org/lowercase/. Really worthwhile watching. It will cheer you up, trust me.
