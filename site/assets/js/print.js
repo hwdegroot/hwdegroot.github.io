@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     let location = window.location.search;
+    console.log(location);
     if (location && location.length > 1) {
         let search = location.substr('1')
             .split("&")
@@ -10,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 {}
             );
 
-        console.log(search);
         if (search.hasOwnProperty("print")) {
             document.body.classList.add("print");
         }

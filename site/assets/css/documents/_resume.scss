@@ -1,16 +1,25 @@
+
 .document-content {
     hr {
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    .personalia-container {
+        img {
+            display: none;
+        }
+    }
+
     #personalia {
-        & ~ ul {
+        ~ .personalia-container ul,
+        ~ ul {
             list-style-type: none;
             padding: 0;
 
             li {
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
 
                 i.material-icons,
                 svg {

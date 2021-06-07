@@ -26,6 +26,8 @@ I started with my own starter and want to bake at least one bread a week (so far
 ### Personalia
 ------
 
+<span class="personalia-container">
+
 * {{< materialicon "language" >}} **Dutch** (native), **English** (good)
 * {{< materialicon "calendar_today" >}} May 1st, 1983
 * {{< materialicon "place" >}} Utrecht Area, The Netherlands
@@ -35,6 +37,9 @@ I started with my own starter and want to bake at least one bread a week (so far
 * {{< urlicon >}} [forsure.dev](https://www.forsure.dev)
 * {{< materialicon "face" >}} Male
 
+![Rik de Groot](images/rik+de+groot.jpeg)
+
+</span>
 
 ### Profile
 ------
@@ -66,6 +71,9 @@ open source projects, and developing in my spare time.
 
 #### easee
 
+* {{< urlicon >}} https://easee.online
+* {{< linkedinicon >}} https://www.linkedin.com/company/easeeonline/
+
 **Scrum master** - *February 2020 - now*
 
 As a Scrum master my main focus is supporting the development team,
@@ -93,9 +101,6 @@ _Key achievements and responsibilities_
 * Process automation (CI, test framework, release)
 * Process guards (Code reviews, tests, sprints)
 * Introduced SCRUM
-
-* {{< urlicon >}} https://easee.online
-* {{< linkedinicon >}} https://www.linkedin.com/company/easeeonline/
 
 
 #### Mendix
@@ -126,15 +131,18 @@ _Key achievements and responsibilities_
 
 #### NetInvent
 
+* {{< linkedinicon >}} https://www.linkedin.com/company/netinvent-bv/
+
 **C# Developer** - *January 2014 - October 2014*
 
 Lead several projects as a consultant. Successfully delivered (html) applications for customers in
 different domains (government, music industries). Implementing C#.NET webapplications (C#.NET, Code First).
 
-* {{< linkedinicon >}} https://www.linkedin.com/company/netinvent-bv/
-
 
 #### ExpertDoc
+
+* {{< urlicon >}} https://www.expertdoc.nl/
+* {{< linkedinicon >}} https://www.linkedin.com/company/expertdoc/
 
 **QA Manager** - *January 2013 - December 2014*
 
@@ -149,9 +157,6 @@ _Key achievements and responsibilities_
 * Implementation of guideline MDD/93/42/EEC (software as a medical device) processes and certification.
 * Introduced and implemented workflows for the QMS in Microsoft Sharepoint.
 * Implementing domain decision trees
-
-* {{< urlicon >}} https://www.expertdoc.nl/
-* {{< linkedinicon >}} https://www.linkedin.com/company/expertdoc/
 
 
 ### Certificates

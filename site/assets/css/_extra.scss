@@ -73,9 +73,6 @@ figure {
         }
     }
 
-    .audio {
-    }
-
     figcaption {
         font-size: 1rem;
     }
@@ -157,6 +154,17 @@ body {
 
 .app-container {
     margin: initial;
+
+    @media all and (max-width: 559px) {
+        padding: 0.5rem;
+
+        a {
+            max-width: calc(100vw - 24px - 1.5rem);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
 }
 
 .app-header {

@@ -42,7 +42,6 @@
     aside[role=search],
     header {
         display: none;
-
     }
 
     svg.url-icon {
@@ -54,6 +53,18 @@
     svg.social {
         path {
             fill: black;
+        }
+    }
+
+    .document .document-content .personalia-container {
+        display: flex;
+
+        img {
+            display: block;
+            border-radius: 50%;
+            width: 10rem;
+            border: 5px solid #313131;
+            margin-left: 10px;
         }
     }
 }
