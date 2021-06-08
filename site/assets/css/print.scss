@@ -31,21 +31,68 @@
     h2,
     h3,
     h4 {
-        font-size: 2rem;
-        text-transform: lowercase;
-        font-variant: small-caps;
-        color: #313131 !important;
-        & + hr {
-            display: none;
+        font-size: 14pt;
+        text-transform: uppercase;
+        font-family: monospace;
+        color: lighten(black, 40%) !important;
+        margin-top: 10pt !important;
+        letter-spacing: 3pt;
+        font-weight: 900;
+        margin-bottom: 2pt;
+
+        & ~ span,
+        & ~ ul,
+        & ~ span > ul,
+        & ~ p {
+            margin-top: 0;
         }
 
-        margin-top: initial !important;
+        + hr {
+            border-color: lighten(black, 40%) !important;
+            border-top: 0 !important;
+            margin-top: 0;
+        }
     }
 
     h4 {
-        font-size: 1.5rem;
+        font-size: 13pt;
     }
 
+    svg {
+        &.icon {
+            height: 12pt;
+            width: 12pt;
+            align-self: initial !important;
+        }
+
+        &.url-icon {
+            path {
+                stroke: lighten(black, 40%);
+            }
+        }
+
+        &.social {
+            path {
+                fill: lighten(black, 40%);
+            }
+        }
+    }
+
+    .personalia-container svg.icon {
+        width: 22px;
+        height: 22px;
+        align-self: flex-start !important;
+
+        &.url-icon path {
+            stroke: black;
+        }
+
+        &.social path {
+            fill: black;
+        }
+
+
+    }
 
     .toc-wrapper,
     .show-search,
@@ -54,29 +101,19 @@
         display: none;
     }
 
-    svg.url-icon {
-        path {
-            stroke: black;
-        }
-    }
-
-    svg.social {
-        path {
-            fill: black;
-        }
-    }
 
     .document .document-content .personalia-container {
         display: flex;
         justify-content: space-between;
 
-        @media screen and (min-width: 768px) {
-            img {
+        img {
+            border-radius: 50%;
+            width: 10rem;
+            border: 3px solid lighten(black, 40%);
+            margin-left: 10px;
+
+            @media all and (min-width: 768px) {
                 display: block;
-                border-radius: 50%;
-                width: 10rem;
-                border: 5px solid #313131;
-                margin-left: 10px;
             }
         }
     }
@@ -88,4 +125,13 @@ body.print {
 
 @media print {
     @include print;
+
+    .document .document-content .personalia-container img {
+        display: block !important;
+        filter: grayscale(100%);
+    }
+
+    * {
+        font-size: 12pt;
+    }
 }
