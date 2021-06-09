@@ -157,18 +157,25 @@ body {
 
     @media screen and (max-width: 559px) {
         padding: 0.5rem;
-    }
 
-    .document-container a {
-        max-width: calc(100vw - 24px - 1.5rem);
+        .post-content p,
+        .document-content p {
+            text-align: justify;
+        }
+
+    }
+    .document-content a {
+        max-width: calc(100% - 24px - 1.5rem);
         overflow: hidden;
         text-overflow: ellipsis;
-        word-break: break-all;
     }
 
     @media screen and (max-width: 768px) {
         a {
             word-break: break-all;
+            white-space: initial;
+            overflow: initial;
+            text-overflow: initial;
         }
     }
 }
