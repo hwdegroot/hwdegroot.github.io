@@ -1,7 +1,5 @@
 @page {
     size: A4;
-    margin-left: 0;
-    margin-right: 0;
 }
 
 @mixin print {
@@ -125,6 +123,10 @@ body.print {
 
 @media print {
     @include print;
+
+    .app-container {
+        padding: 0;
+    }
 
     .document .document-content .personalia-container img {
         display: block !important;
