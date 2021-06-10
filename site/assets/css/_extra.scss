@@ -361,15 +361,21 @@ body {
     @import "document";
 }
 
-svg.url-icon {
-    path {
-        stroke: #d3d3d3;
+svg {
+    &.icon {
+        height: 20px;
+        width: 20px;
+        align-self: flex-start!important;
+    }
+    &.url-icon {
+        path {
+            stroke: #d3d3d3;
+        }
+    }
+
+    &.social {
+        path {
+            fill: #d3d3d3;
+        }
     }
 }
-
-svg.social {
-    path {
-        fill: #d3d3d3;
-    }
-}
-
