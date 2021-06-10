@@ -216,10 +216,10 @@ _Key achievements and responsibilities_
 Familiar with working in regulated environments (Medical device software) according to and with the
 following standards:
 
-* ISO 13485 - Medical Devices — Quality Management Systems
-* ISO 14971 - Medical devices — Application of risk management to medical devices
-* IEC 62366-1 - Medical Devices — Usability Engineering
-* IEC 62304 - Medical Device Software — Software life cycle processes
+* **ISO 13485** - Medical Devices — Quality Management Systems
+* **ISO 14971** - Medical devices — Application of risk management to medical devices
+* **IEC 62366-1** - Medical Devices — Usability Engineering
+* **IEC 62304** - Medical Device Software — Software life cycle processes
 
 
 #### **Programming**
