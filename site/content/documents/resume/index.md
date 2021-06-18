@@ -63,17 +63,11 @@ In the role as scrum master I try to facilitate the team coming up with the best
 executing a plan thought of by someone else telling teams what to do (autonomy over micromanagement). For me strict
 hierarchical organizational structures will not get the best out of me.
 
-I try to stay up with new technologies by reading about them and visiting conferences. Besides that I like contributing to
-open source projects, and developing in my spare time.
-
 
 ### Experience
 ------
 
 #### easee
-
-* {{< urlicon >}} https://easee.online
-* {{< linkedinicon >}} https://www.linkedin.com/company/easeeonline/
 
 **Scrum master** - *February 2020 - now*
 
@@ -113,13 +107,12 @@ At the time the application build at mendix consisted of many repositories, that
 and tested with CI. I started optimizing this process and became owner of these processes and architecture.
 First alone, later the team grew.
 
-* {{< urlicon >}} https://mendix.com
-
 **Developer (Ops)**  - *January 2017 - September 2017*
 
 _Key achievements and responsibilities_
 
  * Setting up and scripting deployment pipelines and automating release process and pipelines.
+ * Build realtime monitoring dashboard with build status in React/typescript on top of Jenkins API
  * Supporting teams with their CI/CD process and the implementation of build pipelines and git hooks.
 
 **Test Engineer** - *November 2014 - December 2016*
@@ -132,8 +125,6 @@ _Key achievements and responsibilities_
 
 #### NetInvent
 
-* {{< linkedinicon >}} https://www.linkedin.com/company/netinvent-bv/
-
 **C# Developer** - *January 2014 - October 2014*
 
 Lead several projects as a consultant. Successfully delivered (html) applications for customers in
@@ -141,9 +132,6 @@ different domains (government, music industries). Implementing C#.NET webapplica
 
 
 #### ExpertDoc
-
-* {{< urlicon >}} https://www.expertdoc.nl/
-* {{< linkedinicon >}} https://www.linkedin.com/company/expertdoc/
 
 **QA Manager** - *January 2013 - December 2014*
 
@@ -159,53 +147,6 @@ _Key achievements and responsibilities_
 * Introduced and implemented workflows for the QMS in Microsoft Sharepoint.
 * Implementing domain decision trees
 
-
-### Certificates
-------
-
-#### Boost your impact
-
-* Date obtained: June 12, 2020
-* Issuer: [FP&P](https://www.fpnp.nl/boost-your-impact-programma-voor-young-professionals/)
-
-#### IEC 62304 Introduction course Online
-
-* Date obtained: May 28, 2020
-* Issuer: [Lorit Consultancy](https://lorit-consultancy.com/en/home/)
-
-#### Mendix Apprentice
-
-* Date obtained: January 2015
-* Certificate id: 10663
-* Issuer: [Mendix](https://mendix.com)
-* Url: https://academy.mendix.com/index.html#1422606975083-2300
-
-#### PSM I
-
-* Date obtained: December 24, 2012
-* Certificate id: 167692
-* Issuer: [Scrum.org](https://www.scrum.org/)
-* Url: https://www.scrum.org/certificates/167692
-* Recipient email address (to view certificate): rik.degroot@expertdoc.nl
-
-#### PRINCE2 Foundation
-
-* Date obtained: October 2012
-* Certificate id: 02360521-01-VEYW
-* Issuer: [APMG International](https://apmg-international.com/)
-
-#### TMap Test Professional
-
-* Date obtained: September 2011
-* Certificate id: 429661.984979
-* Issuer: [Exin](https://www.exin.com/)
-
-#### Radiation Health Physics Level 3
-
-* Date obtained: April 2009
-* Certificate id: 10122007-D39-3
-* Issuer: [TU Delft](http://www.rid.tudelft.nl/en/cooperation/facilities/reactor-instituut-delft/radiation-protection-professional-education/health-physics-courses/)
-* Url: http://www.rid.tudelft.nl/en/cooperation/facilities/reactor-instituut-delft/radiation-protection-professional-education/health-physics-courses/
 
 
 ### Skills
@@ -258,6 +199,54 @@ Also, or especially, in regulated environments.
 I am very familiar with risk assessment and risk management, especially according to ISO 14971. For most of the roles
 I had I was involved in the risk management processes. Especially in my current role, where I am also part of the risk
 management team, whose responsibility it is to guard the risk manangement processes.
+
+### Certificates
+------
+
+#### Boost your impact
+
+* Date obtained: June 12, 2020
+* Issuer: [FP&P](https://www.fpnp.nl/boost-your-impact-programma-voor-young-professionals/)
+
+#### IEC 62304 Introduction course Online
+
+* Date obtained: May 28, 2020
+* Issuer: [Lorit Consultancy](https://lorit-consultancy.com/en/home/)
+
+#### Mendix Apprentice
+
+* Date obtained: January 2015
+* Certificate id: 10663
+* Issuer: [Mendix](https://mendix.com)
+* Url: https://academy.mendix.com/index.html#1422606975083-2300
+
+#### PSM I
+
+* Date obtained: December 24, 2012
+* Certificate id: 167692
+* Issuer: [Scrum.org](https://www.scrum.org/)
+* Url: https://www.scrum.org/certificates/167692
+* Recipient email address (to view certificate): rik.degroot@expertdoc.nl
+
+#### PRINCE2 Foundation
+
+* Date obtained: October 2012
+* Certificate id: 02360521-01-VEYW
+* Issuer: [APMG International](https://apmg-international.com/)
+
+#### TMap Test Professional
+
+* Date obtained: September 2011
+* Certificate id: 429661.984979
+* Issuer: [Exin](https://www.exin.com/)
+
+#### Radiation Health Physics Level 3
+
+* Date obtained: April 2009
+* Certificate id: 10122007-D39-3
+* Issuer: [TU Delft](http://www.rid.tudelft.nl/en/cooperation/facilities/reactor-instituut-delft/radiation-protection-professional-education/health-physics-courses/)
+* Url: http://www.rid.tudelft.nl/en/cooperation/facilities/reactor-instituut-delft/radiation-protection-professional-education/health-physics-courses/
+
 
 ### Education
 ------
