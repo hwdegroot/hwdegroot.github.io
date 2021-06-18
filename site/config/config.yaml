@@ -7,7 +7,7 @@ permalinks:
     posts: /-/:year/:month/:day/:title
     tags: /t/:slug
     policies: /policy/:title
-    documents: /doc/:title
+    documents: /d/:title
 languageCode: en-us
 paginate: 10
 themesDir: themes
