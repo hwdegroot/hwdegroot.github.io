@@ -9,4 +9,4 @@ type: policy
 showComments: false
 ---
 
-Don't be a total asshole.
+It's nice to be important, but it's more important to be nice!
