@@ -28,11 +28,12 @@
     h1,
     h2,
     h3,
-    h4 {
+    h4,
+    h5 {
         font-size: 14pt;
         text-transform: uppercase;
         font-family: monospace;
-        color: lighten(black, 40%) !important;
+        color: #722f37 !important;
         margin-top: 10pt !important;
         letter-spacing: 3pt;
         font-weight: 900;
@@ -114,6 +115,13 @@
                 display: block;
             }
         }
+    }
+
+    code {
+        background-color: rgba(#722f37, 0.2);
+        color: #722f37;
+        padding: 0 3px;
+        border-radius: 3px;
     }
 }
 

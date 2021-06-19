@@ -13,15 +13,15 @@ showComments: false
 ### Who am I?
 ------
 
-I am a *Software Engineer*, like to participate in sports in the weekends
-(drink beer on the terrace with friends after exercising).
-I have 2 kids, with whom I like to investigate the forest when we have time.
-I like games, and am always in for a match of *foosball*.
-I like direct communication with respect for one another. I prefer autonomy over micromanagement.
+I am a *Software Engineer* and I like to participate in sports in the weekends
+(have an excuse to drink beer on the terrace with friends after exercising).
+I have 2 kids, I like games, and am always in for a match of *foosball*.
+Direct communication with respect for one another works the best for me, and
+I prefer autonomy over micromanagement.
 
-When I have time left in a busy family life, I love to cook and bake. I am not a chef, but it gives me zen.
-Maybe in an afterlife I will open my own bakery. My Covid-hobby is baking sourdough bread.
-I started with my own starter and want to bake at least one bread a week (so far I am holding up).
+I love to cook and bake. Disclaimer: I am not a chef, but it gives me _Zen_.
+Maybe in an afterlife I will open my own bakery, but for now sourdough bread (and baking) really got
+me. I made with my own starter and try to bake at least one bread a week (so far I am holding up).
 
 
 ### Personalia
