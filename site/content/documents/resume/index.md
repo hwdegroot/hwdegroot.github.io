@@ -112,7 +112,7 @@ First alone, later the team grew.
 _Key achievements and responsibilities_
 
  * Setting up and scripting deployment pipelines and automating release process and pipelines.
- * Build realtime monitoring dashboard with build status in React/typescript on top of Jenkins API
+ * Build realtime monitoring dashboard with build status and awareness of the shippability in React/typescript on top of Jenkins API
  * Supporting teams with their CI/CD process and the implementation of build pipelines and git hooks.
 
 **Test Engineer** - *November 2014 - December 2016*
@@ -178,6 +178,15 @@ There is, however, some truth in this as well, because any developer will have a
 projects. On the other hand, these are great learning experiences as well. Just need to know when and when not to do
 it.
 
+There are lots of books written on haw to write good software. Any developer will tell you something different.
+I like the [Joel Test](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/). It is a simple list
+that does not necessarily give you good software, if that even exists, but it will make writing bad code, and
+have software that your users won't use less likely.
+
+##### Tools
+
+Git, Bash, Linux, C#, .NET, C++, Python, Vanilla JS, Vue, TypeScript
+
 #### **Operations**
 
 Very skilled with configuration management tools such as Ansible, Puppet and Chef Setting up (local)
@@ -185,9 +194,17 @@ environments using containerization with `docker`.
 
 Skilled with AWS environments.
 
+##### Tools
+
+puppet, Ansible, AWS
+
 #### **CI/CD**
 
 _(continuous integration/continuous delivery)_ Scripting and maintaining release scripts and pipelines. Very clear view and idea about continuous delivery and deployment. Very experienced in setting up pipelines with `docker` and `docker-compose` and high availability clusters using orchestration tools such as `kubernetes`
+
+##### Tools
+
+Docker, Docker-compose, Python, bash, linux, Gitlab CI, Jenkins, Artifactory
 
 #### **Release management**
 
@@ -200,6 +217,11 @@ Also, or especially, in regulated environments.
 I am very familiar with risk assessment and risk management, especially according to ISO 14971. For most of the roles
 I had I was involved in the risk management processes. Especially in my current role, where I am also part of the risk
 management team, whose responsibility it is to guard the risk manangement processes.
+
+##### Tools
+
+Pen and paper
+
 
 ### Certificates
 ------
