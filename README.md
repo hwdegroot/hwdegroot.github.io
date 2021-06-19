@@ -16,7 +16,7 @@ Run locally
 
 This will require you to have [`docker`](https://www.docker.com) and [`GNU Make`](https://www.gnu.org/software/make/)
 
-Check out the [`Makefile`](https://gitlab.com/hwdegroot/forsure.dev/blob/master/Makefile) for all available commands.
+Check out the [`Makefile`](https://gitlab.com/hwdegroot/forsure.dev/blob/main/Makefile) for all available commands.
 
 Then fire up a browser and navigate to [http://localhost:8888](http://localhost:8888)
 

@@ -55,7 +55,7 @@ To get this up and running we are going to need 4 things
 
 If you have a default layout for your hugo site, like I do, you will need to make the `/search` endpoint available. There are multiple
 ways to do that, but I chose to make a directory `search` inside the content directory, containing an `index.md` file. You can see it
-[here](https://gitlab.com/hwdegroot/forsure.dev/tree/master/site/content/search). The `index.md` file will contain dummy content. You can
+[here](https://gitlab.com/hwdegroot/forsure.dev/tree/main/site/content/search). The `index.md` file will contain dummy content. You can
 use this to add some documentation for the team if you'd prefer. But really, what's in there doesn't matter, because the actual file won't be served.
 
 What _is_ important is the `type` of the file. I used `data`, but it doesn't matter at this point. We will only have to make sure that we use it
@@ -71,7 +71,7 @@ type: data
 
 Make sure, to exclude the `data` type from the pages that you want people to see in the list.
 
-In my [layouts/_default/list.html](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/layouts/_default/list.html) template that drills down to
+In my [layouts/_default/list.html](https://gitlab.com/hwdegroot/forsure.dev/blob/main/site/layouts/_default/list.html) template that drills down to
 
 ```go
 {{ range $index, $element := where .Paginator.Pages ".Type" "==" "post" }}
@@ -95,7 +95,7 @@ type. So let's do that next.
 ### Creating the data template
 
 Because I chose the `type` to be `data` and to use a directory `search` with a file `index.md`, I created a directory `data` in
-[`/content/layouts`](https://gitlab.com/hwdegroot/forsure.dev/tree/master/site/layouts/data/).
+[`/content/layouts`](https://gitlab.com/hwdegroot/forsure.dev/tree/main/site/layouts/data/).
 Inside this directory I put the template `single.html`. This is the file that hugo expects for a file called `index.md`. If you prefer `_index.md`
 make sure to call this file `baseof.html`. If you don't want to put the search file inside a directory, but want to add `search.md` to the root of the content
 dir, then call this file `list.html`.
@@ -107,7 +107,7 @@ But we want this url to show a nice `json` representation of all the pages, beca
 
 ### Filling the template
 
-You can view how to fill the template [here](https://gitlab.com/hwdegroot/forsure.dev/tree/master/site/layouts/data/single.html)
+You can view how to fill the template [here](https://gitlab.com/hwdegroot/forsure.dev/tree/main/site/layouts/data/single.html)
 
 The example is based on [this gist](https://github.com/goblindegook/goblindegook.com/blob/master/themes/goblindegook/layouts/data/document-index.html) from
 [goblindegook](https://github.com/goblindegook/goblindegook.com).
@@ -200,11 +200,11 @@ a script tag for you. If you do this for `Promise` only you will get something l
 
 If you need more, it is pretty straight-forward. Make sure that you put the polyfill as the first element after `<body>`.
 
-I put them all in a [partial](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/layouts/partials/scripts.html), that I
+I put them all in a [partial](https://gitlab.com/hwdegroot/forsure.dev/blob/main/site/layouts/partials/scripts.html), that I
 load in my head (except the polyfill, because, like I said, I don't care).
 
 So all set there, time to create a partial for the client side search. You can find the partial
-[here](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/layouts/partials/search.html), but it looks like this.
+[here](https://gitlab.com/hwdegroot/forsure.dev/blob/main/site/layouts/partials/search.html), but it looks like this.
 
 ```html
 <div class="show-search">
@@ -241,11 +241,11 @@ So all set there, time to create a partial for the client side search. You can f
 Note that the javascript file is already included here. I will come back to that in the next paragraph
 
 
-It will need some styling. Take a peek [here](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/assets/css/_search.scss).
+It will need some styling. Take a peek [here](https://gitlab.com/hwdegroot/forsure.dev/blob/main/site/assets/css/_search.scss).
 
 Additionally, if you put the styling in a `scss` file, make sure to load it. The [template](https://themes.gohugo.io/hugo-book/) I am using,  allows
 injection of css via an  `_extra.scss` file in the `assets/css` directory. So I just created a `_search.scss` file in the assets directory, and included
-it in the [`_extra.scss`](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/assets/css/_extra.scss) like so
+it in the [`_extra.scss`](https://gitlab.com/hwdegroot/forsure.dev/blob/main/site/assets/css/_extra.scss) like so
 
 ```scss
 ...
@@ -256,7 +256,7 @@ it in the [`_extra.scss`](https://gitlab.com/hwdegroot/forsure.dev/blob/master/s
 ### The real magic
 
 Now the final step is to make the search work. For that, just create a javascript file in the assets directory. For me
-that is [`assets/js/search.js`](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/assets/js/search.js).
+that is [`assets/js/search.js`](https://gitlab.com/hwdegroot/forsure.dev/blob/main/site/assets/js/search.js).
 
 It looks like this:
 

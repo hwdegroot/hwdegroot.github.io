@@ -32,7 +32,7 @@ Here I will try to explain how I got from writing some basic _markdown_ to runni
 You can find the repository of this site [here](https://gitlab.com/hwdegroot/forsure.dev). I like `yaml` over `toml`.
 Therefor I will use the `yaml` configuration option from hugo.
 
-My config is as follows, but also available [here](https://gitlab.com/hwdegroot/forsure.dev/blob/master/site/config/config.yaml)
+My config is as follows, but also available [here](https://gitlab.com/hwdegroot/forsure.dev/blob/main/site/config/config.yaml)
 
 ```yaml
 title: Rik de Groot
@@ -84,7 +84,7 @@ The nice thing about using the tools that are popular, is that a lot of people a
 So I did. You can find all about deploying a hugo app to GitLab pages in [this example](https://gitlab.com/pages/hugo).
 
 I used the following `.gitlab-ci.yml` configuration to get the job done. Gitlab published a [docker container](https://registry.gitlab.com/pages/hugo:latest),
-that can be used to build your project (see the above example form GitLab). But I like to have the extended features as well, so [I created my own](https://gitlab.com/hwdegroot/forsure.dev/blob/master/Dockerfile) which is available in the [container registry of the project](https://gitlab.com/hwdegroot/forsure.dev/container_registry). But not too much credits to myself, because I based it on the container from [jguyomard](https://github.com/jguyomard).
+that can be used to build your project (see the above example form GitLab). But I like to have the extended features as well, so [I created my own](https://gitlab.com/hwdegroot/forsure.dev/blob/main/Dockerfile) which is available in the [container registry of the project](https://gitlab.com/hwdegroot/forsure.dev/container_registry). But not too much credits to myself, because I based it on the container from [jguyomard](https://github.com/jguyomard).
 You can find the project on [GitHub](https://github.com/jguyomard/docker-hugo).
 
 
@@ -113,7 +113,7 @@ pages:
             - public
         only:
             - tags
-            - master
+            - main
 
 ```
 
