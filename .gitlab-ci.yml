@@ -21,13 +21,13 @@ pages:
     extends: .pages
     only:
         - tags
-        - master
+        - main
 
 pages_dev:
     extends: .pages
     except:
         - tags
-        - master
+        - main
     when: manual
 
 
