@@ -183,6 +183,10 @@ body {
 .app-header {
     position: relative;
 
+    &-social {
+        font-size: 1rem;
+    }
+
     .policy {
         //position: absolute;
         bottom: 0;

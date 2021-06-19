@@ -20,18 +20,21 @@
         <header class="app-header">
             <a href="{{ .Site.BaseURL }}" style="display: flex; flex-direction: column; align-items: center;">
                 <img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author }}" />
-                <span style="display: inline-flex">Living on the edge of glory!</span>
+                <span style="display: inline-flex">on the edge of glory!</span>
             </a>
 
-            <h1><a href="/d/resume">{{ .Site.Title }}</a></h1>
+            <a href="/d/about-me" style="display: flex; flex-direction: column;">
+                <h2 style="color:#67eba2;margin-bottom:0;padding-bottom:0;line-height:1;">{{ .Site.Title }}</h2>
+                <p style="margin:0;font-size:0.6rem;">more about me</p>
+            </a>
             <p>Code, cook, cake</p>
-            <p><a href="https://twitter.com/easeeonline" target="_new">@easeeonline</a></p>
             <div class="app-header-social">
+                <a href="https://twitter.com/easeeonline" style="font-size: 1rem; display: block;" target="_new">@easeeonline</a>
                 {{ range .Site.Params.social }}
                 <a target="_blank" href="{{ .url }}">{{ partial "icon.html" (dict "ctx" $ "name" .name ) }}</a>
                 {{ end }}
             </div>
-            <div class="policy disqus">
+            <div class="policy disqus" style="margin-top: 5rem;">
                 <p class="center bottom"><small><a href="/policy/comment-policy">Comment policy</a></small></p>
             </div>
         </header>

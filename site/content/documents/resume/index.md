@@ -1,5 +1,5 @@
 ---
-title: Resume
+title: About me
 date: 2020-03-04T10::50:00Z
 _build:
     list: never
@@ -138,15 +138,16 @@ different domains (government, music industries). Implementing C#.NET webapplica
 ExpertDoc makes a decision support system for first line medical professionals (GP). At the time companies
 that create standalone Medical Device Software, have to adhere to the MDD as well.
 
-In the beginning my work was building, implementing and maintaining the decision steps for the supported domains.
-Later, when the QMS was to implemented in scope of MDD/93/42/EEC my role was more QA/RA officer.
+At first, the focus of my work was on implementing and maintaining the decision trees for the supported domains
+in the tool Gaston from Medecs BV.
+Later, when the QMS was to be implemented in scope of MDD/93/42/EEC my role shifted to QA/RA officer, as I was
+in charge of the implementation of the QMS.
 
 _Key achievements and responsibilities_
 
 * Implementation of guideline MDD/93/42/EEC (software as a medical device) processes and certification.
 * Introduced and implemented workflows for the QMS in Microsoft Sharepoint.
 * Implementing domain decision trees
-
 
 
 ### Skills
