@@ -13,7 +13,7 @@ showComments: false
 ### Who am I?
 ------
 
-I am a *Software Engineer* and I like to participate in sports in the weekends
+I am a passionate developer who likes to participate in sports in the weekends
 (have an excuse to drink beer on the terrace with friends after exercising).
 I have 2 kids, I like games, and am always in for a match of *foosball*.
 Direct communication with respect for one another works the best for me, and
@@ -38,7 +38,7 @@ me. I made with my own starter and try to bake at least one bread a week (so far
 * {{< urlicon >}} [forsure.dev](https://www.forsure.dev)
 * {{< materialicon "face" >}} Male
 
-![Rik de Groot](images/rik+de+groot.jpeg)
+![Rik de Groot](images/rik-de-groot.jpg)
 
 </span>
 

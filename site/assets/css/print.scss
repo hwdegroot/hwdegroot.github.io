@@ -77,20 +77,24 @@
         }
     }
 
-    .personalia-container svg.icon {
-        width: 22px;
-        height: 22px;
-        align-self: flex-start !important;
-
-        &.url-icon path {
-            stroke: black;
+    .personalia-container {
+        & > p {
+            margin-top: 0;
         }
 
-        &.social path {
-            fill: black;
+        svg.icon {
+            width: 22px;
+            height: 22px;
+            align-self: flex-start !important;
+
+            &.url-icon path {
+                stroke: black;
+            }
+
+            &.social path {
+                fill: black;
+            }
         }
-
-
     }
 
     .toc-wrapper,
