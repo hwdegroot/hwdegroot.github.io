@@ -35,6 +35,7 @@ me. I made with my own starter and try to bake at least one bread a week (so far
 * {{< materialicon "alternate_email" >}} <a href="mailto:hwdegroot@gmail.com">hwdegroot@gmail.com</a>
 * {{< linkedinicon >}} [rikhwdegroot](https://www.linkedin.com/in/rikhwdegroot/)
 * {{< twittericon >}} [*@hwdegroot*](https://twitter.com/hwdegroot)
+* CM [*@hwdegroot*](https://www.codementor.io/m-badges/hwdegroot/im-a-cm-g.svg)
 * {{< urlicon >}} [forsure.dev](https://www.forsure.dev)
 * {{< materialicon "face" >}} Male
 
