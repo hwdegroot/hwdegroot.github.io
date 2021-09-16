@@ -43,6 +43,10 @@ params:
           url: https://twitter.com/hwdegroot
         - name: linkedin
           url: https://www.linkedin.com/in/rikhwdegroot/
+        - name: codingcoach
+          url: https://mentors.codingcoach.io/?name=Rik+de+Groot
+        - name: codementor
+          url: https://www.codementor.io/@hwdegroot
     style:
         # green
         darkestColor: "#282e37"
