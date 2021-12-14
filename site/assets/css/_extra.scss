@@ -231,6 +231,7 @@ body {
     font-size: var(--font-size);;
     color: var(--font-color);
     display: flex;
+    flex-wrap: wrap;
     justify-items: flex-start;
 
     svg {
@@ -238,9 +239,7 @@ body {
     }
 
     .tag {
-        margin: auto;
-        margin-left: 2px;
-        margin-right: 2px;
+        margin: 2px;
     }
 }
 
