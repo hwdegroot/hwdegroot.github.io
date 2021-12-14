@@ -4,6 +4,7 @@
 @import 'toc';
 @import 'table';
 @import 'presentation';
+@import 'focus';
 
 html {
     font-size:  1.2rem;
@@ -208,6 +209,14 @@ body {
 .post-list-item-metadata {
     display: flex;
     flex-wrap: wrap;
+
+    [class^=posts-list-item-] {
+        display: flex;
+
+        svg {
+            color: #d3d3d3;
+        }
+    }
 }
 
 .posts-list-item-description,
@@ -215,16 +224,43 @@ body {
     display: inline-block;
 }
 
+.post-list-item-labels {
+    --font-size: 22px;
+    --font-color: #67eba2;
+
+    font-size: var(--font-size);;
+    color: var(--font-color);
+    display: flex;
+    justify-items: flex-start;
+
+    svg {
+        color: #d3d3d3;
+    }
+
+    .tag {
+        margin: auto;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+}
+
 .posts-list-item-title {
     font-size: 1.2rem;
 }
 
 .posts-list-item-description {
+    --font-size: 22px;
+    --font-color: #67eba2;
+
+    font-size: var(--font-size);;
+    color: var(--font-color);
     margin-right: 10px;
-    font-size: 1rem;
-    display: flex;
     flex-direction: row;
     align-items: center;
+
+    svg {
+        color: #d3d3d3;
+    }
 
     & > * {
         margin-right: 5px;
@@ -233,46 +269,22 @@ body {
 }
 
 .posts-list-item-comments {
-    --font-size: 1rem;
-    --height: 100%;
+    --font-size: 22px;
+    --font-color: #67eba2;
 
     position: relative;
-    //line-height: 1rem;
-    height: var(--height);
+    font-size: var(--font-size);;
+    color: #67eba2;
 
-    i,
     a {
         font-size: var(--font-size);;
+        color: var(--font-color);
         color: #67eba2;
-        margin-left: calc(var(--font-size) + 3px);
-        line-height: 1.2rem;
-        height: var(--height);
         opacity: 0.8;
         text-transform: lowercase;
-
-        &::before {
-            content: "comment";
-            position: absolute;
-            left: 0;
-            bottom: calc((var(--height) - var(--font-size)) - .25rem);
-            margin-right: 0.4rem;
-            font-family: 'Material Icons';
-            font-weight: normal;
-            font-style: normal;
-            line-height: 1;
-            letter-spacing: normal;
-            text-transform: none;
-            display: inline-block;
-            white-space: nowrap;
-            word-wrap: normal;
-            direction: ltr;
-            -webkit-font-feature-settings: 'liga';
-            -webkit-font-smoothing: antialiased;
-        }
     }
 
     &:hover {
-        i,
         a {
             color: white;
             transition: color .35s
@@ -354,6 +366,12 @@ body {
     }
 }
 
+.app-header-social {
+    a {
+        display: inline-block;
+    }
+}
+
 @media only screen and (min-width: 940px) {
     .app-container {
         max-width: 65rem;
@@ -367,9 +385,11 @@ body {
 
 svg {
     &.icon {
+        display: flex;
         height: 30px;
-        width: 20px;
+        width: 30px;
         align-self: flex-start!important;
+        margin: 2px;
     }
     &.url-icon {
         path {

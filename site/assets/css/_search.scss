@@ -5,10 +5,14 @@
     margin-top: 20px;
 
     a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+
         svg {
             width: 2rem;
             height: 2rem;
-            margin-right: 10px;
             cursor: pointer;
 
             path {

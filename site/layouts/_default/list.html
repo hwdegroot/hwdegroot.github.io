@@ -25,13 +25,14 @@
                         </span>
                         {{ if (and (.Params.showComments) (.Site.DisqusShortname)) }}
                             <span class="posts-list-item-comments">
+                                {{ partial "custom-icon.html" (dict "ctx" $ "name" "comment") }}
                                 <a class="disqus-comments" href="{{ .RelPermalink }}#disqus_thread">Comments</a>
                             </span>
                         {{ end }}
                     </div>
                     {{- with .Params.tags -}}
-                        <div>
-                            {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
+                        <div class="post-list-item-labels">
+                            {{ partial "custom-icon.html" (dict "ctx" $ "name" "tag") }}
                             {{ range . -}}
                                 {{- with $.Site.GetPage (printf "/%s/%s" "tags" . ) -}}
                                     {{- if (eq (substr .Title 0 5) "lang-") -}}

@@ -1,0 +1,34 @@
+:is(a, button, input, textarea, summary) {
+    --outline-size: max(2px, 0.08em);
+    --outline-style: dashed;
+    --outline-color: currentColor;
+    --autline-offset: 1px;
+
+    &::after {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 5px;
+    }
+}
+
+:is(a, button, input, textarea, summary):focus::after {
+    outline: var(--outline-size)
+             var(--outline-style)
+             var(--outline-color);
+    outline-offset: var(--outline-offset, var(--outline-size));
+}
+
+:is(a, button, input, textarea, summary):focus-visible::after {
+    outline: var(--outline-size)
+             var(--outline-style)
+             var(--outline-color);
+    outline-offset: var(--outline-offset, var(--outline-size));
+}
+
+:is(a, button, input, textarea, summary):focus::after:not(:focus-visible) {
+    outline: none;
+}
