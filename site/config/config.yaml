@@ -44,7 +44,7 @@ params:
         - name: linkedin
           url: https://www.linkedin.com/in/rikhwdegroot/
         - name: codingcoach
-          url: https://mentors.codingcoach.io/?name=Rik+de+Groot
+          url: https://mentors.codingcoach.io/u/613e0e08f18483304124cebf
         - name: codementor
           url: https://www.codementor.io/@hwdegroot
     style:
