@@ -10,10 +10,9 @@ RUN apk add --update \
         git \
         asciidoctor \
         libc6-compat \
-        libstdc++ && \
-\
-    apk upgrade && \
-\
+        libstdc++
+
+RUN apk upgrade && \
     apk add --no-cache \
         bash \
         ca-certificates \
@@ -21,20 +20,15 @@ RUN apk add --update \
         openssh-client
 
 RUN mkdir -p /usr/local/src && \
-    cd /usr/local/src && \
-\
-    curl -sSLo ${HUGO_RELEASE}.tar.gz  https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_RELEASE}.tar.gz && \
-    curl -sSL https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_checksums.txt | \
-        grep ${HUGO_RELEASE}.tar.gz > ${HUGO_RELEASE}.sha256 && \
-    cat ${HUGO_RELEASE}.sha256 | sha256sum -c && \
-    tar -xzf ${HUGO_RELEASE}.tar.gz && \
-    mv hugo /usr/local/bin/hugo && \
-    rm -f ${HUGO_RELEASE}.* && \
-\
-    curl -sSLo minify-stable.tar.gz https://bin.equinox.io/c/dhgbqpS8Bvy/minify-stable-linux-amd64.tgz && \
-    tar -xzf minify-stable.tar.gz && \
-    mv minify /usr/local/bin/ && \
-    rm -f minify-stable.tar.gz
+    cd /usr/local/src
+
+RUN curl -sSLo ${HUGO_RELEASE}.tar.gz  https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_RELEASE}.tar.gz
+RUN curl -sSL https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_checksums.txt | \
+        grep ${HUGO_RELEASE}.tar.gz > ${HUGO_RELEASE}.sha256
+RUN cat ${HUGO_RELEASE}.sha256 | sha256sum -c
+RUN tar -xzf ${HUGO_RELEASE}.tar.gz
+RUN mv hugo /usr/local/bin/hugo
+RUN rm -f ${HUGO_RELEASE}.*
 
 VOLUME /src
 VOLUME /publish
