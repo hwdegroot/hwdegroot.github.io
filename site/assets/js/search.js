@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // open search on CTRL+SHIFT+F
-        if (e.ctrlKey && e.shiftKey && e.key == "F" && !searchWrapper.classList.contains("active")) {
+        if (((e.ctrlKey && e.shiftKey && e.key == "F") || e.key == "/") && !searchWrapper.classList.contains("active")) {
             e.preventDefault();
             toggleSearch(searchWrapper, searchInput);
         }
