@@ -202,6 +202,18 @@ body {
     }
 }
 
+.app-header-avatar-wrapper  {
+    display: flex;
+    border: .5rem solid #67eba2;
+    border-radius: 100%;
+    overflow: hidden;
+
+    img {
+        border: none;
+        border-radius: 0;
+    }
+}
+
 .post-footer {
     margin-top: 15px;
 }

@@ -19,7 +19,9 @@
     <body>
         <header class="app-header">
             <a href="{{ .Site.BaseURL }}" style="display: flex; flex-direction: column; align-items: center;">
-                <img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author }}" />
+                <div class="app-header-avatar-wrapper">
+                    <img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author }}" />
+                </div>
                 <span style="display: inline-flex">on the edge of glory!</span>
             </a>
 
