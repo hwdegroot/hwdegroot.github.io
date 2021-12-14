@@ -65,13 +65,15 @@
         }
 
         &.url-icon {
+            polygon,
             path {
                 stroke: lighten(black, 40%);
             }
         }
 
         &.social {
-            path {
+            path,
+            polygon {
                 fill: lighten(black, 40%);
             }
         }
@@ -87,12 +89,18 @@
             height: 22px;
             align-self: flex-start !important;
 
-            &.url-icon path {
-                stroke: black;
+            &.url-icon {
+                polygon,
+                path {
+                    stroke: black;
+                }
             }
 
-            &.social path {
-                fill: black;
+            &.social {
+                polygon,
+                path {
+                    fill: black;
+                }
             }
         }
     }

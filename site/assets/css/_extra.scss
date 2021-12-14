@@ -385,10 +385,14 @@ body {
 svg {
     &.icon {
         display: flex;
-        height: 30px;
-        width: 30px;
         margin: 2px;
+
+        &:not(.social, .url-icon) {
+            height: 30px;
+            width: 30px;
+        }
     }
+
     &.url-icon {
         path {
             stroke: #d3d3d3;
