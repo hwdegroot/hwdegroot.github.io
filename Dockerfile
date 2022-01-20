@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM debian:latest
 
 MAINTAINER Rik de Groot <hwdegroot@gmail.com>
 
@@ -6,15 +6,12 @@ ARG HUGO_VERSION
 ARG PORT=1313
 ENV HUGO_RELEASE=hugo_extended_${HUGO_VERSION}_Linux-64bit
 
-RUN apk add --update \
+RUN apt-get update && \
+    apt-get install -yy \
         git \
         asciidoctor \
-        libc6-compat \
-        libstdc++
-
-RUN apk upgrade && \
-    apk add --no-cache \
-        bash \
+        libc6 \
+        libstdc++6 \
         ca-certificates \
         curl \
         openssh-client

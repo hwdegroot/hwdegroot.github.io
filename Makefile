@@ -2,6 +2,7 @@ PORT := 8888
 HUGO_VERSION := 0.90.1
 CONTAINER_NAME := forsure.local
 
+
 serve: clean build
 	docker run \
 		--rm \
@@ -28,6 +29,7 @@ build:
 	docker build \
 		--tag registry.gitlab.com/hwdegroot/forsure.dev/hugo:$(HUGO_VERSION) \
 		--tag registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest \
+		--platform linux/x86_64 \
 		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
 		--build-arg PORT=$(PORT) \
 		.
