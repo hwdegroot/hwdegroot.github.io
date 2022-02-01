@@ -8,6 +8,18 @@ Clone the repo
 
     git clone git@gitlab.com:hwdegroot/forsure.dev.git --recursive
 
+or
+
+    git clone git@gitlab.com:hwdegroot/forsure.dev.git
+    git submodule update --init
+
+
+Troubleshooting
+---
+
+Q: I am getting a getting `<resources.ExecuteAsTemplate>: error calling ExecuteAsTemplate: type <nil> not supported in Resource transformations` when running `make serve`
+
+A: Did you run `git submodule update --init`?
 
 Run locally
 ---
