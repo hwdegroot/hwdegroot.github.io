@@ -1,5 +1,5 @@
 PORT := 8888
-HUGO_VERSION := 0.90.1
+HUGO_VERSION := 0.92.1
 CONTAINER_NAME := forsure.local
 
 
