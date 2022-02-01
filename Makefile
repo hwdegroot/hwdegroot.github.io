@@ -15,6 +15,13 @@ serve: clean build
 		registry.gitlab.com/hwdegroot/forsure.dev/hugo:$(HUGO_VERSION) \
 		hugo server --contentDir content/ --bind 0.0.0.0 --port $(PORT) --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
 
+
+%:      # thanks to chakrit
+	@:    # thanks to William Pursell
+
+bump-version:
+	./bump-hugo-version.sh $(filter-out $@,$(MAKECMDGOALS))
+
 publish:
 	docker exec -it $(CONTAINER_NAME) \
 		hugo --contentDir content --config config/config.yaml --destination ../public/
