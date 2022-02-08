@@ -1,6 +1,7 @@
 PORT := 8888
-HUGO_VERSION := 0.90.1
+HUGO_VERSION := 0.92.1
 CONTAINER_NAME := forsure.local
+
 
 serve: clean build
 	docker run \
@@ -10,8 +11,16 @@ serve: clean build
 		--workdir /src/site \
 		--publish $(PORT):$(PORT) \
 		--privileged \
+		--platform linux/x86_64 \
 		registry.gitlab.com/hwdegroot/forsure.dev/hugo:$(HUGO_VERSION) \
-		hugo server --contentDir content/ --bind "0.0.0.0" --port $(PORT) --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
+		hugo server --contentDir content/ --bind 0.0.0.0 --port $(PORT) --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
+
+
+%:      # thanks to chakrit
+	@:    # thanks to William Pursell
+
+bump-version:
+	./bump-hugo-version.sh $(filter-out $@,$(MAKECMDGOALS))
 
 publish:
 	docker exec -it $(CONTAINER_NAME) \
@@ -28,6 +37,7 @@ build:
 	docker build \
 		--tag registry.gitlab.com/hwdegroot/forsure.dev/hugo:$(HUGO_VERSION) \
 		--tag registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest \
+		--platform linux/x86_64 \
 		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
 		--build-arg PORT=$(PORT) \
 		.
