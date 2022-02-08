@@ -59,7 +59,7 @@ pygmentsCodeFences: true
 # Site parameters
 params:
     author: Rik de Groot
-    description: Code, cook and bake. Working @easeeonline
+    description: Code, cook and bake. Tech Lead @FinLeaseNL
     avatar: assets/images/rik-de-groot.jpg
     images:
         - assets/og/cover.png
