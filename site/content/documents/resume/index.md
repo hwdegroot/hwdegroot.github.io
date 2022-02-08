@@ -69,9 +69,15 @@ hierarchical organizational structures will not get the best out of me.
 ### Experience
 ------
 
+#### FinancialLease.nl
+
+**Tech Lead** - *January 2022 - now*
+
+🚀
+
 #### easee
 
-**Scrum master** - *February 2020 - now*
+**Scrum master** - *February 2020 - December 2021*
 
 As a Scrum master my main focus is supporting the development team,
 enabling the daily stand-ups and facilitating retrospectives are two of the main tasks.
@@ -80,7 +86,7 @@ Product Owner we started the weekly company demo's where the RnD team demos the 
 that was accomplished during the week.
 
 
-**Senior Software Engineer**  - *October 2017 - now*
+**Senior Software Engineer**  - *October 2017 - December 2021*
 
 At easee we create an online eye exam. Because the device has a measuring function we are classified
 as a MDD 93/42/EEC medical device class I with measuring function (also known as class Im). Together with

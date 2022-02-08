@@ -32,7 +32,7 @@ params:
     # show cookie policy
     cookiePolicy: false
     author: Rik de Groot
-    description: Code, cook and bake. Working @easeeonline
+    description: Code, cook and bake. Tech Lead @FinLeaseNL
     avatar: images/rik-de-groot.jpg
     images:
         - images/og/cover.png
