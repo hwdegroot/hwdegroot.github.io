@@ -16,6 +16,7 @@ RUN apt-get update && \
         curl \
         openssh-client
 
+
 RUN mkdir -p /usr/local/src && \
     cd /usr/local/src
 
@@ -29,6 +30,8 @@ RUN rm -f ${HUGO_RELEASE}.*
 
 VOLUME /src
 VOLUME /publish
+
+RUN git config --global --add safe.directory /src
 
 WORKDIR /src
 
