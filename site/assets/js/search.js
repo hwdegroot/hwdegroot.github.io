@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     let searchResults = [];
     const searchWrapper = document.querySelector("aside[role=search]");
     const searchResultElement = searchWrapper.querySelector(".search-results");
@@ -80,59 +80,54 @@ document.addEventListener("DOMContentLoaded", () => {
         return content;
     }
 
-    fetch("/search")
-        .then(response => response.json())
-        .then(result => {
-            const searchContent = result;
-            const searchIndex = lunr(builder => {
-                builder.ref("id")
-                builder.field("content");
-                builder.field("tag");
-                builder.field("title");
-                builder.field("url");
-                builder.field("type");
+    const response = await fetch("/search");
+    const result = await response.json();
+    const searchContent = result;
+    const searchIndex = lunr(builder => {
+        builder.ref("id")
+        builder.field("content");
+        builder.field("tag");
+        builder.field("title");
+        builder.field("url");
+        builder.field("type");
 
-                Array.from(result).forEach(doc => {
-                    builder.add(doc)
-                }, builder)
-            })
-            searchInput.removeAttribute("disabled");
-            searchInput.addEventListener("keyup", e => {
-                let searchString = e.target.value;
-                if (searchString && searchString.length > 2) {
-                    try {
-                        searchResults = searchIndex.search(searchString);
-                    } catch (err) {
-                        if (err instanceof lunr.QueryParseError) {
-                            return;
-                        }
-                    }
-                } else {
-                    searchResults = [];
+        Array.from(result).forEach(doc => {
+            builder.add(doc)
+        }, builder)
+    })
+    searchInput.removeAttribute("disabled");
+    searchInput.addEventListener("keyup", e => {
+        let searchString = e.target.value;
+        if (searchString && searchString.length > 2) {
+            try {
+                searchResults = searchIndex.search(searchString);
+            } catch (err) {
+                if (err instanceof lunr.QueryParseError) {
+                    return;
                 }
+            }
+        } else {
+            searchResults = [];
+        }
 
-                if (searchResults.length > 0) {
-                    searchResultElement.innerHTML = searchResults.map(match => {
-                        let item = searchContent.find(el => {
-                            return el.id == parseInt(match.ref);
-                        });
-                        return "<li>" +
-                            "<h4 title='field: title'><a href='" + item.url + "'>" + mark(item.title, searchString) + "</a></h4>" +
-                            "<p class='type'>" + item.type + "</p>" +
-                            "<p class='summary' title='field: content'>" +
-                            mark((item.content.length > 200 ? (item.content.substring(0, 200) + "...") : item.content), searchString) +
-                            "</p>" +
-                            "<p class='tags' title='field: tag'>" + tags(item.tag, searchString) + "</p>" +
-                            "<a href='" + item.url + "' title='field: url'>" + mark(item.url, searchString) + "</a>" +
-                            "</li>";
-                    }).join("");
-                } else {
-                    searchResultElement.innerHTML = "<li><p class='no-result'>No results found</p></li>";
-                }
-            });
-        })
-        .catch(err => {
-            console.error(err);
-        });
+        if (searchResults.length > 0) {
+            searchResultElement.innerHTML = searchResults.map(match => {
+                let item = searchContent.find(el => {
+                    return el.id == parseInt(match.ref);
+                });
+                return "<li>" +
+                    "<h4 title='field: title'><a href='" + item.url + "'>" + mark(item.title, searchString) + "</a></h4>" +
+                    "<p class='type'>" + item.type + "</p>" +
+                    "<p class='summary' title='field: content'>" +
+                    mark((item.content.length > 200 ? (item.content.substring(0, 200) + "...") : item.content), searchString) +
+                    "</p>" +
+                    "<p class='tags' title='field: tag'>" + tags(item.tag, searchString) + "</p>" +
+                    "<a href='" + item.url + "' title='field: url'>" + mark(item.url, searchString) + "</a>" +
+                    "</li>";
+            }).join("");
+        } else {
+            searchResultElement.innerHTML = "<li><p class='no-result'>No results found</p></li>";
+        }
+    });
 });
 
