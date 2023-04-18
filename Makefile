@@ -1,5 +1,5 @@
 PORT := 8888
-HUGO_VERSION := 0.92.1
+HUGO_VERSION := $(shell cat .hugo-version)
 CONTAINER_NAME := forsure.local
 
 

@@ -14,7 +14,7 @@ fi
 AVAILABLE=$(echo $AVAILABLE_VERSIONS | jq --arg version "$HUGO_VERSION" '. as $v | $version | IN($v[])')
 
 if [[ "$AVAILABLE" == "true" ]]; then
-    sed -i "s/^HUGO_VERSION := .*/HUGO_VERSION := $HUGO_VERSION/g" Makefile
+    echo $HUGO_VERSION > .hugo-version
     exit 0
 fi
 
