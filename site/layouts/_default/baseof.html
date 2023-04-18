@@ -36,9 +36,6 @@
                 <a target="_blank" href="{{ .url }}">{{ partial "custom-icon.html" (dict "ctx" $ "name" .name ) }}</a>
                 {{ end }}
             </div>
-            <div class="policy disqus" style="margin-top: 5rem;">
-                <p class="center bottom"><small><a href="/policy/comment-policy">Comment policy</a></small></p>
-            </div>
         </header>
         <main class="app-container">
         {{ partial "search" }}
@@ -51,18 +48,5 @@
         {{ end }}
         {{ $modal := resources.Get "js/modal.js" | resources.Minify | resources.Fingerprint -}}
         <script type="text/javascript" src="{{ $modal.RelPermalink }}"></script>
-
-        {{ if .Site.DisqusShortname }}
-            {{ if in (.Site.BaseURL | string) "localhost" }}
-            <script>
-                document.querySelectorAll('a.disqus-comments').forEach(link => {
-                    link.innerHTML = `${Math.floor(100 * Math.random())} ${link.innerHTML}`;
-                });
-            </script>
-            {{ else }}
-            <script src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" id="dsq-count-scr" async></script>
-            {{end }}
-        {{ end }}
-        <!-- NO GA -->
     </body>
 </html>
