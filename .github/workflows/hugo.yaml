@@ -60,10 +60,7 @@ jobs:
           hugo \
             --contentDir content \
             --config config/config.yaml \
-            --destination ../public \
-            --gc \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --destination ../public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
