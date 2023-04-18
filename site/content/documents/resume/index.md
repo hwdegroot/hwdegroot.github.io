@@ -37,7 +37,7 @@ me. I made with my own starter and try to bake at least one bread a week (so far
 * {{< twittericon >}} [*@hwdegroot*](https://twitter.com/hwdegroot)
 * {{< codingcoachicon >}} [codingcoach](https://mentors.codingcoach.io/u/613e0e08f18483304124cebf)
 * {{< codementoricon >}} [codementor](https://www.codementor.io/@hwdegroot)
-* {{< urlicon >}} [forsure.dev](https://www.forsure.dev)
+* {{< urlicon >}} [rikdegroot.io](https://rikdegroot.io)
 * {{< materialicon "face" >}} Male
 
 ![Rik de Groot](images/rik-de-groot.jpg)

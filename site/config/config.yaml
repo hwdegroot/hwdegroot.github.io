@@ -2,7 +2,7 @@ title: Rik de Groot
 assetsDir: content/assets
 enableRobotsTXT: true
 metaDataFormat: yaml
-baseURL: https://www.forsure.dev/
+baseURL: https://rikdegroot.io/
 permalinks:
     posts: /-/:year/:month/:day/:title
     tags: /t/:slug
