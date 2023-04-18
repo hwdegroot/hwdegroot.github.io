@@ -11,7 +11,7 @@ images:
     - images/og/ibm-5160.png
 disqus_identifier: "f355ef2ad8ff0047813f58db28ac801d"
 disqus_title: "640 Kilobytes of RAM??! and Why I Bought an IBM 5160"
-showComments: true
+showComments: false
 
 ---
 

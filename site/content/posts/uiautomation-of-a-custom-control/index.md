@@ -11,7 +11,7 @@ tags:
     - TestStack-White
 images:
     - images/og/cover.png
-showComments: true
+showComments: false
 
 ---
 
