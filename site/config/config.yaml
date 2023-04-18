@@ -37,6 +37,8 @@ params:
     images:
         - images/og/cover.png
     social:
+        - name: github
+          url: https://github.com/hwdegroot
         - name: gitlab
           url: https://gitlab.com/hwdegroot
         - name: twitter
