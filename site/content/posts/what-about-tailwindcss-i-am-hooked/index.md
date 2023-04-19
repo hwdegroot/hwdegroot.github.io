@@ -13,7 +13,7 @@ images:
     - images/og/cover.png
 disqus_identifier: "d20caec3b48a1eef164cb4ca81ba2587"
 disqus_title: "what-about-tailwindcss-i-am-hooked"
-showComments: true
+showComments: false
 
 ---
 

@@ -22,12 +22,6 @@
                                 {{ .PublishDate.Format "Jan 2, 2006" }}
                             </span>
                         </span>
-                        {{ if (and (.Params.showComments) (.Site.DisqusShortname)) }}
-                            <span class="posts-list-item-comments">
-                                {{ partial "custom-icon.html" (dict "ctx" $ "name" "comment") }}
-                                <a class="disqus-comments" href="{{ .RelPermalink }}#disqus_thread">Comments</a>
-                            </span>
-                        {{ end }}
                     </div>
                     {{- with .Params.tags -}}
                         <div class="post-list-item-labels">

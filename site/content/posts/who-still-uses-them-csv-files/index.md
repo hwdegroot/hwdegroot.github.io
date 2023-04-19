@@ -11,7 +11,7 @@ images:
     - images/og/cover.png
 disqus_identifier: "7cd472f4fcaf2721f794b48eebd6d414"
 disqus_title: "Who Still Uses Them Csv Files"
-showComments: true
+showComments: false
 
 ---
 

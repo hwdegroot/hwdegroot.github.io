@@ -12,7 +12,7 @@ images:
 disqus_identifier: "b41840651158f972d21cb59b5cce4952"
 disqus_title: "Add Search Functionality to Your Hugo Static Site"
 type: post
-showComments: true
+showComments: false
 
 ---
 
