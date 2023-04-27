@@ -108,7 +108,7 @@ Now, every time I change a template, the css file is automatically regenerated. 
 
 Happy secret sharing!!
 
-You can find the project in [gitlab](https://gitlab.com/hwdegroot/secret-sharing) and an example app
-on [heroku](https://share-secret-safely.herokuapp.com/). And guess what, it has an API 😍
+You can find the project in [github](https://github.com/hwdegroot/share-secret-safely) and an example app
+on [rikdegroot.io](https://secrets.rikdegroot.io/). And guess what, it has an API 😍
 
 
