@@ -30,15 +30,13 @@ me. I made with my own starter and try to bake at least one bread a week (so far
 <span class="personalia-container">
 
 * {{< materialicon "language" >}} **Dutch** (native), **English** (good)
-* {{< materialicon "calendar_today" >}} May 1st, 1983
+* {{< materialicon "calendar_today" >}} 1983
 * {{< materialicon "place" >}} Utrecht Area, The Netherlands
 * {{< materialicon "alternate_email" >}} <a href="mailto:hwdegroot@gmail.com">hwdegroot@gmail.com</a>
 * {{< linkedinicon >}} [rikhwdegroot](https://www.linkedin.com/in/rikhwdegroot/)
-* {{< twittericon >}} [*@hwdegroot*](https://twitter.com/hwdegroot)
 * {{< codingcoachicon >}} [codingcoach](https://mentors.codingcoach.io/u/613e0e08f18483304124cebf)
-* {{< codementoricon >}} [codementor](https://www.codementor.io/@hwdegroot)
 * {{< urlicon >}} [rikdegroot.io](https://rikdegroot.io)
-* {{< materialicon "face" >}} Male
+* {{< materialicon "face" >}} Male (He/Him)
 
 ![Rik de Groot](images/rik-de-groot.jpg)
 
