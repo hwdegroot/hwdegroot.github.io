@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const searchResultElement = searchWrapper.querySelector(".search-results");
     const searchInput = searchWrapper.querySelector("input");
 
-    const toggleSearch = (searchWrapper, searchInput)  =>{
+    const toggleSearch = (searchWrapper, searchInput) => {
         if (searchWrapper.classList.contains("active")) {
             searchWrapper.classList.add("visible");
             setTimeout(() => {
@@ -30,8 +30,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             toggleSearch(searchWrapper, searchInput);
         }
 
-        // open search on CTRL+SHIFT+F
-        if (((e.ctrlKey && e.shiftKey && e.key == "F") || e.key == "/") && !searchWrapper.classList.contains("active")) {
+        // open search on CTRL+K
+        if (((e.ctrlKey && e.key == "K") || e.key == "/")) { // && !searchWrapper.classList.contains("active")) {
+            console.log("JO");
             e.preventDefault();
             toggleSearch(searchWrapper, searchInput);
         }
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return i && i.length > 0;
             })
             .map(i => {
-                return "<span class='tag'>" + mark(i, searchString) + "</span>";
+                return `<span class='tag'>${mark(i, searchString)}</span>`;
             })
         return tagHTML.join("");
     }
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
                 let re = new RegExp(s, "i");
                 content = content.replace(re, m => {
-                    return "<mark>"+m+"</mark>";
+                    return `<mark>${m}</mark>`;
                 });
             });
         }
