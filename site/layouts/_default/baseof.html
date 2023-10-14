@@ -31,10 +31,14 @@
             </a>
             <p>Code, cook, cake</p>
             <div class="app-header-social">
-                <a href="https://twitter.com/FinLeaseNL" style="font-size: 1rem; display: block;" target="_new">@FinLeaseNL</a>
+                <div>
+                <a href="https://www.linkedin.com/company/financial-lease-nederland-b-v-" style="font-size: 1rem; display: block;" target="_new">@FinLeaseNL</a>
+                </div>
+                <div>
                 {{ range .Site.Params.social }}
                 <a target="_blank" href="{{ .url }}">{{ partial "custom-icon.html" (dict "ctx" $ "name" .name ) }}</a>
                 {{ end }}
+                </div>
             </div>
         </header>
         <main class="app-container">

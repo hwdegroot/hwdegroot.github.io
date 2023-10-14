@@ -41,14 +41,10 @@ params:
           url: https://github.com/hwdegroot
         - name: gitlab
           url: https://gitlab.com/hwdegroot
-        - name: twitter
-          url: https://twitter.com/hwdegroot
         - name: linkedin
           url: https://www.linkedin.com/in/rikhwdegroot/
         - name: codingcoach
           url: https://mentors.codingcoach.io/u/613e0e08f18483304124cebf
-        - name: codementor
-          url: https://www.codementor.io/@hwdegroot
     style:
         # green
         darkestColor: "#282e37"

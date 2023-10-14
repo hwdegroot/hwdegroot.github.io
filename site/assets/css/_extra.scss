@@ -369,6 +369,7 @@ body {
         flex-direction: column-reverse;
 
         header {
+
             .app-header-avatar {
                 max-height: calc(100vw - 5rem);
                 max-width: calc(100vw - 5rem);
@@ -378,6 +379,8 @@ body {
 }
 
 .app-header-social {
+    flex-direction: column;
+
     a {
         display: inline-block;
     }
