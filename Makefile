@@ -12,7 +12,7 @@ serve: clean build
 		--publish $(PORT):$(PORT) \
 		--privileged \
 		--platform linux/x86_64 \
-		registry.gitlab.com/hwdegroot/forsure.dev/hugo:$(HUGO_VERSION) \
+		rikdegroot.io:hugo-$(HUGO_VERSION) \
 		hugo server --contentDir content/ --bind 0.0.0.0 --port $(PORT) --buildDrafts --config config/config.yaml || echo "Run 'make build' or 'make clean' first"
 
 
@@ -25,18 +25,12 @@ bump-version:
 publish:
 	docker exec -it $(CONTAINER_NAME) \
 		hugo --contentDir content --config config/config.yaml --destination ../public/
-
-push_docker: clean build
-	docker push registry.gitlab.com/hwdegroot/forsure.dev/hugo:$(HUGO_VERSION)
-
-
 stop:
 	docker stop --time 0 $(CONTAINER_NAME)
 
 build:
 	docker build \
-		--tag registry.gitlab.com/hwdegroot/forsure.dev/hugo:$(HUGO_VERSION) \
-		--tag registry.gitlab.com/hwdegroot/forsure.dev/hugo:latest \
+		--tag rikdegroot.io:hugo-$(HUGO_VERSION) \
 		--platform linux/x86_64 \
 		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
 		--build-arg PORT=$(PORT) \

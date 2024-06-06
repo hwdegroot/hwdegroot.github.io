@@ -6,11 +6,11 @@ This is the repository for my blog, hosted on [rikdegroot.io](https://rikdegroot
 Clone the repo
 ---
 
-    git clone git@github.com:hwdegroot/rikdegroot.io.git --recursive
+    git clone git@github.com:hwdegroot/hwdegroot.github.io.git --recursive
 
 or
 
-    git clone git@github.com:hwdegroot/rikdegroot.io.git
+    git clone git@github.com:hwdegroot/hwdegroot.github.io.git
     git submodule update --init
 
 
